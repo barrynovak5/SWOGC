@@ -15,7 +15,7 @@
             var footer1 = document.getElementById("header2");
             var footer2 = document.getElementById("footer2");
 
-            header1.value = "<style type='text/css' media='all'>" +
+            var style = "<style type='text/css' media='all'>" +
                                 + "td{ 	font-family: arial, helvetica, verdana;	font-size: 14px; color: #474747;}"
 
                                 + "div{	font-family: arial, helvetica, verdana;	font-size: 14px; color: #474747;}"
@@ -27,6 +27,8 @@
                                 + "a:hover{	color: #5995d3;	text-decoration: underline;}"
                                 + "</style>";
 
+
+            header2.value = style;
         }
 
         function Validator(theForm) {
