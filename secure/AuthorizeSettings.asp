@@ -13,7 +13,10 @@ Function getAuthorizeCredentials(ByRef loginId, ByRef transactionKey, ByRef test
     ' developer accounts: https://test.authorize.net/gateway/transact.dll
     ' for real accounts (even in test mode), please make sure that you are
     ' posting to: https://secure.authorize.net/gateway/transact.dll
-    authorizeUrl = "https://test.authorize.net/gateway/transact.dll"
+
+    ' Developers can post to https://developer.authorize.net/param_dump.asp to get a parameter dump
+
+    authorizeUrl = "https://developer.authorize.net/param_dump.asp"
 
 End Function
 
