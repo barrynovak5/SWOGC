@@ -91,40 +91,7 @@
                                                                     </table>
                                                                 </td>
                                                             </tr>
-                                                            <tr>
-                                                                <td style="padding-bottom: 0px; padding-left: 0px; padding-right: 16px; padding-top: 0px"
-                                                                    valign="bottom" width="100%" align="right">
-                                                                    <table border="0" cellspacing="0" bordercolor="red" cellpadding="0">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td valign="bottom" align="right">
-                                                                                    <table border="0" cellspacing="0" bordercolor="green" cellpadding="0">
-                                                                                        <tbody>
-                                                                                            <tr>
-                                                                                                <td class="menuCellStore" valign="top" align="middle">
-                                                                                                    <a class="menuLinkStore" href="http://secure.4cforchildren.org/store/Login.asp">
-                                                                                                        <div class="outerMenuDivStore">
-                                                                                                            <div class="ItemBoxInnerPaddingStore" onmouseover="cellOnStore(this);" onmouseout="cellOffStore(this);">
-                                                                                                                Log In</div>
-                                                                                                        </div>
-                                                                                                    </a>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="padding-bottom: 0px; padding-left: 0px; padding-right: 18px; padding-top: 0px"
-                                                                    valign="bottom" align="right">
-                                                                    <font class="cartSummary">Your cart is empty.</font>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
+                                                                                                                    </tbody>
                                                     </table>
                                                 </td>
                                                 <td align="right">
