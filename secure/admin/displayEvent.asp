@@ -39,7 +39,7 @@ Do While Not objRS.EOF
 %>
 <form method="POST" action="updateevent.asp"
 <input type="hidden" value="<%= objRS.Fields("EVENTID")%>"/>
-<input type="textbox" name="EventName"><%= objRS.Fields("EventName")%></input>
+<input type="textbox" name="EventName" value="<%= objRS.Fields("EventName")%>"/>
 <input type="submit" value="Save"/>
 </form>
 <%
