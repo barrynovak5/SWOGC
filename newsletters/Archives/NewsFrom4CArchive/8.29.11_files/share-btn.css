@@ -1,0 +1,85 @@
+.container { padding:30px }
+
+.shr-bar {  height:33px; padding:0px; background:#dadada url(../images/shr_bar_bg.png) repeat-x 0 0; text-align:center; border-bottom:1px solid #999; font-family:Arial, Helvetica, sans-serif;  }
+.shr-bar-wrap {width:600px; margin:0 auto; text-align:left; position:relative;height: 33px; }
+
+.shr-callout { font-size:11px; line-height:21px; margin-right: 10px; text-shadow:0 1px 0px #fff; color: #787878; font-weight: bold;  display: block; height: 23px; float: left; }
+
+.shr-btn { margin-right:10px; display: inline; height:23px; width: auto; }
+
+.shr-shelf-wrap:after {  content: ""; display: block; height: 0; clear: both; }
+
+
+.shr-shelf { 
+height: 24px;
+background: url(../images/shr_drw_div_right.png) 100% 50% no-repeat;
+padding:0px 7px 0px 0;
+overflow:hidden; 
+float: left;
+}
+.shr-shelf-wrap { 
+padding:0 0 0 7px; background: url(../images/shr_drw_div_left.png) 0 50% no-repeat;
+float: left;
+}
+
+.shr-shelf-inner { padding:4px 0 0 0; margin:0; list-style:none; }
+
+.shr-shelf li { float:left; padding:0 }
+.shr-shelf a {display:block; width:16px; height:16px; float:left;  margin-right:3px; }
+
+.shr-fb, .shr-fb-like, .shr-tw, .shr-li, .shr-add { background: url(../images/icn_sprite.png) 0 0 no-repeat; }
+ 
+.shr-fb { background-position: 0 -213px; }
+.shr-fb-like { background-position: 0 -533px; }
+.shr-tw { background-position: 0 -285px;  }
+.shr-li { background-position: 0 -249px;  }
+.shr-add { background-position: 0 -497px; margin-right:0 !important; }
+
+
+li.divider { padding-left:4px;  background: url(../images/light_divider.png) 0 50% no-repeat; }
+
+#like-btn-wrap { position:absolute; top: 0px; left: 0px; width: 220px;  padding:7px 0 0 0px; height: 28px; }
+#tweet-btn-wrap { position:absolute; top: 0px; left: 200px; width: 80px;  padding:7px 0 0 0px; height: 28px;}
+#share-btn-wrap { position:absolute; top: 0; left: 300px; width: 123px;  padding:5px 0 0 0px; height: 28px;}
+
+#jmml-btn-wrap { position:absolute; top: 0; left: 400px; width: 120px;  padding:5px 0 0 30px; height: 28px;}
+
+.jmml-btn { background:url(../images/shr_jmml_blue_big.png) 50% 2px no-repeat; width:85px; height:33px; display:block;  }
+.powered-by { background:url(../images/shr_bar_pwr.png) 20px 0px no-repeat; width:100px; height:33px; display:block; position: absolute; top: 0; left: 500px; }
+
+
+.flt-l { float:left; }
+.flt-r { float:right; }
+
+
+/* fb like overlay... */
+#like_action_call { display: none; font-family: Arial,Sans; }
+.tooltip { min-width:300px; position:absolute; top:44px; left:100px; font-size:80%; }
+.tooltip-body { position:relative; background: #1c659d url(../images/tooltip_bg_blue.png) 0 0 repeat-x; padding:20px; color:#fff; border:1px solid #1c659d;
+	border-radius:5px; 					-moz-border-radius:5px; 					-webkit-border-radius:5px; 
+	box-shadow:0 3px 5px rgba(0,0,0,.5);	-moz-box-shadow:0 3px 5px rgba(0,0,0,.5);	-webkit-box-shadow:0 3px 5px rgba(0,0,0,.5);
+ }
+.tooltip-pointer { background: url(../images/tooltip_crt_top.png) 0 0 no-repeat; height:18px; width:29px; position:absolute; top:-16px; left:20px; }	 
+.tooltip h3 { margin:0; padding:0; text-shadow:0 1px 0 rgba(0,0,0,.3);}
+.tooltip h3.large { font-size:18px; }
+.tooltip p { margin:.5em 0 0 0; color:#d7e2ea;  }
+
+#fb_like_target { position: absolute; top:0; left:0; width:300px; height:25px;  z-index:1000; display:none; }
+
+#tweet-btn-wrap a.custom-tweet-btn, #tweet-btn-wrap a.custom-tweet-btn:link, #tweet-btn-wrap a.custom-tweet-btn:visited {
+	position:relative;
+	top: -20px;
+    background:url("http://platform2.twitter.com/widgets/images/tweet.png") no-repeat scroll 0 0 transparent;
+    display:block; 
+    width:56px; height:20px;
+    border:none;
+}
+
+#tweet-btn-wrap a.custom-tweet-btn:hover {
+    background-position: 0 -21px;	
+}
+
+#tweet-btn-wrap a.custom-tweet-btn:active {
+    background-position: 0 -42px;
+}
+
