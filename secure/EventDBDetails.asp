@@ -30,11 +30,6 @@ cmd.Parameters("@EventId") = 1
 'Open and display the Recordset.
 rs.Open cmd
 
-
-
-Dim ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader
-Dim PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
-
 If Not rs.EOF Then
 
     ReceiptPageUrl = rs.Fields.Item("ReceiptPageURL") 'http://www.4c.org
