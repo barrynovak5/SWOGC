@@ -9,24 +9,26 @@
 <body>
 
 <form method="post" action="displayEvent.asp">
-<label id="LabelDonationEvent">Select an Event...</label><br />
+<label id="LabelDonationEvent">Select Event:</label><br />
 <!--#include file="donationeventlist.asp"-->
 <br/>
-<label id="Label2">Download/display registered visitors for Event:</label><br />
-<input name="ButtonDisplayEvent" type="submit" value="Display" /><br /><br />
+<label id="LabelEventVisitors">Event Visitors:</label><br />
+
+<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" />
+<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br /><br />
 </form>
 <label id="LabelCustomizeEvent">Customize Event (e.g. payment form)</label><br />
-<input name="ButtonEditEvent" type="button" value="Edit" />
-<input name="ButtonAddEvent" type="button" value="Add" />
-<input name="ButtonCopyEvent" type="button" value="Copy" /><br />
+<input name="ButtonEditEvent" type="button" value="Edit Event" />
+<input name="ButtonAddEvent" type="button" value="Add New Event" />
+<input name="ButtonCopyEvent" type="button" value="Copy an Event" /><br />
 <br />
 
 <form method="post" action="EditDonation.asp">
-<label id="LabelDonationReason">Donation Reason...</label><br />
+<label id="LabelDonationReason">Donation Reason:</label><br />
 <!-- #include virtual="/secure/picklist.asp"-->
 <br/>
-<input name="ButtonEditDonation" type="button" value="Edit" /><br /><br />
-<input name="ButtonAddDonation" type="button" value="Add" /><br /><br />
+<input name="ButtonEditDonation" type="button" value="Edit Reason" />
+<input name="ButtonAddDonation" type="button" value="Add New Reason" /><br /><br />
 
 </form>
 
