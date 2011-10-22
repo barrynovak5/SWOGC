@@ -519,7 +519,6 @@
                      <!--#include file="footer.asp"-->                    
                 </td>
             </tr>
-            </TBODY></TABLE></TD></TR>
             <tr>
                 <td valign="top" align="left">
                     <br /><br />
