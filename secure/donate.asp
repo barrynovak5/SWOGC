@@ -2,12 +2,7 @@
 
 <%
 Dim EventId
-
-
-
-Set EventId = '1'
-
-
+EventId = "1"
 
 LoadEventDetails()
 %>
