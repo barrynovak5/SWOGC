@@ -5,19 +5,16 @@
     <meta name="keywords" content="4C, 4C for children, comprehensive community child care, cccc, child care, childcare, CCR&amp;R, Ohio referral agencies, early care and education, Child Development, Early Childhood Education, non-profit organization, education, healthy child care, T.E.A.C.H., Child Care Aware, children and families, early learning, early education, child care network, SAC, OST, afterschool, right program, Ohio law, day care, daycare, babysitters, CDA, professional development, family, child, community, healthy child care Ohio">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="revisit-after" content="14 Days">
-    <link rel="stylesheet" type="text/css" href="styles/css.css">
+    <link rel="stylesheet" type="text/css" href="styles/css.css"/>
     <script language="JavaScript" type="text/javascript"><!--
         
         function CreateHeaderAndFooterFields()
         {
-            var footerTD = document.getElementById("footerTD");
-            var headerTD = document.getElementById("headerTD");
-            
             var header2 = document.getElementById("header2");
-            var footer2 = document.getElementById("footer2");
+            var header2 = document.getElementById("footer2");
             
-            header2.value = headerTD.innerHTML;             
-            footer2.value = footerTD.innerHTML;
+            header2.value = '<link rel="stylesheet" type="text/css" href="https://secure.4c.org/secure/styles/css.css"/>'
+  
         }
         
         function Validator(theForm) {
