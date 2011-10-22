@@ -119,6 +119,7 @@ End Sub
   End Select     
 
 
+conn.Open "FourC"
 set rs=Server.CreateObject("ADODB.recordset")
 sql="SELECT ID, LISTVALUE FROM DONATIONREASONS"
 rs.Open sql, conn
