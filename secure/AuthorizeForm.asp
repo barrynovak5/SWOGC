@@ -87,9 +87,6 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
         <input type='hidden' name='x_footer2_html_payment_form' value='<% Response.Write(Request.Form("Footer2")) %>' />
     </div>
 
-	<INPUT type='ReturnEnabled' name='ReturnEnabled' type="hidden"  value='<% Response.Write(UCase(Request.Form("ReturnEnabled"))) %>' />
-
-
     <% If UCase(Request.Form("ReturnEnabled")) = "TRUE" Then
         Response.Write("<INPUT TYPE=HIDDEN NAME='x_receipt_link_method' VALUE='LINK'>")
         Response.Write("<INPUT TYPE=HIDDEN NAME='x_receipt_link_text' VALUE='" & Request.Form("ReturnTitle") & "'>")
