@@ -359,6 +359,7 @@
                                                                                             <input value="True" type="hidden" name="ReturnEnabled" />
                                                                                             <input value="1" type="hidden" name="EventID" />
                                                                                             <input value="General Donation" type="hidden" name="EventName" />
+                                                                                            <input value="This is a General Donation" type="hidden" name="x_description" />
                                                                                             
                                                                                             <input value="" id="header1" name="x_header_html_payment_form" type="hidden" />
                                                                                             <input value="" id="header2" name="x_footer_html_payment_form" type="hidden" />
