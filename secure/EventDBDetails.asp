@@ -33,19 +33,26 @@ rs.Open cmd
 If Not rs.EOF Then
 
     ReceiptPageUrl = rs.Fields.Item("ReceiptPageURL") 'http://www.4c.org
+Response.Write("MMMM:" + ReceiptPageEnabled)
     ReceiptPageTitle = rs.Fields.Item("ReceiptPageTitle")
-    ReceiptPageUrl = rs.Fields.Item("ReceiptPageUrl")
     DefaultReceiptPageTitle = ""  ' UPDATE AFTER DB UPDATE rs.Fields.Item("DefaultReceiptPageTitle")
     DefaultReceiptPageUrl = rs.Fields.Item("DefaultReceiptPageUrl")
+Response.Write("NNNN:" + ReceiptPageEnabled)
     If ReceiptPageTitle = "" OR ReceiptPageUrl = "" Then
         If DefaultReceiptPageTitle = "" OR DefaultReceiptPageUrl = "" Then
-            ReceiptPageEnabled = false
+            ReceiptPageEnabled = "false"
+Response.Write("QQQQ:" + ReceiptPageEnabled)
         Else
-            ReceiptPageEnabled = true
+            ReceiptPageEnabled = "true"
             ReceiptPageTitle = DefaultReceiptPageTitle
             ReceiptPageUrl = DefaultReceiptPageUrl
+Response.Write("OOOO:" + ReceiptPageEnabled)
         End If
+    Else
+        ReceiptPageEnabled = "true"
+Response.Write("PPPP:" + ReceiptPageEnabled)
     End If
+Response.Write("RRRR:" + ReceiptPageEnabled)
 
     EventName = rs.Fields.Item("EventName")
     EventDescription = rs.Fields.Item("EventDescription")
@@ -55,8 +62,6 @@ If Not rs.EOF Then
     PaymentFormFooter = rs.Fields.Item("PaymentFormFooter")
     ReceiptFormFooter = rs.Fields.Item("ReceiptFormFooter")
     ReceiptEmailFooter = rs.Fields.Item("ReceiptEmailFooter")
-
-    Response.Write("HHHH:" & EventName)
 
 End If
 

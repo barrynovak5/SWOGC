@@ -12,6 +12,8 @@ Call LoadEventDetails(ReturnUrl, ReturnTitle, ReturnEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
     PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter)
 
+Response.Write("TTTT:" & ReturnEnabled)
+
 %>
 
 <html>
