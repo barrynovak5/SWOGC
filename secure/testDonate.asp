@@ -133,18 +133,9 @@
                                         Early Childhood Education - Southwest Ohio &amp; Northern Kentucky
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td valign="top" colspan="2" align="left">
-                                        <img border="0" src="images/Donation/misc/spacer.gif" width="974" height="1">
-                                    </td>
-                                </tr>
+                                
                             </tbody>
                         </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top" align="left">
-                        <img border="0" src="images/Donation/misc/spacer.gif" width="994" height="1">
                     </td>
                 </tr>
             </tbody>
@@ -293,18 +284,7 @@
                                                                                             4C for children - Make a Donation</div>
                                                                                     </h1>
                                                                                 </td>
-                                                                                <td class="cartSummaryBound" valign="top" align="left">
-                                                                                    <table border="0" cellspacing="0" bordercolor="blue" cellpadding="0">
-                                                                                        <tbody>
-                                                                                            <tr>
-                                                                                                <td valign="top" align="left">
-                                                                                                    <img border="0" src="images/Donation/misc/spacer.gif" width="330" height="1">
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </td>
-                                                                            </tr>
+                                                                                                                                                           </tr>
                                                                         </tbody>
                                                                     </table>
                                                                 </td>
@@ -402,7 +382,7 @@
                                                                                         &nbsp;E-Mail:
                                                                                     </td>
                                                                                     <td colspan="6" align="left">
-                                                                                        <input size="35" name="DonorEmailAddress">
+                                                                                        <input size="35" name="DonorEmailAddress"/>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -417,7 +397,7 @@
                                                                                     <td align="right" class="style2">
                                                                                     </td>
                                                                                     <td colspan="6">
-                                                                                        <input size="35" name="DonorAddress2">
+                                                                                        <input size="35" name="DonorAddress2"/>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -425,7 +405,7 @@
                                                                                         &nbsp;Company:
                                                                                     </td>
                                                                                     <td colspan="6">
-                                                                                        <input maxlength="50" size="35" name="RequiredCompany"/>
+                                                                                        <input maxlength="50" size="35" name="DonorCompany"/>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
