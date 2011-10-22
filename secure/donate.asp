@@ -1,3 +1,12 @@
+<!--#INCLUDE FILE="EventDBDetails.asp"-->
+
+<%
+Dim EventId
+
+EventId = '1'
+LoadEventDetails()
+%>
+
 <html>
 <head>
     <title>4C for Children, Early Childhood Education, Community Child Care</title>
@@ -354,17 +363,21 @@
                                                                                                 Fields in red are required fields.</div>
                                                                                             <form language="JavaScript" onsubmit="return Validator(this)" method="post" name="frm1Donation"
                                                                                             action="process.asp">
-                                                                                            <input value="http://www.4c.org" type="hidden" name="ReturnUrl" />
-                                                                                            <input value="Return to Site" type="hidden" name="ReturnTitle" />
-                                                                                            <input value="True" type="hidden" name="ReturnEnabled" />
-                                                                                            <input value="1" type="hidden" name="EventID" />
-                                                                                            <input value="General Donation" type="hidden" name="EventName" />
-                                                                                            <input value="This is a General Donation" type="hidden" name="x_description" />
+
+                                                                                            <input value="<% Response.Write(EventId) %>" type="hidden" name="EventID" />
+                                                                                            <input value="<% Response.Write(ReceiptPageUrl) %>" type="hidden" name="ReturnUrl" />
+                                                                                            <input value="<% Response.Write(ReceiptPageTitle) %>" type="hidden" name="ReturnTitle" />
+                                                                                            <input value="<% Response.Write(ReceiptPageEnabled) %>" type="hidden" name="ReturnEnabled" />
+                                                                                            <input value="<% Response.Write(EventName) %>" type="hidden" name="EventName" />
+                                                                                            <input value="<% Response.Write(EventDescription) %>" type="hidden" name="x_description" />
+                                                                                            <input value="<% Response.Write(PaymentFormHeader) %>" type="hidden" name="x_header_html_payment_form" type="hidden" />
+                                                                                            <input value="<% Response.Write(ReceiptFormHeader) %>" type="hidden" name="x_header_html_receipt" type="hidden" />
+                                                                                            <input value="<% Response.Write(ReceiptEmailHeader) %>" type="hidden" name="x_header_email_receipt" type="hidden" />
+
+                                                                                            <input value="<% Response.Write(PaymentFormFooter) %>" type="hidden" name="x_Footer_html_payment_form" type="hidden" />
+                                                                                            <input value="<% Response.Write(ReceiptFormFooter) %>" type="hidden" name="x_Footer_html_receipt" type="hidden" />
+                                                                                            <input value="<% Response.Write(ReceiptEmailFooter) %>" type="hidden" name="x_Footer_email_receipt" type="hidden" />
                                                                                             
-                                                                                            <input value="" id="header1" name="x_header_html_payment_form" type="hidden" />
-                                                                                            <input value="" id="header2" name="x_footer_html_payment_form" type="hidden" />
-                                                                                            <input value="" id="footer1" name="x_header2_html_payment_form" type="hidden" />
-                                                                                            <input value="" id="footer2" name="x_footer2_html_payment_form" type="hidden" />
                                                                                             <table>
                                                                                                 <tr>
                                                                                                     <td class="required">
