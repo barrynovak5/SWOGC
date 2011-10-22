@@ -13,16 +13,14 @@
 <!--#include file="donationeventlist.asp"-->
 <br/>
 <label id="LabelEventVisitors">Event Visitors:</label><br />
-
-<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" />
-<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br /><br />
-</form>
+<input name="ButtonDownloadEventVisitors" type="button" value="Download List" />
+<input name="ButtonDisplayEventVisitors" type="button" value="Display List" /><br /><br />
 <label id="LabelCustomizeEvent">Customize Event (e.g. payment form)</label><br />
-<input name="ButtonEditEvent" type="button" value="Edit Event" />
+<input name="ButtonEditEvent" type="submit" value="Edit Event" />
 <input name="ButtonAddEvent" type="button" value="Add New Event" />
 <input name="ButtonCopyEvent" type="button" value="Copy an Event" /><br />
 <br />
-
+</form>
 <form method="post" action="EditDonation.asp">
 <label id="LabelDonationReason">Donation Reason:</label><br />
 <!-- #include virtual="/secure/picklist.asp"-->
