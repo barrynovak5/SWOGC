@@ -69,17 +69,6 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
     <INPUT type='hidden' name='x_show_form' value='PAYMENT_FORM' />
 	<INPUT type='hidden' name='x_line_item' value='<% Response.Write(lineItem) %>' />
 
-	<INPUT type='hidden' name='x_first_name' value='<% Response.Write(Request.Form("DonorFirstName")) %>' />
-	<INPUT type='hidden' name='x_last_name' value='<% Response.Write(Request.Form("DonorLastName")) %>' />
-	<INPUT type='hidden' name='x_address' value='<% Response.Write(Request.Form("DonorAddress") & " " & Request.Form("DonorAddress2")) %>' />
-	<INPUT type='hidden' name='x_state' value='<% Response.Write(Request.Form("DonorState")) %>' />
-	<INPUT type='hidden' name='x_zip'     value='<% Response.Write(Request.Form("DonorZipCode")) %>' />
-
-	<INPUT type='hidden' name='x_company' value='<% Response.Write(Request.Form("DonorCompany")) %>' />
-	<INPUT type='hidden' name='x_city'    value='<% Response.Write(Request.Form("DonorCity")) %>' />
-	<INPUT type='hidden' name='x_phone'   value='<% Response.Write(Request.Form("DonorPhone")) %>' />
-	<INPUT type='hidden' name='x_email'   value='<% Response.Write(Request.Form("DonorEmailAddress")) %>' />
-
     <div style="display:none">
         <%
             Response.Write(vbCrLf)
