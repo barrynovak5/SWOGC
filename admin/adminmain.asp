@@ -10,7 +10,7 @@
 
 <form method="POST" action="displayEvent.asp">
 <label id="Label1">Select an Event...</label><br />
-<!-- #include virtual="/admin/donationeventlist.asp"-->
+<!-- #include file="donationeventlist.asp"-->
 <br/>
 <label id="Label2">Download/display registered visitors for Event:</label><br />
 <input name="Button2" type="submit" value="Display" /><br /><br />
