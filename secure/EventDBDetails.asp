@@ -10,8 +10,8 @@ objCommand.ActiveConnection = conn
 objCommand.CommandText = "SELECT EVENTNAME, EVENTDESCRIPTION, ReceiptPageUrl, DefaultReceiptPageUrl, " & _ 
         "ReceiptPageTitle, DefaultReceiptPageTitle, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, " & _
         "PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter FROM EVENTS_VW WHERE EventId = @EVENTID"
-param1 = objCommand.CreateParameter("@EVENTID", adInteger, adParamInput, , 1)
-objCommand.Parameters.Append param1
+
+objCommand.Parameters.Append(objCommand.CreateParameter("@EVENTID", adInteger, adParamInput, , 1))
 
 Set rs = Server.CreateObject("ADODB.Recordset")
 rs.Open objCommand, conn
