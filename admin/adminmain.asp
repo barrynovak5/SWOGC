@@ -21,13 +21,9 @@
 <input name="ButtonCopyEvent" type="button" value="Copy an Event" /><br />
 <br />
 </form>
-<form method="post" action="EditDonation.asp">
-<label id="LabelDonationReason">Donation Reason:</label><br />
-<!-- #include virtual="/secure/picklist.asp"-->
-<br/>
-<input name="ButtonEditDonation" type="button" value="Edit Reason" />
-<input name="ButtonAddDonation" type="button" value="Add New Reason" /><br /><br />
-
+<form method="post" action="DisplayDonationReasons.asp">
+<label id="LabelDonationReason">Donation Reasons</label><br />
+<input name="ButtonManageDonation" type=submit value="Manage Donation Reasons" />
 </form>
 
 </body>
