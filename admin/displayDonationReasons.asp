@@ -22,7 +22,7 @@
                 var donationReasonText = document.getElementById("Reason" + donationId);
                 theForm.DonationReasonValue.value = donationReasonText.value;
                 
-                theForm.sumit();
+                theForm.submit();
             }
             
             function DeleteDonation(donationId)
@@ -36,7 +36,7 @@
             
             function ValidateAddReason(theForm)
             {
-                if (!theForm.DonationReasonValue.length)
+                if (!theForm.DonationReasonValue.value.length)
                 {
                     alert("Please enter a donation reason to add");
                     return (false);
@@ -57,7 +57,7 @@
 
     set conn=Server.CreateObject("ADODB.Connection")
 
- Sub AddDonationReason()
+ Sub AddDonationReason
 
     conn.Open "FourC"
 
@@ -77,7 +77,7 @@
 
 End Sub
 
-Sub UpdateDonationReason()
+Sub UpdateDonationReason
 
     conn.Open "FourC"
 
@@ -96,7 +96,7 @@ Sub UpdateDonationReason()
 
 End Sub
 
-Sub DeleteDonationReason()
+Sub DeleteDonationReason
 
     conn.Open "FourC"
 
@@ -118,14 +118,14 @@ End Sub
   'Process the donation reasons depending on the action specified.
   'D=Delete U=Update A=Add
    
-  Select Case donationReason
+  Select Case DonationReasonAction
   
   Case "A"
-      Call AddDonationReason()     
+      Call AddDonationReason    
   Case "U"
-      Call UpdateDonationReason()
+      Call UpdateDonationReason
   Case "D"
-      Call DeleteDonationReason()
+      Call DeleteDonationReason
   End Select     
 
 
@@ -156,7 +156,7 @@ rs.Open sql, conn
                             Add new donation reason&nbsp;&nbsp;
                         </td>
                         <td>
-                            <input name="DonationReasonValue" type="text" style="width: 408px" />
+                            <input id="newDonationReasonValue" name="DonationReasonValue" type="text" style="width: 408px" />
                         </td>
                         <td>
                             &nbsp;&nbsp;
