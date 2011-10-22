@@ -8,24 +8,29 @@
 
 <body>
 
-<label id="Label1">Select an Event...</label><br />
-<!--#include virtual="../secure/picklist.asp"-->
-<label id="Label2">Download/display registered visitors for Event:</label><br />
-<input name="Button1" type="button" value="Download" />
-<input name="Button2" type="button" value="Display" /><br /><br />
-<label id="Label3">Customize Event (e.g. payment form)</label><br />
-<input name="Button3" type="button" value="Edit" />
-<input name="Button4" type="button" value="Create" />
-<input name="Button5" type="button" value="Copy" /><br />
+<form method="post" action="displayEvent.asp">
+<label id="LabelDonationEvent">Select Event:</label><br />
+<!--#include file="donationeventlist.asp"-->
+<br/>
+<label id="LabelEventVisitors">Event Visitors:</label><br />
+
+<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" />
+<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br /><br />
+</form>
+<label id="LabelCustomizeEvent">Customize Event (e.g. payment form)</label><br />
+<input name="ButtonEditEvent" type="button" value="Edit Event" />
+<input name="ButtonAddEvent" type="button" value="Add New Event" />
+<input name="ButtonCopyEvent" type="button" value="Copy an Event" /><br />
 <br />
-<label id="Label4">Donation Reason</label><br />
-<select name="DonationReason" style="width: 301px">
-<option></option>
-<option selected="selected" value="1">I want to</option>
-</select><br />
-<input name="Button6" type="button" value="Edit" />
-<input name="Button7" type="button" value="Add" />
-<input name="Button8" type="button" value="Delete" />
+
+<form method="post" action="EditDonation.asp">
+<label id="LabelDonationReason">Donation Reason:</label><br />
+<!-- #include virtual="/secure/picklist.asp"-->
+<br/>
+<input name="ButtonEditDonation" type="button" value="Edit Reason" />
+<input name="ButtonAddDonation" type="button" value="Add New Reason" /><br /><br />
+
+</form>
 
 </body>
 

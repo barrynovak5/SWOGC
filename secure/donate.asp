@@ -359,18 +359,19 @@
                                                                                             <input value="True" type="hidden" name="ReturnEnabled" />
                                                                                             <input value="1" type="hidden" name="EventID" />
                                                                                             <input value="General Donation" type="hidden" name="EventName" />
+                                                                                            <input value="This is a General Donation" type="hidden" name="x_description" />
                                                                                             
-                                                                                            <input value="" id="header1" name="header1" type="hidden" />
-                                                                                            <input value="" id="header2" name="header2" type="hidden" />
-                                                                                            <input value="" id="footer1" name="footer1" type="hidden" />
-                                                                                            <input value="" id="footer2" name="footer2" type="hidden" />
+                                                                                            <input value="" id="header1" name="x_header_html_payment_form" type="hidden" />
+                                                                                            <input value="" id="header2" name="x_footer_html_payment_form" type="hidden" />
+                                                                                            <input value="" id="footer1" name="x_header2_html_payment_form" type="hidden" />
+                                                                                            <input value="" id="footer2" name="x_footer2_html_payment_form" type="hidden" />
                                                                                             <table>
                                                                                                 <tr>
                                                                                                     <td class="required">
                                                                                                         <b>Donation Amount: </b>
                                                                                                     </td>
                                                                                                     <td>
-                                                                                                        <input value="" type="text" name="DonationAmount" />
+                                                                                                        <input value="" type="text" name="x_amount" />
                                                                                                     </td>
                                                                                                 </tr>
                                                                                             </table>
@@ -391,7 +392,7 @@
                                                                                                             First Name:
                                                                                                         </td>
                                                                                                         <td colspan="6">
-                                                                                                            <input maxlength="50" size="35" name="DonorFirstName">
+                                                                                                            <input maxlength="50" size="35" name="x_first_name">
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -399,7 +400,7 @@
                                                                                                             Last Name:
                                                                                                         </td>
                                                                                                         <td colspan="6">
-                                                                                                            <input maxlength="50" size="35" name="DonorLastName">
+                                                                                                            <input maxlength="50" size="35" name="x_last_name">
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -407,7 +408,7 @@
                                                                                                             &nbsp;E-Mail:
                                                                                                         </td>
                                                                                                         <td colspan="6" align="left">
-                                                                                                            <input size="35" name="DonorEmailAddress" />
+                                                                                                            <input size="35" name="x_email" />
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -415,7 +416,7 @@
                                                                                                             &nbsp;Address:
                                                                                                         </td>
                                                                                                         <td colspan="6">
-                                                                                                            <input maxlength="100" size="35" name="DonorAddress">
+                                                                                                            <input maxlength="100" size="35" name="x_address">
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -430,7 +431,7 @@
                                                                                                             &nbsp;Company:
                                                                                                         </td>
                                                                                                         <td colspan="6">
-                                                                                                            <input maxlength="50" size="35" name="DonorCompany" />
+                                                                                                            <input maxlength="50" size="35" name="x_company" />
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -438,7 +439,7 @@
                                                                                                             &nbsp;City:
                                                                                                         </td>
                                                                                                         <td colspan="6">
-                                                                                                            <input maxlength="50" size="35" name="DonorCity" />
+                                                                                                            <input maxlength="50" size="35" name="x_city" />
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -446,7 +447,7 @@
                                                                                                             &nbsp;State:
                                                                                                         </td>
                                                                                                         <td colspan="6">
-                                                                                                            <input maxlength="50" size="35" name="DonorState" />
+                                                                                                            <input maxlength="50" size="35" name="x_state" />
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -454,7 +455,7 @@
                                                                                                             &nbsp;Zip:
                                                                                                         </td>
                                                                                                         <td colspan="6">
-                                                                                                            <input maxlength="15" size="35" name="DonorZipCode" />
+                                                                                                            <input maxlength="15" size="35" name="x_zip" />
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -462,12 +463,12 @@
                                                                                                             &nbsp;Telephone:
                                                                                                         </td>
                                                                                                         <td valign="top" align="left">
-                                                                                                            <input size="17" name="DonorPhone" />
+                                                                                                            <input size="17" name="x_phone" />
                                                                                                             <br>
                                                                                                             Day
-                                                                                                            <input value="day" checked="checked" type="radio" name="DonorPhoneDayOrEvening" />&nbsp;
+                                                                                                            <input value="D" checked="checked" type="radio" name="DonorPhoneDayOrEvening" />&nbsp;
                                                                                                             Evening
-                                                                                                            <input value="evening" type="radio" name="DonorPhoneDayOrEvening" />
+                                                                                                            <input value="E" type="radio" name="DonorPhoneDayOrEvening" />
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -487,7 +488,7 @@
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <td colspan="2">
-                                                                                                            <textarea wrap="physical" rows="7" cols="45" name="DonorComments"></textarea>
+                                                                                                            <textarea wrap="physical" rows="7" cols="45" maxlength="1000" name="DonorComments"></textarea>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
