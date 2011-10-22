@@ -29,7 +29,7 @@ objCmd.CommandType = adCmdText
 Set objParam = objCmd.CreateParameter("@EVENTID" , adInteger, adParamInput, 0, 0)
 objCmd.Parameters.Append objParam
 
-objCmd.Parameters("@EVENTID") = 1
+objCmd.Parameters("@EVENTID") = donationEventId
 
 'Open and display the Recordset.
 
