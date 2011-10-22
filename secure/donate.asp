@@ -488,7 +488,7 @@
                                                                                                     </tr>
                                                                                                     <tr>
                                                                                                         <td colspan="2">
-                                                                                                            <textarea wrap="physical" rows="7" cols="45" name="DonorComments"></textarea>
+                                                                                                            <textarea wrap="physical" rows="7" cols="45" maxlength="1000" name="DonorComments"></textarea>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>

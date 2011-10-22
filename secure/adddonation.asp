@@ -1,5 +1,6 @@
 <%
 Function AddDonation(invoiceNo)
+
 ' Fields used by both Authorize.net and our database
 EventId = Request.Form("EventID")
 DonorFirstName = Request.Form("x_first_name")
@@ -13,17 +14,19 @@ DonationAmount = Request.Form("x_amount")
 DonorAddress = Request.Form("x_address")
 DonorPhone = Request.Form("x_phone")
 
+
 ' Fields only used by our database
 DonationReasonId = Request.Form("DonationReasonId")
 DonorAddress2  = Request.Form("DonorAddress2")
 DonorPhoneDayOrEvening = Request.Form("DonorPhoneDayOrEvening")
 AddToNewsletter = Request.Form("AddToNewsletter")
+DonorComments = Request.Form("DonorComments")
 
 
 set conn=Server.CreateObject("ADODB.Connection")
 conn.Open "FourC"
 
-sql="INSERT INTO DONATIONS (EventID, InvoiceNumber, DonationReasonID, DonorFirstName, DonorLastName, DonorCompany, DonorEmailAddress, DonorCity, DonorState, DonorZipCode, DonationAmount, DonorAddress, DonorAddress2, DonorPhone, AddToNewsletter, DonorPhoneDayOrEvening)"
+sql="INSERT INTO DONATIONS (EventID, InvoiceNumber, DonationReasonID, DonorFirstName, DonorLastName, DonorCompany, DonorEmailAddress, DonorCity, DonorState, DonorZipCode, DonationAmount, DonorAddress, DonorAddress2, DonorPhone, AddToNewsletter, DonorPhoneDayOrEvening, DonorComments)"
 sql=sql & " VALUES (" & _
     EventId & "," & _
     "'" & invoiceNo & "'," & _
@@ -40,7 +43,9 @@ sql=sql & "'" & DonorAddress & "',"
 sql=sql & "'" & DonorAddress2 & "',"
 sql=sql & "'" & DonorPhone & "',"
 sql=sql & "" & AddToNewsletter & ","
-sql=sql & "'" & DonorPhoneDayOrEvening & "')"
+sql=sql & "'" & DonorPhoneDayOrEvening & "," & _
+    "'" & DonorComments & _
+     "')"
 
 
 
