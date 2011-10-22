@@ -61,10 +61,9 @@
 
     conn.Open "FourC"
 
-    sql="INSERT INTO DONATIONREASONS (ID, LISTVALUE)"
+    sql="INSERT INTO DONATIONREASONS (LISTVALUE)"
     sql=sql & " VALUES "
-    sql=sql & "(" & DonationReasonID & ","
-    sql=sql & "'" & DonationReasonValue & "')"
+    sql=sql & "('" & DonationReasonValue & "')"
 
     conn.Execute sql,recaffected
     if err<>0 then
@@ -81,8 +80,8 @@ Sub UpdateDonationReason
 
     conn.Open "FourC"
 
-    sql="UPDATE DONATIONREASONS SET LISTVALUE = " & DonationReasonValue
-    sql = sql & " WHERE ID =" & DonationReasonID
+    sql="UPDATE DONATIONREASONS SET LISTVALUE = '" & DonationReasonValue
+    sql = sql & "' WHERE ID =" & DonationReasonID
 
     on error resume next
     conn.Execute sql,recaffected
