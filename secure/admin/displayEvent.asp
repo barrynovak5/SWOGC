@@ -20,27 +20,13 @@ objCommand.Parameters.Append(objCommand.CreateParameter("@EVENTID", adInteger, a
 
 Set rs = objCommand.Execute()
 
-
-
-Response.Write(sql)
-rs.Open sql, conn
+If Not rs.EOF Then
+%>
+<p> here</p>
+<%
+rs.Close
+set rs = nothing
+set cmd = nothing
+set conn = nothing
 %>
 
-table border="1" width="100%">
-  <tr>
-  <%for each x in rs.Fields
-    response.write("<th>" & x.name & "</th>")
-  next%>
-  </tr>
-  <%do until rs.EOF%>
-    <tr>
-    <%for each x in rs.Fields%>
-      <td>
-	  <%Response.Write(x.value)%></td>
-    <%next
-    rs.MoveNext%>
-    </tr>
-  <%loop
-  rs.close
-  conn.close%>
-</table>
