@@ -14,7 +14,7 @@ set conn=Server.CreateObject("ADODB.Connection")
 conn.Open "FourC"
 set objCommand = Server.CreateObject("ADODB.Command")
 objCommand.ActiveConnection = conn
-objCommand.CommandText = "SELECT * FROM DONATIONEVENT WHERE EVENTID = @EVENTID"
+objCommand.CommandText = "SELECT  FROM EVENTS WHERE EVENTID = @EVENTID"
 
 objCommand.Parameters.Append(objCommand.CreateParameter("@EVENTID", adInteger, adParamInput, , donationEventId))
 
