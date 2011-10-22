@@ -8,11 +8,13 @@
 
 <body>
 
+<form action="displayEvent.asp">
 <label id="Label1">Select an Event...</label><br />
 <!-- #include virtual="/secure/picklist.asp"-->
+<br/>
 <label id="Label2">Download/display registered visitors for Event:</label><br />
-<input name="Button1" type="button" value="Download" />
-<input name="Button2" type="button" value="Display" /><br /><br />
+<input name="Button2" type="submit" value="Display" /><br /><br />
+</form>
 <label id="Label3">Customize Event (e.g. payment form)</label><br />
 <input name="Button3" type="button" value="Edit" />
 <input name="Button4" type="button" value="Create" />
