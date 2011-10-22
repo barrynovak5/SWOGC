@@ -31,10 +31,6 @@ cmd.Parameters.Append newParameter
 
 Set recordset = cmd.Execute
 
-If recordset.EOF Then
-   Response.Write "Nothing was found."
-End If
-
 Dim eventName = Trim(recordset.Fields("EVENTNAME"))
 Dim eventDescription = Trim(recordset.Fields("EVENTDESCRIPTION"))
 
