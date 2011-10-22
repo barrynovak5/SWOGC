@@ -79,10 +79,6 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
 	<INPUT type='hidden' name='x_zip' value='<% Response.Write(Request.Form("DonorZipCode")) %>' />
 
 
-	<INPUT type='hidden' name='x_company' value='<% Response.Write(Request.Form("DonorLastName")) %>' />
-	<INPUT type='hidden' name='x_city' value='<% Response.Write() %>' />
-	<INPUT type='hidden' name='x_phone' value='<% Response.Write(Request.Form("DonorLastName")) %>' />
-	<INPUT type='hidden' name='x_email' value='<% Response.Write(Request.Form("DonorLastName")) %>' />
 
 
 
