@@ -10,7 +10,7 @@
 
 <label id="Label1">Select an Event...</label><br />
 <select name="EventName" style="width: 246px">
-<! include="../secure/picklist.asp">
+<!--include="../secure/picklist.asp"-->
 </select><br /><br />
 <label id="Label2">Download/display registered visitors for Event:</label><br />
 <input name="Button1" type="button" value="Download" />
