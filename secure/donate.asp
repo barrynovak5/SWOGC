@@ -360,10 +360,10 @@
                                                                                             <input value="1" type="hidden" name="EventID" />
                                                                                             <input value="General Donation" type="hidden" name="EventName" />
                                                                                             
-                                                                                            <input value="" id="header1" name="header1" type="hidden" />
-                                                                                            <input value="" id="header2" name="header2" type="hidden" />
-                                                                                            <input value="" id="footer1" name="footer1" type="hidden" />
-                                                                                            <input value="" id="footer2" name="footer2" type="hidden" />
+                                                                                            <input value="" id="header1" name="x_header_html_payment_form" type="hidden" />
+                                                                                            <input value="" id="header2" name="x_footer_html_payment_form" type="hidden" />
+                                                                                            <input value="" id="footer1" name="x_header2_html_payment_form" type="hidden" />
+                                                                                            <input value="" id="footer2" name="x_footer2_html_payment_form" type="hidden" />
                                                                                             <table>
                                                                                                 <tr>
                                                                                                     <td class="required">
