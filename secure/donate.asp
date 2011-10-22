@@ -370,7 +370,7 @@
                                                                                                         <b>Donation Amount: </b>
                                                                                                     </td>
                                                                                                     <td>
-                                                                                                        <input value="" type="text" name="DonationAmount" />
+                                                                                                        <input value="" type="text" name="x_amount" />
                                                                                                     </td>
                                                                                                 </tr>
                                                                                             </table>
@@ -430,7 +430,7 @@
                                                                                                             &nbsp;Company:
                                                                                                         </td>
                                                                                                         <td colspan="6">
-                                                                                                            <input maxlength="50" size="35" name="DonorCompany" />
+                                                                                                            <input maxlength="50" size="35" name="x_company" />
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
@@ -465,9 +465,9 @@
                                                                                                             <input size="17" name="x_phone" />
                                                                                                             <br>
                                                                                                             Day
-                                                                                                            <input value="day" checked="checked" type="radio" name="DonorPhoneDayOrEvening" />&nbsp;
+                                                                                                            <input value="D" checked="checked" type="radio" name="DonorPhoneDayOrEvening" />&nbsp;
                                                                                                             Evening
-                                                                                                            <input value="evening" type="radio" name="DonorPhoneDayOrEvening" />
+                                                                                                            <input value="E" type="radio" name="DonorPhoneDayOrEvening" />
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
