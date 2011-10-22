@@ -82,6 +82,7 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
 
     <div style="display:none">
         <%
+            Response.Write(vbCrLf)
             Dim i
             For i = 1 to Request.Form.Count
                 If Left(Request.Form.Key(i),2) = "x_" Then
@@ -90,10 +91,11 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
             Next
         %>
 
+
         <% If UCase(Request.Form("ReturnEnabled")) = "TRUE" Then
-            Response.Write("<INPUT TYPE=HIDDEN NAME='x_receipt_link_method' VALUE='LINK'>")
-            Response.Write("<INPUT TYPE=HIDDEN NAME='x_receipt_link_text' VALUE='" & Request.Form("ReturnTitle") & "'>")
-            Response.Write("<INPUT TYPE=HIDDEN NAME='x_receipt_link_URL' VALUE='" & Request.Form("ReturnUrl") & "'>")
+            Response.Write("    <INPUT TYPE=HIDDEN NAME='x_receipt_link_method' VALUE='LINK'>" & vbCrLf)
+            Response.Write("    <INPUT TYPE=HIDDEN NAME='x_receipt_link_text' VALUE='" & Request.Form("ReturnTitle") & "'>" & vbCrLf)
+            Response.Write("    <INPUT TYPE=HIDDEN NAME='x_receipt_link_URL' VALUE='" & Request.Form("ReturnUrl") & "'>" & vbCrLf)
         End If %>
 
     </div>
