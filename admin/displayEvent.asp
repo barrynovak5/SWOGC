@@ -26,7 +26,7 @@ cmd.CommandText = "SELECT EVENTNAME, EVENTDESCRIPTION " & _
                                "WHERE (EVENTID=?) "
 
 '--- Create and append parameter for eventID
-Set newParameter = cmd.CreateParameter("@EVENTID", adInteger, adParamInput, 0, donationEventId )
+Set newParameter = cmd.CreateParameter("@EVENTID", adInteger, adParamInput, , CInt(donationEventId) )
 cmd.Parameters.Append newParameter
 
 Set recordset = cmd.Execute
