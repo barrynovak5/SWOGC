@@ -130,7 +130,7 @@ End Sub
 
 conn.Open "FourC"
 set rs=Server.CreateObject("ADODB.recordset")
-sql="SELECT ID, LISTVALUE FROM DONATIONREASONS"
+sql="SELECT ID, LISTVALUE FROM DONATIONREASONS WHERE ACTIVE = 1"
 rs.Open sql, conn
     %>
     <table>
