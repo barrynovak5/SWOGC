@@ -1,32 +1,65 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>4c Admin</title>
-</head>
-
-<body>
+<!--#include file=adovbs.inc -->
 <%
 donationEventId = Request.Form("DonationEventId")
-
-set conn=Server.CreateObject("ADODB.Connection")
-conn.Open "FourC"
-set objCommand = Server.CreateObject("ADODB.Command")
-objCommand.ActiveConnection = conn
-objCommand.CommandText = "SELECT  FROM EVENTS WHERE EVENTID = @EVENTID"
-
-objCommand.Parameters.Append(objCommand.CreateParameter("@EVENTID", adInteger, adParamInput, , donationEventId))
-
-Set rs = objCommand.Execute()
-
-If Not rs.EOF Then
+Response.Write(donationEventId)
 %>
-<p> here</p>
+
 <%
-rs.Close
-set rs = nothing
-set cmd = nothing
-set conn = nothing
+Set objConn = Server.CreateObject("ADODB.Connection")
+Set objCmd  = Server.CreateObject("ADODB.Command")
+Set objRS   = Server.CreateObject("ADODB.Recordset")
+
+objConn.Open "FourC"
+
+objRS.CursorType = adOpenForwardOnly
+objRS.LockType = adLockOptimistic
+                
+Set objCmd.ActiveConnection = objConn
+
+'If a SQL statement with question marks is specified, then the
+'CommandType is adCmdText.  If a query name is specified, then
+'the CommandType is adCmdStoredProc.
+
+objCmd.CommandText = "SELECT * FROM EVENTS WHERE EVENTID = ?"
+objCmd.CommandType = adCmdText
+
+'Create the parameter and populate it.
+
+Set objParam = objCmd.CreateParameter("@EVENTID" , adInteger, adParamInput, 0, 0)
+objCmd.Parameters.Append objParam
+
+objCmd.Parameters("@EVENTID") = 1
+
+'Open and display the Recordset.
+
+objRS.Open objCmd
+%>
+<table border=1 cellpadding=2 cellspacing=2>
+<tr>
+<%
+For I = 0 To objRS.Fields.Count - 1
+  Response.Write "<td><b>" & objRS(I).Name & "</b></td>"
+Next
+%>
+</tr>
+<%
+Do While Not objRS.EOF
+  Response.Write "<tr>"
+  For I = 0 To objRS.Fields.Count - 1
+    Response.Write "<td>" & objRS(I) & "</td>"
+  Next
+  Response.Write "</tr>"
+  objRS.MoveNext
+Loop
+%>
+</table>
+
+<%
+objRS.Close
+objConn.Close
+Set objRS = Nothing
+Set objCmd = Nothing
+Set objConn = Nothing
 %>
 
