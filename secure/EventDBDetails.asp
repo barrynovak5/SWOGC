@@ -1,4 +1,4 @@
-<!--#include File="adovbs.inc"-->
+<!--#include virtual="adovbs.inc"-->
 <%
 
 Function LoadEventDetails()
