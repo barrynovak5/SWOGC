@@ -4,14 +4,17 @@ Function LoadEventDetails()
 
 set conn=Server.CreateObject("ADODB.Connection")
 conn.Open "FourC"
-
-sql="SELECT EVENTNAME, EVENTDESCRIPTION, ReceiptPageUrl, DefaultReceiptPageUrl, ReceiptPageTitle, DefaultReceiptPageTitle, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, " & _
-    "PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter FROM EVENTS_VW WHERE EventId = ?"
 set objCommand = Server.CreateObject("ADODB.Command")
-objCommand.ActiveConnection = conn
-objCommand.CommandText = sql
-objCommand.Parameters(0).value = EventId
-set rs= objCommand.Execute()
+with objCommand
+    .ActiveConnection = conn
+    .CommandText = "SELECT EVENTNAME, EVENTDESCRIPTION, ReceiptPageUrl, DefaultReceiptPageUrl, " & _ 
+        "ReceiptPageTitle, DefaultReceiptPageTitle, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, " & _
+        "PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter FROM EVENTS_VW WHERE EventId = @EVENTID"
+    .Parameters.Append .CreateParameter("@EVENTID", adInteger, adParamInput, , CInt(EventId))
+end with
+
+Set rs = Server.CreateObject("ADODB.Recordset")
+rs.Open objCommand, conn
 
 Dim ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader
 Dim PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
@@ -42,6 +45,11 @@ If Not rs.EOF Then
     ReceiptFormFooter = rs.Fields.Item("ReceiptFormFooter")
     ReceiptEmailFooter = rs.Fields.Item("ReceiptEmailFooter")
 End If
+
+rs.Close
+set rs = nothing
+set cmd = nothing
+set conn = nothing
 
 End Function
 
