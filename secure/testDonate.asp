@@ -7,6 +7,19 @@
     <meta name="revisit-after" content="14 Days">
     <link rel="stylesheet" type="text/css" href="styles/css.css">
     <script language="JavaScript" type="text/javascript"><!--
+        
+        function CreateHeaderAndFooterFields()
+        {
+            var footerTD = document.getElementById("footerTD");
+            var headerTD = document.getElementById("headerTD");
+            
+            var header2 = document.getElementById("header2");
+            var footer2 = document.getElementById("footer2");
+            
+            header2.value = headerTD.innerHTML;             
+            footer2.value = footerTD.innerHTML;
+        }
+        
         function Validator(theForm) {
 
             if (trim(theForm.DonationAmount.value) == "") {
@@ -65,7 +78,7 @@
                 return (false);
             }
             
-            if (theForm.DonorEmailAddress.value.length < 6) {
+            if (theForm.DonorEmailAddress.value.length > 0 &&  theForm.DonorEmailAddress.value.length < 6) {
                 alert("Please enter at least 6 characters in the \"E-mail\" field.");
                 theForm.DonorEmailAddress.focus();
                 return (false);
@@ -116,7 +129,7 @@
         }
     </style>
 </head>
-<body bottommargin="0" leftmargin="0" rightmargin="0" topmargin="0" bgcolor="#ffffff"
+<body bottommargin="0" leftmargin="0" onload="CreateHeaderAndFooterFields()" rightmargin="0" topmargin="0" bgcolor="#ffffff"
     marginheight="0" marginwidth="0">
     <div class="SEODiv">
         <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
@@ -254,7 +267,7 @@
                         height="100%">
                         <tbody>
                             <tr>
-                                <td class="bannerCell" valign="top" width="100%" align="left">
+                                <td class="bannerCell" id="headerTD" valign="top" width="100%" align="left">
                                       <!--#include file="header.asp"-->
                                 </td>
                             </tr>
@@ -321,13 +334,17 @@
                                                                                                 Fields in red are required fields.</div>
                                                                                             <form language="JavaScript" onsubmit="return Validator(this)" method="post" name="frm1Donation"
                                                                                             action="process.asp">
-                                                                                            <input value="On-line Donation" type="hidden" name="Donation"/>
-                                                                                            <input value="http://www.4c.org" type="hidden" name="ReturnUrl" />
                                                                                            
-                                                                                            <input value="Return to Site" type="hidden" name="ReturnTitle" />
+                                                                                           
+                                                                                            <input value="http://www.4c.org" type="hidden" name="ReturnUrl" />
+                                                                                            <input value="Return to Site" type="hidden" name="ReturnTitle" />                                                                        
                                                                                             <input value="True" type="hidden" name="ReturnEnabled" />
                                                                                             <input value="1" type="hidden" name="EventID"/>                                                             
-                                                                                           
+                                                                                            
+                                                                                            <input value="" id="header1" name="header1" type="hidden" />
+                                                                                            <input value="" id="header2" name="header2" type="hidden" />
+                                                                                            <input value="" id="footer1" name="footer1" type="hidden" />
+                                                                                            <input value="" id="footer2" name="footer2" type="hidden" />
                                                                                            
                                                                                             <table>
                                                                                                 <tr>
@@ -515,11 +532,10 @@
             </tr>
             <!-- Below is for footer, etc. ----------------->
             <tr>
-                <td class="baseAreaBound" valign="top" align="middle">
+                <td class="baseAreaBound" id="footerTD" valign="top" align="middle">
                      <!--#include file="footer.asp"-->                    
                 </td>
             </tr>
-            </TBODY></TABLE></TD></TR>
             <tr>
                 <td valign="top" align="left">
                     <br /><br />
