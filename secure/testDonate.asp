@@ -133,18 +133,9 @@
                                         Early Childhood Education - Southwest Ohio &amp; Northern Kentucky
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td valign="top" colspan="2" align="left">
-                                        <img border="0" src="images/Donation/misc/spacer.gif" width="974" height="1">
-                                    </td>
-                                </tr>
+                                
                             </tbody>
                         </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top" align="left">
-                        <img border="0" src="images/Donation/misc/spacer.gif" width="994" height="1">
                     </td>
                 </tr>
             </tbody>
