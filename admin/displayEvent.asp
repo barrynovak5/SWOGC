@@ -1,6 +1,6 @@
+
 <%
 
-DonationReasonId = Request.Form("DonationReasonId")
-Response.Write("Id " & DonationReasonId)
-
+DonationEventId = Request.Form("DonationEventId")
+Response.Write("DonationEventId" & DonationEventId)
 %>
