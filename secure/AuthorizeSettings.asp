@@ -4,8 +4,8 @@
 
 Function getAuthorizeCredentials(ByRef loginId, ByRef transactionKey, ByRef testModeEnabled, ByRef authorizeUrl)
 
-    loginID			= "6RT5cpN7n"
-    transactionKey	= "9M9T3s3bxvY55rZE"
+    loginID			= "2Hd97eVe4"
+    transactionKey	= "9v67FYp97NeVRe3X"
 
     testModeEnabled = "false"
 
