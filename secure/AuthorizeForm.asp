@@ -3,27 +3,19 @@
 
 <%
 
-Function ShowAuthorizeForm()
+Function ShowAuthorizeForm(invoiceNo)
 
 ' Get Authorize Credentials
-Dim loginID, transactionKey, testMode, authorizeUrl
-Call getAuthorizeCredentials(loginId, transactionKey, testMode, authorizeUrl)
+Dim loginID, transactionKey, testModeEnabled, authorizeUrl
+Call getAuthorizeCredentials(loginId, transactionKey, testModeEnabled, authorizeUrl)
 
-
-Dim amount, description
-amount = Request.Form("DonationAmount")
-description		= lineItemName
-
-' an invoice ID is generated using the date and time
-Dim invoiceNo
-invoiceNo = Year(Date) & Month(Date) &  Day(Date) & Hour(Now) & Minute(Now) & Second(Now)
 
 ' Get the data we need from the POST info
 dim lineItem, lineItemQuantity, lineItemIsTaxable
 lineItemQuantity = "1"
 lineItemIsTaxable = "N"
-lineItem = Request.Form("EventId") & "<|>" & Request.Form("EventName") & "<|>" & Request.Form("EventDescription") & "<|>" & _
-    lineItemQuantity & "<|>" & Request.Form("DonationAmount") & "<|>" & lineItemIsTaxable
+lineItem = Request.Form("EventId") & "<|>" & Request.Form("EventName") & "<|>" & Request.Form("x_description") & "<|>" & _
+    lineItemQuantity & "<|>" & Request.Form("x_amount") & "<|>" & lineItemIsTaxable
 
 ' a sequence number is randomly generated
 Dim sequence
@@ -59,13 +51,11 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
 
 <FORM id='authorizedotnetform' method='post' action='<% Response.Write(authorizeUrl) %>' >
 	<INPUT type='hidden' name='x_login' value='<% Response.Write(loginId) %>' />
-	<INPUT type='hidden' name='x_amount' value='<% Response.Write(amount) %>' />
-	<INPUT type='hidden' name='x_description' value='<% Response.Write(description) %>' />
+	<INPUT type='hidden' name='x_test_request' value='<% Response.Write(testModeEnabled) %>' />
 	<INPUT type='hidden' name='x_invoice_num' value='<% Response.Write(invoiceNo) %>' />
 	<INPUT type='hidden' name='x_fp_sequence' value='<% Response.Write(sequence) %>' />
 	<INPUT type='hidden' name='x_fp_timestamp' value='<% Response.Write(timeStamp) %>' />
 	<INPUT type='hidden' name='x_fp_hash' value='<% Response.Write(fingerprint) %>' />
-	<INPUT type='hidden' name='x_test_request' value='<% Response.Write(testModeEnabled) %>' />
     <INPUT type='hidden' name='x_show_form' value='PAYMENT_FORM' />
 	<INPUT type='hidden' name='x_line_item' value='<% Response.Write(lineItem) %>' />
 
