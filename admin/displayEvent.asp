@@ -11,7 +11,8 @@
 <%
 donationEventId = Request.Form("DonationEventId")
 set rs=Server.CreateObject("ADODB.recordset")
-sql="SELECT EVENTNAME, EVENTDESCRIPTION FROM DONATIONEVENT WHERE EVENTID=" & donationEventId
+sql="SELECT * FROM DONATIONEVENT WHERE EVENTID=" & donationEventId
+Response.Write(sql)
 rs.Open sql, conn
 %>
 
