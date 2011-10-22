@@ -402,7 +402,7 @@
                                                                                         &nbsp;E-Mail:
                                                                                     </td>
                                                                                     <td colspan="6" align="left">
-                                                                                        <input size="35" name="DonorEmailAddress">
+                                                                                        <input size="35" name="DonorEmailAddress"/>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -417,7 +417,7 @@
                                                                                     <td align="right" class="style2">
                                                                                     </td>
                                                                                     <td colspan="6">
-                                                                                        <input size="35" name="DonorAddress2">
+                                                                                        <input size="35" name="DonorAddress2"/>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -425,7 +425,7 @@
                                                                                         &nbsp;Company:
                                                                                     </td>
                                                                                     <td colspan="6">
-                                                                                        <input maxlength="50" size="35" name="RequiredCompany"/>
+                                                                                        <input maxlength="50" size="35" name="DonorCompany"/>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
