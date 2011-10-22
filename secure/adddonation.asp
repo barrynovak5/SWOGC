@@ -43,9 +43,9 @@ sql=sql & "'" & DonorAddress & "',"
 sql=sql & "'" & DonorAddress2 & "',"
 sql=sql & "'" & DonorPhone & "',"
 sql=sql & "" & AddToNewsletter & ","
-sql=sql & "'" & DonorPhoneDayOrEvening & "," & _
-    "'" & DonorComments & _
-     "')"
+sql=sql & "'" & DonorPhoneDayOrEvening & "'," & _
+    "'" & DonorComments & "'" & _
+     ")"
 
 
 
