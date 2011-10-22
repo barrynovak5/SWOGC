@@ -92,8 +92,8 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
 
     <% If UCase(Request.Form("ReturnEnabled")) = "TRUE" Then
         Response.Write("<INPUT TYPE=HIDDEN NAME='x_receipt_link_method' VALUE='LINK'>")
-        Response.Write("<INPUT TYPE=HIDDEN NAME='x_receipt_link_text' VALUE='" & Request.Form("ReturnTitle") & "'>)
-        Response.Write("<INPUT TYPE=HIDDEN NAME='x_receipt_link_URL' VALUE='" & Request.Form("ReturnUrl") & "'>)
+        Response.Write("<INPUT TYPE=HIDDEN NAME='x_receipt_link_text' VALUE='" & Request.Form("ReturnTitle") & "'>")
+        Response.Write("<INPUT TYPE=HIDDEN NAME='x_receipt_link_URL' VALUE='" & Request.Form("ReturnUrl") & "'>")
     <% End If %>
 
 </FORM>
