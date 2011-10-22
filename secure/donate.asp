@@ -370,13 +370,13 @@ LoadEventDetails()
                                                                                             <input value="<% Response.Write(ReceiptPageEnabled) %>" type="hidden" name="ReturnEnabled" />
                                                                                             <input value="<% Response.Write(EventName) %>" type="hidden" name="EventName" />
                                                                                             <input value="<% Response.Write(EventDescription) %>" type="hidden" name="x_description" />
-                                                                                            <input value="<% Response.Write(PaymentFormHeader) %>" type="hidden" name="x_header_html_payment_form" type="hidden" />
-                                                                                            <input value="<% Response.Write(ReceiptFormHeader) %>" type="hidden" name="x_header_html_receipt" type="hidden" />
-                                                                                            <input value="<% Response.Write(ReceiptEmailHeader) %>" type="hidden" name="x_header_email_receipt" type="hidden" />
+                                                                                            <input value="<% Response.Write(PaymentFormHeader) %>" type="hidden" name="x_header_html_payment_form" />
+                                                                                            <input value="<% Response.Write(ReceiptFormHeader) %>" type="hidden" name="x_header_html_receipt" />
+                                                                                            <input value="<% Response.Write(ReceiptEmailHeader) %>" type="hidden" name="x_header_email_receipt" />
 
-                                                                                            <input value="<% Response.Write(PaymentFormFooter) %>" type="hidden" name="x_Footer_html_payment_form" type="hidden" />
-                                                                                            <input value="<% Response.Write(ReceiptFormFooter) %>" type="hidden" name="x_Footer_html_receipt" type="hidden" />
-                                                                                            <input value="<% Response.Write(ReceiptEmailFooter) %>" type="hidden" name="x_Footer_email_receipt" type="hidden" />
+                                                                                            <input value="<% Response.Write(PaymentFormFooter) %>" type="hidden" name="x_Footer_html_payment_form" />
+                                                                                            <input value="<% Response.Write(ReceiptFormFooter) %>" type="hidden" name="x_Footer_html_receipt" />
+                                                                                            <input value="<% Response.Write(ReceiptEmailFooter) %>" type="hidden" name="x_Footer_email_receipt" />
                                                                                             
                                                                                             <table>
                                                                                                 <tr>
