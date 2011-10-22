@@ -82,6 +82,7 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
 
     <div style="display:none">
         <%
+            Dim i
             For i = 1 to Request.Form.Count
                 If Left(Request.Form.Key(i),2) = "x_" Then
                     Response.Write("<input type='hidden' name='" & Request.Form.Key(x) & "' value=""" & Request.Form.Item(x) & """ />") 
