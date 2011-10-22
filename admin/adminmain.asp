@@ -9,7 +9,7 @@
 <body>
 
 <label id="Label1">Select an Event...</label><br />
-<!--include="../secure/picklist.asp"-->
+<!--#include file="../secure/picklist.asp"-->
 <label id="Label2">Download/display registered visitors for Event:</label><br />
 <input name="Button1" type="button" value="Download" />
 <input name="Button2" type="button" value="Display" /><br /><br />
