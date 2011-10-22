@@ -4,8 +4,17 @@
 
 Function getAuthorizeCredentials(ByRef loginId, ByRef transactionKey, ByRef testModeEnabled, ByRef authorizeUrl)
 
-    loginID			= "2Hd97eVe4"
-    transactionKey	= "9v67FYp97NeVRe3X"
+set conn=Server.CreateObject("ADODB.Connection")
+conn.Open "FourC"
+
+set rs=Server.CreateObject("ADODB.recordset")
+sql="SELECT * FROM PaymentIntegration"
+rs.Open sql, conn
+
+
+
+    loginID = rs.Fields.Item("APILoginID")
+    transactionKey = rs.Fields.Item("TransactionKey") 
 
     testModeEnabled = "false"
 
@@ -13,9 +22,6 @@ Function getAuthorizeCredentials(ByRef loginId, ByRef transactionKey, ByRef test
     ' developer accounts: https://test.authorize.net/gateway/transact.dll
     ' for real accounts (even in test mode), please make sure that you are
     ' posting to: https://secure.authorize.net/gateway/transact.dll
-
-    ' Developers can post to https://developer.authorize.net/param_dump.asp to get a parameter dump
-
     authorizeUrl = "https://test.authorize.net/gateway/transact.dll"
 
 End Function
