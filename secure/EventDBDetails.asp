@@ -12,6 +12,8 @@ rs.CursorType = adOpenForwardOnly
 rs.LockType = adLockOptimistic
 cmd.ActiveConnection = conn
 
+' From http://support.microsoft.com/kb/200190
+
 'If a SQL statement with question marks is specified, then the
 'CommandType is adCmdText.  If a query name is specified, then
 'the CommandType is adCmdStoredProc.
@@ -56,6 +58,9 @@ If Not rs.EOF Then
     PaymentFormFooter = rs.Fields.Item("PaymentFormFooter")
     ReceiptFormFooter = rs.Fields.Item("ReceiptFormFooter")
     ReceiptEmailFooter = rs.Fields.Item("ReceiptEmailFooter")
+
+    Response.Write("HHHH:" & EventName)
+
 End If
 
 rs.Close
