@@ -5,17 +5,30 @@
     <meta name="keywords" content="4C, 4C for children, comprehensive community child care, cccc, child care, childcare, CCR&amp;R, Ohio referral agencies, early care and education, Child Development, Early Childhood Education, non-profit organization, education, healthy child care, T.E.A.C.H., Child Care Aware, children and families, early learning, early education, child care network, SAC, OST, afterschool, right program, Ohio law, day care, daycare, babysitters, CDA, professional development, family, child, community, healthy child care Ohio">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="revisit-after" content="14 Days">
-    <link rel="stylesheet" type="text/css" href="styles/css.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/css.css" />
+
     <script language="JavaScript" type="text/javascript"><!--
-        
-        function CreateHeaderAndFooterFields()
-        {
+
+        function CreateHeaderAndFooterFields() {
+            var header1 = document.getElementById("header1")
             var header2 = document.getElementById("header2");
-            
-            header2.value =  '<link rel="stylesheet" type="text/css" href="https://secure.4c.org/secure/styles/css.css"/>'
-  
+            var footer1 = document.getElementById("header2");
+            var footer2 = document.getElementById("footer2");
+
+            header1.value = "<style type='text/css' media='all'>" +
+                                + "td{ 	font-family: arial, helvetica, verdana;	font-size: 14px; color: #474747;}"
+
+                                + "div{	font-family: arial, helvetica, verdana;	font-size: 14px; color: #474747;}"
+                                + "span{font-family: arial, helvetica, verdana;	font-size: 14px; color: #474747;}"
+                                + "h1{font-family: arial, helvetica, verdana; font-size: 18px;	color: #000000;	font-weight: bold;}"
+                                + "h2{font-family: arial, helvetica, verdana;	font-size: 16px; color: #000000; font-weight: bold;}"
+                                + "h3{	font-family: arial, helvetica, verdana;	font-size: 16px; color: #00529f;	font-weight: bold;}"
+                                + "a{ color: #00539f; text-decoration: underline;}"
+                                + "a:hover{	color: #5995d3;	text-decoration: underline;}"
+                                + "</style>";
+
         }
-        
+
         function Validator(theForm) {
 
             if (trim(theForm.DonationAmount.value) == "") {
@@ -46,7 +59,7 @@
                 ch = checkStr.charAt(i);
                 for (j = 0; j < checkOK.length; j++)
                     if (ch == checkOK.charAt(j))
-                        break;
+                    break;
                 if (j == checkOK.length) {
                     allValid = false;
                     break;
@@ -73,11 +86,27 @@
                 theForm.DonationAmount.focus();
                 return (false);
             }
-            
-            if (theForm.DonorEmailAddress.value.length > 0 &&  theForm.DonorEmailAddress.value.length < 6) {
-                alert("Please enter at least 6 characters in the \"E-mail\" field.");
-                theForm.DonorEmailAddress.focus();
-                return (false);
+
+            if (theForm.DonorEmailAddress.value.length > 0) {
+
+                if (theForm.DonorEmailAddress.value.length < 6) {
+                    alert("Please enter at least 6 characters in the \"E-mail\" field.");
+                    theForm.DonorEmailAddress.focus();
+                    return (false);
+                }
+                else {
+                    var emailad = trim(theForm.DonorEmailAddress.value);
+                    var exclude = /[^@\-\.\w]|^[_@\.\-]|[\._\-]{2}|[@\.]{2}|(@)[^@]*\1/;
+                    var check = /@[\w\-]+\./;
+                    var checkend = /\.[a-zA-Z]{2,3}$/;
+
+                    if (((emailad.search(exclude) != -1) || (emailad.search(check)) == -1) || (emailad.search(checkend) == -1)) {
+                        alert("Email is invalid. Please enter a       \nvalid email address.");
+                        theForm.DonorEmailAddress.focus();
+                        return false;
+                    }
+
+                }
             }
 
             if (theForm.DonorEmailAddress.value.length > 50) {
@@ -86,16 +115,6 @@
                 return (false);
             }
 
-            var emailad = trim(theForm.DonorEmailAddress.value);
-            var exclude = /[^@\-\.\w]|^[_@\.\-]|[\._\-]{2}|[@\.]{2}|(@)[^@]*\1/;
-            var check = /@[\w\-]+\./;
-            var checkend = /\.[a-zA-Z]{2,3}$/;
-
-            if (((emailad.search(exclude) != -1) || (emailad.search(check)) == -1) || (emailad.search(checkend) == -1)) {
-                alert("Email is invalid. Please enter a       \nvalid email address.");
-                theForm.DonorEmailAddress.focus();
-                return false;
-            }            
 
             return (true);
         }
@@ -118,6 +137,7 @@
       
 
 //--></script>
+
     <style type="text/css">
         .style2
         {
@@ -125,8 +145,8 @@
         }
     </style>
 </head>
-<body bottommargin="0" leftmargin="0" onload="CreateHeaderAndFooterFields()" rightmargin="0" topmargin="0" bgcolor="#ffffff"
-    marginheight="0" marginwidth="0">
+<body bottommargin="0" leftmargin="0" onload="CreateHeaderAndFooterFields()" rightmargin="0"
+    topmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
     <div class="SEODiv">
         <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
             <tbody>
@@ -142,7 +162,6 @@
                                         Early Childhood Education - Southwest Ohio &amp; Northern Kentucky
                                     </td>
                                 </tr>
-                                
                             </tbody>
                         </table>
                     </td>
@@ -151,6 +170,7 @@
         </table>
     </div>
     <!-- Top Menu Mouseover Code ----------------------------------->
+
     <script>
 <!--
         function cellOnTop(div) {
@@ -246,7 +266,9 @@
         }
 //-->
     </script>
+
     <!-- Flyout Menu Code ----------------------------------->
+
     <script type="text/javascript" src="anylink.js">
         /***********************************************
         * AnyLink CSS Menu script- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
@@ -254,6 +276,7 @@
         * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
         ***********************************************/
     </script>
+
     <table class="pageBackground" border="0" cellspacing="0" bordercolor="red" cellpadding="0"
         width="100%" height="100%">
         <tbody>
@@ -264,7 +287,7 @@
                         <tbody>
                             <tr>
                                 <td class="bannerCell" id="headerTD" valign="top" width="100%" align="left">
-                                      <!--#include file="header.asp"-->
+                                    <!--#include file="header.asp"-->
                                 </td>
                             </tr>
                             <!-- Main 100% height row for left nav and body ---------------->
@@ -293,7 +316,7 @@
                                                                                             4C for children - Make a Donation</div>
                                                                                     </h1>
                                                                                 </td>
-                                                                                                                                                           </tr>
+                                                                            </tr>
                                                                         </tbody>
                                                                     </table>
                                                                 </td>
@@ -320,40 +343,34 @@
                                                                                                                 Accredited Charity</b>
                                                                                                         </td>
                                                                                                         <td valign="top" align="left">
-                                                                                                        <img hspace="3" align="right" src="images/Donation/charityblue.jpg"
-                                                                                                    width="50" height="87">
+                                                                                                            <img hspace="3" align="right" src="images/Donation/charityblue.jpg" width="50" height="87">
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                 </tbody>
                                                                                             </table>
-                                                                                            <div  align="center" class="required">
+                                                                                            <div align="center" class="required">
                                                                                                 Fields in red are required fields.</div>
                                                                                             <form language="JavaScript" onsubmit="return Validator(this)" method="post" name="frm1Donation"
                                                                                             action="process.asp">
-                                                                                           
-                                                                                           
                                                                                             <input value="http://www.4c.org" type="hidden" name="ReturnUrl" />
-                                                                                            <input value="Return to Site" type="hidden" name="ReturnTitle" />                                                                        
+                                                                                            <input value="Return to Site" type="hidden" name="ReturnTitle" />
                                                                                             <input value="True" type="hidden" name="ReturnEnabled" />
-                                                                                            <input value="1" type="hidden" name="EventID"/>    
-                                                                                            <input value="General Donation" type="hidden" name="EventName"/>                                                             
-                                                                                                                                        
+                                                                                            <input value="1" type="hidden" name="EventID" />
+                                                                                            <input value="General Donation" type="hidden" name="EventName" />
                                                                                             
                                                                                             <input value="" id="header1" name="header1" type="hidden" />
                                                                                             <input value="" id="header2" name="header2" type="hidden" />
                                                                                             <input value="" id="footer1" name="footer1" type="hidden" />
                                                                                             <input value="" id="footer2" name="footer2" type="hidden" />
-                                                                                           
                                                                                             <table>
                                                                                                 <tr>
-                                                                                   <td  class="required">
-                                                                                       <b>Donation Amount: </b>                                                                                          
-                                                                                   </td>
-                                                                                   <td>                                                                                       
-                                                                                        <input value="" type="text" name="DonationAmount"/>                                                             
-                                                                                   </td>
-                                                                                </tr>
-                                                                               
+                                                                                                    <td class="required">
+                                                                                                        <b>Donation Amount: </b>
+                                                                                                    </td>
+                                                                                                    <td>
+                                                                                                        <input value="" type="text" name="DonationAmount" />
+                                                                                                    </td>
+                                                                                                </tr>
                                                                                             </table>
                                                                                             <br />
                                                                                             <table>
@@ -367,171 +384,167 @@
                                                                                             </table>
                                                                                             <table>
                                                                                                 <tbody>
-
-                                                                                <tr>
-                                                                                                    <td  align="right" class="style2">
-                                                                                                        First Name:
-                                                                                                    </td>
-                                                                                                    <td colspan="6">
-                                                                                                        <input maxlength="50" size="35" name="DonorFirstName">
-                                                                                                    </td>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            First Name:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="50" size="35" name="DonorFirstName">
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            Last Name:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="50" size="35" name="DonorLastName">
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            &nbsp;E-Mail:
+                                                                                                        </td>
+                                                                                                        <td colspan="6" align="left">
+                                                                                                            <input size="35" name="DonorEmailAddress" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            &nbsp;Address:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="100" size="35" name="DonorAddress">
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input size="35" name="DonorAddress2" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            &nbsp;Company:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="50" size="35" name="DonorCompany" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            &nbsp;City:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="50" size="35" name="DonorCity" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            &nbsp;State:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="50" size="35" name="DonorState" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            &nbsp;Zip:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="15" size="35" name="DonorZipCode" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" valign="top" class="style2">
+                                                                                                            &nbsp;Telephone:
+                                                                                                        </td>
+                                                                                                        <td valign="top" align="left">
+                                                                                                            <input size="17" name="DonorPhone" />
+                                                                                                            <br>
+                                                                                                            Day
+                                                                                                            <input value="day" checked="checked" type="radio" name="DonorPhoneDayOrEvening" />&nbsp;
+                                                                                                            Evening
+                                                                                                            <input value="evening" type="radio" name="DonorPhoneDayOrEvening" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="left" class="style2">
+                                                                                                            <b>What prompted this online gift? </b>
+                                                                                                        </td>
+                                                                                                        <td width="370" colspan="6" align="left">
+                                                                                                            <!--#include file="picklist.asp"-->
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td colspan="2">
+                                                                                                            <b>
+                                                                                                                <br />
+                                                                                                                Comments (if any):</b>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td colspan="2">
+                                                                                                            <textarea wrap="physical" rows="7" cols="45" name="DonorComments"></textarea>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td class="style2">
+                                                                                                            Include me in future notifications:
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <input value="true" type="radio" checked="checked" name="AddToNewsletter" />&nbsp;
+                                                                                                            Yes
+                                                                                                            <input value="false" type="radio" name="AddToNewsletter" />&nbsp; No
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                            <p>
+                                                                                                <input value="Make Donation" type="submit" name="submit" />
+                                                                                            </p>
+                                                                                            <p>
+                                                                                                <b>Thank You!</b></p>
+                                                                                            </form>
+                                                                                    </td>
                                                                                 </tr>
-                                                                                <tr>
-                                                                                    <td  align="right" class="style2">
-                                                                                        Last Name:
-                                                                                    </td>
-                                                                                    <td colspan="6">
-                                                                                        <input maxlength="50" size="35" name="DonorLastName">
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td  align="right" class="style2">
-                                                                                        &nbsp;E-Mail:
-                                                                                    </td>
-                                                                                    <td colspan="6" align="left">
-                                                                                        <input size="35" name="DonorEmailAddress"/>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td  align="right" class="style2">
-                                                                                        &nbsp;Address:
-                                                                                    </td>
-                                                                                    <td colspan="6">
-                                                                                        <input maxlength="100" size="35" name="DonorAddress">
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td align="right" class="style2">
-                                                                                    </td>
-                                                                                    <td colspan="6">
-                                                                                        <input size="35" name="DonorAddress2"/>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td align="right" class="style2">
-                                                                                        &nbsp;Company:
-                                                                                    </td>
-                                                                                    <td colspan="6">
-                                                                                        <input maxlength="50" size="35" name="DonorCompany"/>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td  align="right" class="style2">
-                                                                                        &nbsp;City:
-                                                                                    </td>
-                                                                                    <td colspan="6">
-                                                                                        <input maxlength="50" size="35" name="DonorCity"/>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td  align="right" class="style2">
-                                                                                        &nbsp;State:
-                                                                                    </td>
-                                                                                    <td colspan="6">
-                                                                                        <input maxlength="50" size="35" name="DonorState"/>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td  align="right" class="style2">
-                                                                                        &nbsp;Zip:
-                                                                                    </td>
-                                                                                    <td colspan="6">
-                                                                                        <input maxlength="15" size="35" name="DonorZipCode"/>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td align="right" class="style2">
-                                                                                        &nbsp;Country:
-                                                                                    </td>
-                                                                                    <td colspan="6" align="left">
-                                                                                        <input size="35" name="DonorCountry"/>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td align="right" valign="top" class="style2">
-                                                                                        &nbsp;Telephone:
-                                                                                    </td>
-                                                                                    <td  valign="top" align="left">
-                                                                                        <input size="17" name="DonorPhone"/>
-                                                                                        <br>
-                                                                                        Day
-                                                                                        <input value="day" checked="checked" type="radio" name="DonorPhoneDayOrEvening"/>&nbsp; Evening
-                                                                                        <input value="evening" type="radio" name="DonorPhoneDayOrEvening"/>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr >
-                                                                                    <td align="left" class="style2" >
-                                                                                        <b>What prompted this online gift? </b>
-                                                                                    </td>
-                                                                                    <td width="370" colspan="6" align="left">
-                                                                                        <!--#include file="picklist.asp"-->
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td colspan="2">
-                                                                                        <b>
-                                                                                        <br />
-                                                                                        Comments (if any):</b>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td colspan="2">
-                                                                                        <textarea wrap="physical" rows="7" cols="45" name="DonorComments"></textarea>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                   <td class="style2" >
-                                                                                       Include me in future notifications:                                                                                          
-                                                                                   </td>
-                                                                                   <td>
-                                                                                        <input value="true" type="radio" checked="checked" name="AddToNewsletter"/>&nbsp; Yes
-                                                                                        <input value="false" type="radio" name="AddToNewsletter"/>&nbsp; No                                                             
-                                                                                   </td>
-                                                                                </tr>                                                                              
-                                                                               
                                                                             </tbody>
                                                                         </table>
-                                                                        <p>
-                                                                            <input value="Make Donation" type="submit" name="submit"/>
-                                                                        </p>
-                                                                        <p>
-                                                                            <b>Thank You!</b></p>
-                                                                    </FORM>
+                                                                    </div>
+                                                                    <!----------------------------------->
+                                                                    <!-- PAGE CONTENT ABOVE THIS POINT -->
+                                                                    <!----------------------------------->
                                                                 </td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
-                                                    </DIV><!-----------------------------------><!-- PAGE CONTENT ABOVE THIS POINT --><!----------------------------------->
+                                                </td>
+                                                <td class="rightGutterBound" valign="bottom" align="middle">
+                                                    <img border="0" src="images/Donation/RightGutterBottom.jpg" width="15" height="295">
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </td>
-                                <td class="rightGutterBound" valign="bottom" align="middle">
-                                    <img border="0" src="images/Donation/RightGutterBottom.jpg" width="15" height="295">
+                            </tr>
+                            <tr>
+                                <td valign="top" align="middle">
+                                    <img border="0" src="images/Donation/ContentBottomSpacer.jpg" width="974" height="2">
+                                </td>
+                            </tr>
+                            <!-- Below is for footer, etc. ----------------->
+                            <tr>
+                                <td class="baseAreaBound" id="footerTD" valign="top" align="middle">
+                                    <!--#include file="footer.asp"-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" align="left">
+                                    <br />
+                                    <br />
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                </td>
-            </tr>
-            <tr>
-                <td valign="top" align="middle">
-                    <img border="0" src="images/Donation/ContentBottomSpacer.jpg" width="974" height="2">
-                </td>
-            </tr>
-            <!-- Below is for footer, etc. ----------------->
-            <tr>
-                <td class="baseAreaBound" id="footerTD" valign="top" align="middle">
-                     <!--#include file="footer.asp"-->                    
-                </td>
-            </tr>
-            <tr>
-                <td valign="top" align="left">
-                    <br /><br />
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </body>
 </html>
