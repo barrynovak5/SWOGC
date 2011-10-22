@@ -7,18 +7,19 @@
 </head>
 
 <body>
-
 <%
 donationEventId = Request.Form("DonationEventId")
 
-strCmd = "SELECT * FROM DONATIONEVENT WHERE EVENTID = ?"
-Set objCommand.ActiveConnection = objConn
-objCommand.CommandText = strCmd
-objCommand.CommandType = adCmdText
-Set param1 = objCommand.CreateParameter ("EVENTID", adWChar, adParamInput, 50)
-param1.value = strAuthor
-objCommand.Parameters.Append param1
-Set objRS = objCommand.Execute()
+set conn=Server.CreateObject("ADODB.Connection")
+conn.Open "FourC"
+set objCommand = Server.CreateObject("ADODB.Command")
+objCommand.ActiveConnection = conn
+objCommand.CommandText = "SELECT * FROM DONATIONEVENT WHERE EVENTID = @EVENTID"
+
+objCommand.Parameters.Append(objCommand.CreateParameter("@EVENTID", adInteger, adParamInput, , donationEventId))
+
+Set rs = objCommand.Execute()
+
 
 
 Response.Write(sql)
