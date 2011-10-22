@@ -5,9 +5,21 @@
     <meta name="keywords" content="4C, 4C for children, comprehensive community child care, cccc, child care, childcare, CCR&amp;R, Ohio referral agencies, early care and education, Child Development, Early Childhood Education, non-profit organization, education, healthy child care, T.E.A.C.H., Child Care Aware, children and families, early learning, early education, child care network, SAC, OST, afterschool, right program, Ohio law, day care, daycare, babysitters, CDA, professional development, family, child, community, healthy child care Ohio">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="revisit-after" content="14 Days">
-    <meta name="author" content="Webfodder, Inc. - http://www.webfodder.com">
     <link rel="stylesheet" type="text/css" href="styles/css.css">
     <script language="JavaScript" type="text/javascript"><!--
+        
+        function CreateHeaderAndFooterFields()
+        {
+            var footerTD = document.getElementById("footerTD");
+            var headerTD = document.getElementById("headerTD");
+            
+            var header2 = document.getElementById("header2");
+            var footer2 = document.getElementById("footer2");
+            
+            header2.value = headerTD.innerHTML;             
+            footer2.value = footerTD.innerHTML;
+        }
+        
         function Validator(theForm) {
 
             if (trim(theForm.DonationAmount.value) == "") {
@@ -66,7 +78,7 @@
                 return (false);
             }
             
-            if (theForm.DonorEmailAddress.value.length < 6) {
+            if (theForm.DonorEmailAddress.value.length > 0 &&  theForm.DonorEmailAddress.value.length < 6) {
                 alert("Please enter at least 6 characters in the \"E-mail\" field.");
                 theForm.DonorEmailAddress.focus();
                 return (false);
@@ -117,7 +129,7 @@
         }
     </style>
 </head>
-<body bottommargin="0" leftmargin="0" rightmargin="0" topmargin="0" bgcolor="#ffffff"
+<body bottommargin="0" leftmargin="0" onload="CreateHeaderAndFooterFields()" rightmargin="0" topmargin="0" bgcolor="#ffffff"
     marginheight="0" marginwidth="0">
     <div class="SEODiv">
         <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
@@ -134,18 +146,9 @@
                                         Early Childhood Education - Southwest Ohio &amp; Northern Kentucky
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td valign="top" colspan="2" align="left">
-                                        <img border="0" src="images/Donation/misc/spacer.gif" width="974" height="1">
-                                    </td>
-                                </tr>
+                                
                             </tbody>
                         </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top" align="left">
-                        <img border="0" src="images/Donation/misc/spacer.gif" width="994" height="1">
                     </td>
                 </tr>
             </tbody>
@@ -264,142 +267,8 @@
                         height="100%">
                         <tbody>
                             <tr>
-                                <td class="bannerCell" valign="top" width="100%" align="left">
-                                    <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td valign="top" align="left">
-                                                    <!-- Check for home page, if home, don't link the Logo ------------->
-                                                    <a href="http://www.4cforchildren.org" rel="nofollow">
-                                                        <img border="0" alt="The mission of 4C is to improve the effectiveness and accessibility of early childhood education in Southwestern Ohio &amp; Northern Kentucky."
-                                                            src="images/Donation/BannerLogo.jpg" width="364" height="174"></a>
-                                                </td>
-                                                <td valign="top" width="100%" align="right">
-                                                    <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td style="padding-bottom: 80px; padding-left: 0px; padding-right: 0px; padding-top: 0px"
-                                                                    valign="top" align="right">
-                                                                    <!-- Top Menu --------------------------------------->
-                                                                    <table border="0" cellspacing="0" bordercolor="red" cellpadding="0">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td valign="top" align="left">
-                                                                                    <img title="" border="0" src="images/Donation/TopMenuLeft.jpg" width="12" height="37">
-                                                                                </td>
-                                                                                <td class="topMenuBack" valign="center" align="left">
-                                                                                    <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
-                                                                                        <tbody>
-                                                                                            <tr>
-                                                                                                <td valign="center" width="100%" align="left">
-                                                                                                    <td class="menuCellTop" valign="center" align="middle">
-                                                                                                        <a class="menuLinkTop" href="http://www.4cforchildren.org">
-                                                                                                            <div class="outerMenuDivTop">
-                                                                                                                <div class="ItemBoxInnerPaddingTop" onmouseover="cellOnTop(this);" onmouseout="cellOffTop(this);">
-                                                                                                                    4C<br>
-                                                                                                                    Home</div>
-                                                                                                            </div>
-                                                                                                        </a>
-                                                                                                    </td>
-                                                                                                    <td valign="top" align="left">
-                                                                                                        <img title="" border="0" src="images/Donation/TopMenuSpacer.jpg" width="2" height="37">
-                                                                                                    </td>
-                                                                                                    <td class="menuCellTop" valign="center" align="middle">
-                                                                                                        <a class="menuLinkTop" href="https://secure.4cforchildren.org/">
-                                                                                                            <div class="outerMenuDivTop">
-                                                                                                                <div class="ItemBoxInnerPaddingTop" onmouseover="cellOnTop(this);" onmouseout="cellOffTop(this);">
-                                                                                                                    Workshops<br>
-                                                                                                                    Home</div>
-                                                                                                            </div>
-                                                                                                        </a>
-                                                                                                    </td>
-                                                                                                    <td valign="top" align="left">
-                                                                                                        <img title="" border="0" src="images/Donation/TopMenuSpacer.jpg" width="2" height="37">
-                                                                                                    </td>
-                                                                                                    <td class="menuCellTop" valign="center" align="middle">
-                                                                                                        <a class="menuLinkTop" href="https://secure.4cforchildren.org/donate.asp">
-                                                                                                            <div class="outerMenuDivTop">
-                                                                                                                <div class="ItemBoxInnerPaddingTop" onmouseover="cellOnTop(this);" onmouseout="cellOffTop(this);">
-                                                                                                                    Donate</div>
-                                                                                                            </div>
-                                                                                                        </a>
-                                                                                                    </td>
-                                                                                                    <td valign="top" align="left">
-                                                                                                        <img title="" border="0" src="images/Donation/TopMenuSpacer.jpg" width="2" height="37">
-                                                                                                    </td>
-                                                                                                    <td class="menuCellTop" valign="center" nowrap align="middle">
-                                                                                                        <a class="menuLinkTop" href="http://www.4cforchildren.org/about/">
-                                                                                                            <div class="outerMenuDivTop">
-                                                                                                                <div class="ItemBoxInnerPaddingTop" onmouseover="cellOnTop(this);" onmouseout="cellOffTop(this);">
-                                                                                                                    About 4C</div>
-                                                                                                            </div>
-                                                                                                        </a>
-                                                                                                    </td>
-                                                                                                    <td valign="top" align="left">
-                                                                                                        <img title="" border="0" src="images/Donation/TopMenuSpacer.jpg" width="2" height="37">
-                                                                                                    </td>
-                                                                                                    <td class="menuCellTop" valign="center" nowrap align="middle">
-                                                                                                        <a class="menuLinkTop" href="http://www.4cforchildren.org/about/contact.html">
-                                                                                                            <div class="outerMenuDivTop">
-                                                                                                                <div class="ItemBoxInnerPaddingTop" onmouseover="cellOnTop(this);" onmouseout="cellOffTop(this);">
-                                                                                                                    Contact Us</div>
-                                                                                                            </div>
-                                                                                                        </a>
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </td>
-                                                                                <td valign="top" align="left">
-                                                                                    <img title="" border="0" src="images/Donation/TopMenuRight.jpg" width="12" height="37">
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="padding-bottom: 0px; padding-left: 0px; padding-right: 16px; padding-top: 0px"
-                                                                    valign="bottom" width="100%" align="right">
-                                                                    <table border="0" cellspacing="0" bordercolor="red" cellpadding="0">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td valign="bottom" align="right">
-                                                                                    <table border="0" cellspacing="0" bordercolor="green" cellpadding="0">
-                                                                                        <tbody>
-                                                                                            <tr>
-                                                                                                <td class="menuCellStore" valign="top" align="middle">
-                                                                                                    <a class="menuLinkStore" href="http://secure.4cforchildren.org/store/Login.asp">
-                                                                                                        <div class="outerMenuDivStore">
-                                                                                                            <div class="ItemBoxInnerPaddingStore" onmouseover="cellOnStore(this);" onmouseout="cellOffStore(this);">
-                                                                                                                Log In</div>
-                                                                                                        </div>
-                                                                                                    </a>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="padding-bottom: 0px; padding-left: 0px; padding-right: 18px; padding-top: 0px"
-                                                                    valign="bottom" align="right">
-                                                                    <font class="cartSummary">Your cart is empty.</font>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                                <td align="right">
-                                                    <img border="0" src="images/Donation/BannerRight.jpg" width="14" height="174">
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <td class="bannerCell" id="headerTD" valign="top" width="100%" align="left">
+                                      <!--#include file="header.asp"-->
                                 </td>
                             </tr>
                             <!-- Main 100% height row for left nav and body ---------------->
@@ -428,18 +297,7 @@
                                                                                             4C for children - Make a Donation</div>
                                                                                     </h1>
                                                                                 </td>
-                                                                                <td class="cartSummaryBound" valign="top" align="left">
-                                                                                    <table border="0" cellspacing="0" bordercolor="blue" cellpadding="0">
-                                                                                        <tbody>
-                                                                                            <tr>
-                                                                                                <td valign="top" align="left">
-                                                                                                    <img border="0" src="images/Donation/misc/spacer.gif" width="330" height="1">
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </td>
-                                                                            </tr>
+                                                                                                                                                           </tr>
                                                                         </tbody>
                                                                     </table>
                                                                 </td>
@@ -475,13 +333,18 @@
                                                                                             <div  align="center" class="required">
                                                                                                 Fields in red are required fields.</div>
                                                                                             <form language="JavaScript" onsubmit="return Validator(this)" method="post" name="frm1Donation"
-                                                                                            action="adddonation.asp">
-                                                                                            <input value="On-line Donation" type="hidden" name="Donation"/>
+                                                                                            action="process.asp">
+                                                                                           
+                                                                                           
                                                                                             <input value="http://www.4c.org" type="hidden" name="ReturnUrl" />
-                                                                                           
-                                                                                            <input value="Return to Site" type="hidden" name="ReturnTitle" />
+                                                                                            <input value="Return to Site" type="hidden" name="ReturnTitle" />                                                                        
                                                                                             <input value="True" type="hidden" name="ReturnEnabled" />
-                                                                                           
+                                                                                            <input value="1" type="hidden" name="EventID"/>                                                             
+                                                                                            
+                                                                                            <input value="" id="header1" name="header1" type="hidden" />
+                                                                                            <input value="" id="header2" name="header2" type="hidden" />
+                                                                                            <input value="" id="footer1" name="footer1" type="hidden" />
+                                                                                            <input value="" id="footer2" name="footer2" type="hidden" />
                                                                                            
                                                                                             <table>
                                                                                                 <tr>
@@ -536,7 +399,7 @@
                                                                                         &nbsp;E-Mail:
                                                                                     </td>
                                                                                     <td colspan="6" align="left">
-                                                                                        <input size="35" name="DonorEmailAddress">
+                                                                                        <input size="35" name="DonorEmailAddress"/>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -551,7 +414,7 @@
                                                                                     <td align="right" class="style2">
                                                                                     </td>
                                                                                     <td colspan="6">
-                                                                                        <input size="35" name="DonorAddress2">
+                                                                                        <input size="35" name="DonorAddress2"/>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -559,7 +422,7 @@
                                                                                         &nbsp;Company:
                                                                                     </td>
                                                                                     <td colspan="6">
-                                                                                        <input maxlength="50" size="35" name="RequiredCompany"/>
+                                                                                        <input maxlength="50" size="35" name="DonorCompany"/>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -591,7 +454,7 @@
                                                                                         &nbsp;Country:
                                                                                     </td>
                                                                                     <td colspan="6" align="left">
-                                                                                        <input size="35" name="a0080_Billing_Country"/>
+                                                                                        <input size="35" name="DonorCountry"/>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -602,7 +465,7 @@
                                                                                         <input size="17" name="DonorPhone"/>
                                                                                         <br>
                                                                                         Day
-                                                                                        <input value="day" type="radio" name="DonorPhoneDayOrEvening"/>&nbsp; Evening
+                                                                                        <input value="day" checked="checked" type="radio" name="DonorPhoneDayOrEvening"/>&nbsp; Evening
                                                                                         <input value="evening" type="radio" name="DonorPhoneDayOrEvening"/>
                                                                                     </td>
                                                                                 </tr>
@@ -631,11 +494,10 @@
                                                                                        Include me in future notifications:                                                                                          
                                                                                    </td>
                                                                                    <td>
-                                                                                        <input value="true" type="radio" name="AddToNewsletter"/>&nbsp; Yes
+                                                                                        <input value="true" type="radio" checked="checked" name="AddToNewsletter"/>&nbsp; Yes
                                                                                         <input value="false" type="radio" name="AddToNewsletter"/>&nbsp; No                                                             
                                                                                    </td>
-                                                                                </tr>
-                                                                             
+                                                                                </tr>                                                                              
                                                                                
                                                                             </tbody>
                                                                         </table>
@@ -670,51 +532,10 @@
             </tr>
             <!-- Below is for footer, etc. ----------------->
             <tr>
-                <td class="baseAreaBound" valign="top" align="middle">
-                    <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
-                        <tbody>
-                            <tr>
-                                <td class="footerCell" valign="top" width="100%" align="middle">
-                                    <a class="footerLink" href="http://www.4cforchildren.org">4C Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                                    <a class="footerLink" href="https://secure.4cforchildren.org/">Workshops Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                                    <a class="footerLink" href="https://secure.4cforchildren.org/donate.asp">Donate</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                                    <a class="footerLink" href="http://www.4cforchildren.org/about/">About 4C</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                                    <a class="footerLink" href="http://www.4cforchildren.org/about/contact.html">Contact
-                                        Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                                </td>
-                            </tr>
-                            <tr>
-                                <td valign="top" width="100%" align="middle">
-                                    <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td class="footerAddress" valign="top" width="33%" align="middle">
-                                                    1924 Dana Avenue<br>
-                                                    Cincinnati Ohio 45207<br>
-                                                    513.221.0033
-                                                </td>
-                                                <td class="footerAddress" valign="top" width="34%" align="middle">
-                                                    601 Washington Ave., Suite 105<br>
-                                                    Newport, Kentucky 41071<br>
-                                                    859.781.3511
-                                                </td>
-                                                <td class="footerAddress" valign="top" width="33%" align="middle">
-                                                    1320 E. Fifth Street<br>
-                                                    Dayton Ohio 45402<br>
-                                                    937.220.9660
-                                                    <br />
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            
-                        </tbody>
-                    </table>
+                <td class="baseAreaBound" id="footerTD" valign="top" align="middle">
+                     <!--#include file="footer.asp"-->                    
                 </td>
             </tr>
-            </TBODY></TABLE></TD></TR>
             <tr>
                 <td valign="top" align="left">
                     <br /><br />
