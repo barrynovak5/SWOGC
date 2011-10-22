@@ -49,8 +49,6 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
 </HEAD>
 <BODY onload="load()">
 
-<button onclick='load()' />
-
 <FORM id='authorizedotnetform' method='post' action='<% Response.Write(authorizeUrl) %>' >
 	<INPUT type='hidden' name='x_login' value='<% Response.Write(loginId) %>' />
 	<INPUT type='hidden' name='x_test_request' value='<% Response.Write(testModeEnabled) %>' />
