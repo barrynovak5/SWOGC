@@ -6,7 +6,7 @@ set conn=Server.CreateObject("ADODB.Connection")
 conn.Open "FourC"
 
 set rs=Server.CreateObject("ADODB.recordset")
-sql="SELECT * FROM DONATIONEVENT"
+sql="SELECT * FROM EVENTS"
 rs.Open sql, conn
 %>
 
