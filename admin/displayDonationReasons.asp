@@ -8,7 +8,7 @@
                return existingReasonsForm;               
             }
      
-            function SetBasicFormParameters(action, id, form)
+            function SetBasicFormParameters(action, id, theForm)
             {
                 theForm.DonationReasonId.value = id;                
                 theForm.DonationReasonAction = action;
@@ -32,6 +32,16 @@
                 SetBasicFormParameters("D", donationId, theForm);
                 
                 theForm.submit();            
+            }
+            
+            function ValidateAddReason(theForm)
+            {
+                if (!theForm.DonationReasonValue.length)
+                {
+                    alert("Please enter a donation reason to add");
+                    return (false);
+                }
+                return true;
             }
      </script>
 </head>
