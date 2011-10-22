@@ -94,7 +94,7 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
         Response.Write("<INPUT TYPE=HIDDEN NAME='x_receipt_link_method' VALUE='LINK'>")
         Response.Write("<INPUT TYPE=HIDDEN NAME='x_receipt_link_text' VALUE='" & Request.Form("ReturnTitle") & "'>")
         Response.Write("<INPUT TYPE=HIDDEN NAME='x_receipt_link_URL' VALUE='" & Request.Form("ReturnUrl") & "'>")
-    <% End If %>
+    End If %>
 
 </FORM>
 
