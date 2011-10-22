@@ -15,11 +15,8 @@ amount = Request.Form("DonationAmount")
 description		= lineItemName
 
 ' an invoice ID is generated using the date and time
-Dim invoice
+Dim invoiceNo
 invoiceNo = Year(Date) & Month(Date) &  Day(Date) & Hour(Now) & Minute(Now) & Second(Now)
-
-' Persist Data to the database
-'Call storeContactInfo(invoiceNo)
 
 ' Get the data we need from the POST info
 dim lineItem, lineItemQuantity, lineItemIsTaxable
@@ -64,7 +61,7 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
 	<INPUT type='hidden' name='x_login' value='<% Response.Write(loginId) %>' />
 	<INPUT type='hidden' name='x_amount' value='<% Response.Write(amount) %>' />
 	<INPUT type='hidden' name='x_description' value='<% Response.Write(description) %>' />
-	<INPUT type='hidden' name='x_invoice_num' value='<% Response.Write(invoice) %>' />
+	<INPUT type='hidden' name='x_invoice_num' value='<% Response.Write(invoiceNo) %>' />
 	<INPUT type='hidden' name='x_fp_sequence' value='<% Response.Write(sequence) %>' />
 	<INPUT type='hidden' name='x_fp_timestamp' value='<% Response.Write(timeStamp) %>' />
 	<INPUT type='hidden' name='x_fp_hash' value='<% Response.Write(fingerprint) %>' />
@@ -76,9 +73,8 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
 	<INPUT type='hidden' name='x_last_name' value='<% Response.Write(Request.Form("DonorLastName")) %>' />
 	<INPUT type='hidden' name='x_address' value='<% Response.Write(Request.Form("DonorAddress") & " " & Request.Form("DonorAddress2")) %>' />
 	<INPUT type='hidden' name='x_state' value='<% Response.Write(Request.Form("DonorState")) %>' />
-
-
 	<INPUT type='hidden' name='x_zip'     value='<% Response.Write(Request.Form("DonorZipCode")) %>' />
+
 	<INPUT type='hidden' name='x_company' value='<% Response.Write(Request.Form("DonorCompany")) %>' />
 	<INPUT type='hidden' name='x_city'    value='<% Response.Write(Request.Form("DonorCity")) %>' />
 	<INPUT type='hidden' name='x_phone'   value='<% Response.Write(Request.Form("DonorPhone")) %>' />
@@ -90,6 +86,8 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
         <input type='hidden' name='x_footer_html_payment_form' value='<% Response.Write(Request.Form("Footer1")) %>' />
         <input type='hidden' name='x_footer2_html_payment_form' value='<% Response.Write(Request.Form("Footer2")) %>' />
     </div>
+
+	<INPUT type='ReturnEnabled' name='ReturnEnabled'   value='<% Response.Write(Request.Form("ReturnEnabled")) %>' />
 
 
     <% If UCase(Request.Form("ReturnEnabled")) = "TRUE" Then  %>
