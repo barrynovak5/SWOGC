@@ -15,7 +15,7 @@ cmd.ActiveConnection = conn
 'If a SQL statement with question marks is specified, then the
 'CommandType is adCmdText.  If a query name is specified, then
 'the CommandType is adCmdStoredProc.
-cmd.CommandText = "Events_Vw"
+cmd.CommandText = "Events_vw"
 cmd.CommandType = adCmdStoredProc
 
 'Create the parameter and populate it.
