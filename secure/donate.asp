@@ -4,11 +4,11 @@
 Dim EventId
 EventId = "1"
 
-Dim ReturnUrl, ReturnTitle, ReturnEnabled, EventName, _
+Dim ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
     PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
 
-Call LoadEventDetails(ReturnUrl, ReturnTitle, ReturnEnabled, EventName, _
+Call LoadEventDetails(ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
     PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter)
 
