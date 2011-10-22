@@ -284,18 +284,7 @@
                                                                                             4C for children - Make a Donation</div>
                                                                                     </h1>
                                                                                 </td>
-                                                                                <td class="cartSummaryBound" valign="top" align="left">
-                                                                                    <table border="0" cellspacing="0" bordercolor="blue" cellpadding="0">
-                                                                                        <tbody>
-                                                                                            <tr>
-                                                                                                <td valign="top" align="left">
-                                                                                                    <img border="0" src="images/Donation/misc/spacer.gif" width="330" height="1">
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </td>
-                                                                            </tr>
+                                                                                                                                                           </tr>
                                                                         </tbody>
                                                                     </table>
                                                                 </td>
