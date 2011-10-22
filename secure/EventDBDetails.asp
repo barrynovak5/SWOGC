@@ -39,12 +39,14 @@ If Not rs.EOF Then
     DefaultReceiptPageUrl = rs.Fields.Item("DefaultReceiptPageUrl")
     If ReceiptPageTitle = "" OR ReceiptPageUrl = "" Then
         If DefaultReceiptPageTitle = "" OR DefaultReceiptPageUrl = "" Then
-            ReceiptPageEnabled = false
+            ReceiptPageEnabled = "false"
         Else
-            ReceiptPageEnabled = true
+            ReceiptPageEnabled = "true"
             ReceiptPageTitle = DefaultReceiptPageTitle
             ReceiptPageUrl = DefaultReceiptPageUrl
         End If
+    Else
+        ReceiptPageEnabled = "true"
     End If
 
     EventName = rs.Fields.Item("EventName")
