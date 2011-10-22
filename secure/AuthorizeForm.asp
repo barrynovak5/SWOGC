@@ -26,7 +26,7 @@ Dim timeStamp
 timeStamp = simTimeStamp()
 ' a fingerprint is generated using the functions from simlib.asp and md5.asp
 Dim fingerprint
-fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp & "^" & amount & "^")
+fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp & "^" & Request.Form("x_amount") & "^")
 
 ' Create the HTML form containing necessary SIM post values
 ' Additional fields can be added here as outlined in the SIM integration guide
@@ -48,6 +48,8 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
     </script>
 </HEAD>
 <BODY onload="load()">
+
+<button onclick='load()' />
 
 <FORM id='authorizedotnetform' method='post' action='<% Response.Write(authorizeUrl) %>' >
 	<INPUT type='hidden' name='x_login' value='<% Response.Write(loginId) %>' />
