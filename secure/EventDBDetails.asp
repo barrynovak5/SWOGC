@@ -5,13 +5,12 @@ Function LoadEventDetails()
 set conn=Server.CreateObject("ADODB.Connection")
 conn.Open "FourC"
 set objCommand = Server.CreateObject("ADODB.Command")
-with objCommand
-    .ActiveConnection = conn
-    .CommandText = "SELECT EVENTNAME, EVENTDESCRIPTION, ReceiptPageUrl, DefaultReceiptPageUrl, " & _ 
+objCommand.ActiveConnection = conn
+objCommand.CommandText = "SELECT EVENTNAME, EVENTDESCRIPTION, ReceiptPageUrl, DefaultReceiptPageUrl, " & _ 
         "ReceiptPageTitle, DefaultReceiptPageTitle, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, " & _
         "PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter FROM EVENTS_VW WHERE EventId = @EVENTID"
-    .Parameters.Append .CreateParameter("@EVENTID", adInteger, adParamInput, , CInt(EventId))
-end with
+param1 = objCommand.CreateParameter("@EVENTID", adInteger, adParamInput, , CInt(EventId))
+objCommand.Parameters.Append param1
 
 Set rs = Server.CreateObject("ADODB.Recordset")
 rs.Open objCommand, conn
