@@ -11,7 +11,7 @@
             function SetBasicFormParameters(action, id, theForm)
             {
                 theForm.DonationReasonId.value = id;                
-                theForm.DonationReasonAction = action;
+                theForm.DonationReasonAction.value = action;
             }            
          
             function UpdateDonation(donationId)
@@ -148,7 +148,7 @@ rs.Open sql, conn
         </tr>
         <tr>
             <td>
-                <form onsubmit="return ValidateAddReason(this)" action="displayDonationReasons.asp">
+                <form name="AddDonationReasonForm" method="post" language="javascript" onsubmit="return ValidateAddReason(this)" action="displayDonationReasons.asp">
                     <input value="A" name="DonationReasonAction" type="hidden" />
                     <table>
                         <tr>
@@ -169,7 +169,7 @@ rs.Open sql, conn
         </tr>
         <tr>
             <td>
-                <form id="existingReasonsForm" action ="displayDonationReasons.asp">
+                <form id="existingReasonsForm"  method="post" language="javascript" name="ExistingReasonsForm" action ="displayDonationReasons.asp">
                     <input value="U" name="DonationReasonAction" type="hidden" />
                     <input name="DonationReasonValue" type="hidden" />
                     <input name="DonationReasonId" type="hidden" />                     
