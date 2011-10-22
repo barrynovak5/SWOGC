@@ -12,6 +12,8 @@ Call LoadEventDetails(ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, Even
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
     PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter)
 
+Response.Write("IIII:" & ReceiptPageTitle)
+
 %>
 
 <html>
