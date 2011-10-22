@@ -8,7 +8,7 @@
 
 <body>
 
-<form action="displayEvent.asp">
+<form method="POST" action="displayEvent.asp">
 <label id="Label1">Select an Event...</label><br />
 <!-- #include virtual="/secure/picklist.asp"-->
 <br/>
