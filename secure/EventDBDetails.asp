@@ -1,24 +1,34 @@
-<!--#include virtual="adovbs.inc"-->
+<!--#include file="adovbs.inc"-->
 <%
 
-Function LoadEventDetails()
+Function LoadEventDetails(ByRef ReceiptPageUrl, ByRef ReceiptPageTitle, ByRef ReceiptPageEnabled, ByRef EventName, _
+    ByRef EventDescription, ByRef PaymentFormHeader, ByRef ReceiptFormHeader, ByRef ReceiptEmailHeader, _
+    ByRef PaymentFormFooter, ByRef ReceiptFormFooter, ByRef ReceiptEmailFooter)
 
-set conn=Server.CreateObject("ADODB.Connection")
+set conn= Server.CreateObject("ADODB.Connection")
+set cmd = Server.CreateObject("ADODB.Command")
+set rs = Server.CreateObject("ADODB.RecordSet")
+
 conn.Open "FourC"
-set objCommand = Server.CreateObject("ADODB.Command")
-objCommand.ActiveConnection = conn
-objCommand.CommandText = "SELECT EVENTNAME, EVENTDESCRIPTION, ReceiptPageUrl, DefaultReceiptPageUrl, " & _ 
-        "ReceiptPageTitle, DefaultReceiptPageTitle, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, " & _
-        "PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter FROM EVENTS_VW WHERE EventId = @EVENTID"
+rs.CursorType = adOpenForwardOnly
+rs.LockType = adLockOptimistic
+cmd.ActiveConnection = conn
 
-objCommand.Parameters.Append(objCommand.CreateParameter("@EVENTID", adInteger, adParamInput, , 1))
+' From http://support.microsoft.com/kb/200190
 
-Set rs = objCommand.Execute()
-'Set rs = Server.CreateObject("ADODB.Recordset")
-'rs.Open objCommand, conn
+'If a SQL statement with question marks is specified, then the
+'CommandType is adCmdText.  If a query name is specified, then
+'the CommandType is adCmdStoredProc.
+cmd.CommandText = "Events_vw"
+cmd.CommandType = adCmdStoredProc
 
-Dim ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader
-Dim PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
+'Create the parameter and populate it.
+Set param = cmd.CreateParameter("@EventId" , adInteger, adParamInput, 0, 0)
+cmd.Parameters.Append param
+cmd.Parameters("@EventId") = 1 
+
+'Open and display the Recordset.
+rs.Open cmd
 
 If Not rs.EOF Then
 
@@ -45,6 +55,9 @@ If Not rs.EOF Then
     PaymentFormFooter = rs.Fields.Item("PaymentFormFooter")
     ReceiptFormFooter = rs.Fields.Item("ReceiptFormFooter")
     ReceiptEmailFooter = rs.Fields.Item("ReceiptEmailFooter")
+
+    Response.Write("HHHH:" & EventName)
+
 End If
 
 rs.Close

@@ -4,7 +4,16 @@
 Dim EventId
 EventId = "1"
 
-LoadEventDetails()
+Dim ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
+    EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
+    PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
+
+Call LoadEventDetails(ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
+    EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
+    PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter)
+
+Response.Write("JJJJ:" & EventName)
+
 %>
 
 <html>
