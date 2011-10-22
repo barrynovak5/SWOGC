@@ -3,7 +3,7 @@ set conn=Server.CreateObject("ADODB.Connection")
 conn.Open "FourC"
 
 set rs=Server.CreateObject("ADODB.recordset")
-sql="SELECT ID, LISTVALUE FROM DONATIONREASONS WHERE ACTIVE = 1"
+sql="SELECT ID, LISTVALUE FROM DONATIONREASONS WHERE ACTIVE = 1 ORDER BY LISTVALUE ASC"
 rs.Open sql, conn
 %>
 <SELECT name="DonationReasonId">
