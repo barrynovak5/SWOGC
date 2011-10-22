@@ -3,7 +3,7 @@
 <%
 Dim EventId
 
-EventId = '1'
+Set EventId = '1'
 LoadEventDetails()
 %>
 
