@@ -11,9 +11,8 @@
         function CreateHeaderAndFooterFields()
         {
             var header2 = document.getElementById("header2");
-            var header2 = document.getElementById("footer2");
             
-            header2.value = '<link rel="stylesheet" type="text/css" href="https://secure.4c.org/secure/styles/css.css"/>'
+            header2.value =  '<link rel="stylesheet" type="text/css" href="https://secure.4c.org/secure/styles/css.css"/>'
   
         }
         
@@ -336,7 +335,9 @@
                                                                                             <input value="http://www.4c.org" type="hidden" name="ReturnUrl" />
                                                                                             <input value="Return to Site" type="hidden" name="ReturnTitle" />                                                                        
                                                                                             <input value="True" type="hidden" name="ReturnEnabled" />
-                                                                                            <input value="1" type="hidden" name="EventID"/>                                                             
+                                                                                            <input value="1" type="hidden" name="EventID"/>    
+                                                                                            <input value="General Donation" type="hidden" name="EventName"/>                                                             
+                                                                                                                                        
                                                                                             
                                                                                             <input value="" id="header1" name="header1" type="hidden" />
                                                                                             <input value="" id="header2" name="header2" type="hidden" />
@@ -352,15 +353,7 @@
                                                                                         <input value="" type="text" name="DonationAmount"/>                                                             
                                                                                    </td>
                                                                                 </tr>
-                                                                                <tr>
-                                                                                   <td >
-                                                                                       <b>Event Name: </b>                                                                                          
-                                                                                   </td>
-                                                                                   <td>                                                                                       
-                                                                                        <input value="" type="text" name="EventName"/>                                                             
-                                                                                   </td>
-                                                                                </tr>
-
+                                                                               
                                                                                             </table>
                                                                                             <br />
                                                                                             <table>
