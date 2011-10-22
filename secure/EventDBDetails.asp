@@ -13,8 +13,9 @@ objCommand.CommandText = "SELECT EVENTNAME, EVENTDESCRIPTION, ReceiptPageUrl, De
 
 objCommand.Parameters.Append(objCommand.CreateParameter("@EVENTID", adInteger, adParamInput, , 1))
 
-Set rs = Server.CreateObject("ADODB.Recordset")
-rs.Open objCommand, conn
+Set rs = objCommand.Execute()
+'Set rs = Server.CreateObject("ADODB.Recordset")
+'rs.Open objCommand, conn
 
 Dim ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader
 Dim PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
