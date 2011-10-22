@@ -3,19 +3,30 @@
 
 Function LoadEventDetails()
 
-set conn=Server.CreateObject("ADODB.Connection")
+set conn= Server.CreateObject("ADODB.Connection")
+set cmd = Server.CreateObject("ADODB.Command")
+set rs = Server.CreateObject("ADODB.RecordSet")
+
 conn.Open "FourC"
-set objCommand = Server.CreateObject("ADODB.Command")
-objCommand.ActiveConnection = conn
-objCommand.CommandText = "SELECT EVENTNAME, EVENTDESCRIPTION, ReceiptPageUrl, DefaultReceiptPageUrl, " & _ 
-        "ReceiptPageTitle, DefaultReceiptPageTitle, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, " & _
-        "PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter FROM EVENTS_VW WHERE EventId = @EVENTID"
+rs.CursorType = adOpenForwardOnly
+rs.LockType = adLockOptimistic
+cmd.ActiveConnection = conn
 
-objCommand.Parameters.Append(objCommand.CreateParameter("@EVENTID", adInteger, adParamInput, , 1))
+'If a SQL statement with question marks is specified, then the
+'CommandType is adCmdText.  If a query name is specified, then
+'the CommandType is adCmdStoredProc.
+cmd.CommandText = "Events_Vw"
+cmd.CommandType = adCmdStoredProc
 
-Set rs = objCommand.Execute()
-'Set rs = Server.CreateObject("ADODB.Recordset")
-'rs.Open objCommand, conn
+'Create the parameter and populate it.
+Set param = cmd.CreateParameter("@EventId" , adInteger, adParamInput, 0, 0)
+cmd.Parameters.Append param
+objCmd.Parameters("@EventId") = 1 
+
+'Open and display the Recordset.
+rs.Open cmd
+
+
 
 Dim ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader
 Dim PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
