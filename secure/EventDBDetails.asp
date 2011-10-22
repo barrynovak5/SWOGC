@@ -21,7 +21,7 @@ cmd.CommandType = adCmdStoredProc
 'Create the parameter and populate it.
 Set param = cmd.CreateParameter("@EventId" , adInteger, adParamInput, 0, 0)
 cmd.Parameters.Append param
-objCmd.Parameters("@EventId") = 1 
+cmd.Parameters("@EventId") = 1 
 
 'Open and display the Recordset.
 rs.Open cmd
