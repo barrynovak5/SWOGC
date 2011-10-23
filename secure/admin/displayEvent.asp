@@ -70,7 +70,6 @@ end if
 
 <div>
 	<label for="SendEmailReceipt">Send Email Receipt:</label>
-	<!--input type="textbox" name="SendEmailReceipt" value="<%= objRS.Fields("SendEmailReceipt")%>"/>-->
 	<input type="radio" name="SendEmailReceipt" value="True" <%=sendEmailReceiptCheckedTrue%>/>Yes
 	<input type="radio" name="SendEmailReceipt" value="False" <%=sendEmailReceiptCheckedFalse%>/> No
 </div>
