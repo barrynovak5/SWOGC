@@ -16,7 +16,7 @@
 
               // Get rid of all characters except numbers and letters
     	      fileName = fileName.replace(/[^a-zA-Z0-9]+/g, '');
-            
+
               window.location = URL + "?ID=" + donationEvent.value + "&Name=" + fileName;
               return false;  
           }
