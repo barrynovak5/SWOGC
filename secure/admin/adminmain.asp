@@ -13,7 +13,7 @@
     	      var fileName = donationEvent.options[donationEvent.selectedIndex].text;
     	      // Get rid of the item count in the fileName
               alert(fileName.indexOf(")"));
-    	      var fileName1 = filename.substr(fileName.indexOf(")"));
+    	      var fileName1 = fileName.substr(fileName.indexOf(")"));
               alert('g:' + fileName1);
     	      var fileName2 = fileName.indexOf(")");
               // Get rid of all characters except numbers and letters
