@@ -30,7 +30,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     </style>
     <script language="JavaScript" type="text/javascript"><!--
 
-        function Load()
+        function LoadData()
         {
            var lblEmail = document.getElementById("lblEmail");
            var lblEmail.className= "required";
@@ -103,7 +103,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         }
     </style>
 </head>
-<body bottommargin="0" leftmargin="0" onload="return Load()" rightmargin="0"
+<body bottommargin="0" leftmargin="0" onload="javascript:LoadData();" rightmargin="0"
     topmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
     <div class="SEODiv">
         <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
