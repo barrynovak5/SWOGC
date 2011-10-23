@@ -8,7 +8,7 @@ rs.Open sql, conn
 %>
 <SELECT id="donationEventId" name="DonationEventId">
   <% Do While Not rs.EOF %>
-	  <OPTION value="<%= rs.Fields.Item("EVENTID") %>"><%= rs.Fields.Item("EVENTNAME") %> </OPTION>
+	  <OPTION value="<%= rs.Fields.Item("EVENTID") %>">(<%= rs.Fields.Item("EventId") %>)<%= rs.Fields.Item("EVENTNAME") %> </OPTION>
     <%rs.MoveNext%>
   <%loop
   rs.close
