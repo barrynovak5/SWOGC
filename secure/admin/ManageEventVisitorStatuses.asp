@@ -25,12 +25,12 @@ sub UpdateDonationStatus (donationId, statusId)
     Set objParam = objCmd.CreateParameter("@DonationStatusId" , adInteger, adParamInput, 0, 0)
     objCmd.Parameters.Append objParam
 
-    objCmd.Parameters("@DonationStatusId") = statusId
+    objCmd.Parameters("@DonationStatusId") = CInt(statusId)
 
     Set objParam = objCmd.CreateParameter("@DonationId" , adInteger, adParamInput, 0, 0)
     objCmd.Parameters.Append objParam
 
-    objCmd.Parameters("@DonationId") = donationEventId
+    objCmd.Parameters("@DonationId") = CInt(donationId)
     
     
     objConn.Close
