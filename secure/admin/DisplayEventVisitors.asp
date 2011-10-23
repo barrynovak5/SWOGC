@@ -21,7 +21,7 @@ Set objCmd.ActiveConnection = objConn
 'CommandType is adCmdText.  If a query name is specified, then
 'the CommandType is adCmdStoredProc.
 
-objCmd.CommandText = "SELECT DonorFirstName, DonorLastName FROM EVENTS WHERE EVENTID = ?"
+objCmd.CommandText = "SELECT * FROM EVENTS WHERE EVENTID = ?"
 objCmd.CommandType = adCmdText
 
 'Create the parameter and populate it.
