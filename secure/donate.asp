@@ -276,21 +276,24 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                             action="process.asp">
 
                                                                                             <input value="<% Response.Write(EventTypeId) %>" type="hidden" name="EventTypeId" />
-                                                                                            <input value="<% Response.Write(EventId) %>" type="hidden" name="EventID" />
+                                                                                            <input value="<% Response.Write(EventId) %>" type="hidden" name="EventID" />                                                                                             
+                                                                                            <input value="<% Response.Write(EventName) %>" type="hidden" name="EventName" />
+                                                                                            <input value="<% Response.Write(EventDescription) %>" type="hidden" name="x_description" />
+                                                                                            
+                                                                                            <input value="<% Response.Write(PaymentFormHeader) %>" type="hidden" name="x_header_html_payment_form" />
+                                                                                            <input value="<% Response.Write(PaymentFormHeader2) %>" type="hidden" name="x_header2_html_payment_form" />
+                                                                                            <input value="<% Response.Write(PaymentFormFooter) %>" type="hidden" name="x_footer_html_payment_form" />
+                                                                                            <input value="<% Response.Write(PaymentFormFooter2) %>" type="hidden" name="x_footer2_html_payment_form" />
+
                                                                                             <input value="<% Response.Write(ReceiptPageUrl) %>" type="hidden" name="ReturnUrl" />
                                                                                             <input value="<% Response.Write(ReceiptPageTitle) %>" type="hidden" name="ReturnTitle" />
                                                                                             <input value="<% Response.Write(ReceiptPageEnabled) %>" type="hidden" name="ReturnEnabled" />
-                                                                                            <input value="<% Response.Write(EventName) %>" type="hidden" name="EventName" />
-                                                                                            <input value="<% Response.Write(EventDescription) %>" type="hidden" name="x_description" />
-                                                                                            <input value="<% Response.Write(PaymentFormHeader) %>" type="hidden" name="x_header_html_payment_form" />
-                                                                                            <input value="<% Response.Write(PaymentFormHeader2) %>" type="hidden" name="x_header2_html_payment_form" />
                                                                                             <input value="<% Response.Write(ReceiptFormHeader) %>" type="hidden" name="x_header_html_receipt" />
+                                                                                            <input value="<% Response.Write(ReceiptFormHeader2) %>" type="hidden" name="x_header2_html_receipt" />                                                                                           
+                                                                                            <input value="<% Response.Write(ReceiptFormFooter) %>" type="hidden" name="x_footer_html_receipt" />
+                                                                                            <input value="<% Response.Write(ReceiptFormFooter2) %>" type="hidden" name="x_footer2_html_receipt" />
                                                                                             <input value="<% Response.Write(ReceiptEmailHeader) %>" type="hidden" name="x_header_email_receipt" />
-
-                                                                                            <input value="<% Response.Write(PaymentFormFooter) %>" type="hidden" name="x_Footer_html_payment_form" />
-                                                                                            <input value="<% Response.Write(PaymentFormFooter2) %>" type="hidden" name="x_Footer2_html_payment_form" />
-                                                                                            <input value="<% Response.Write(ReceiptFormFooter) %>" type="hidden" name="x_Footer_html_receipt" />
-                                                                                            <input value="<% Response.Write(ReceiptEmailFooter) %>" type="hidden" name="x_Footer_email_receipt" />
+                                                                                            <input value="<% Response.Write(ReceiptEmailFooter) %>" type="hidden" name="x_footer_email_receipt" />
                                                                                             
                                                                                             <table>
                                                                                                 <tr>
