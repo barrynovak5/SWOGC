@@ -3,6 +3,8 @@
 <%
 donationEventId = Request.QueryString("DonationEventId")
 //Response.Write("<p>EventID=" & CStr(donationEventId) & "</p>")
+Response.AddHeader("Content-Type", "application/csv");
+Response.AddHeader("Content-Disposition", "attachment: filename=file.csv");
 %>
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
@@ -40,7 +42,7 @@ Do While Not objRS.EOF
     	if I > 0 then Response.Write ", "
 	Response.Write """" & objRS(I ) & """"
   Next
-  Response.Write "<br/>"
+  Response.Write vbcrlf
   objRS.MoveNext
 Loop
 %>
