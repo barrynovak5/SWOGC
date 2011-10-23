@@ -7,12 +7,13 @@
 
    <script type="text/javascript">
           function SubmitForm(URL) {
-              alert('a');
+
               var donationEvent = document.getElementById("SelectListEventId");
               alert(donationEvent.selectedIndex);
     	      var fileName = donationEvent.options[donationEvent.selectedIndex].text
-    	      alert('b' + fileName);
+    	      alert(fileName);
     	      // Get rid of the item count in the fileName
+              alert(fileName.IndexOf(')');
     	      var fileName1 = filename.substring(fileName.indexOf(')'));
     	      var fileName2 = fileName.indexOf(')');
               // Get rid of all characters except numbers and letters
@@ -39,13 +40,13 @@
 <input name="ButtonEditEvent" type="submit" value="Edit Event" />
 </form>
 
-<form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="alert('x'); return SubmitForm('displayEventVisitors.asp');">
+<form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('displayEventVisitors.asp');">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 	
 </form>
 
-<form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="alert('y'); return SubmitForm('DownloadEventVisitors.asp');">
+<form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('DownloadEventVisitors.asp');">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" /><br /><br />
 	
