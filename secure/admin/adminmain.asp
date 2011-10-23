@@ -55,7 +55,7 @@
     <input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 </form>
 
-<table cellpadding="0" cellspacing="0" border="0" class="display" width="80%" id="EventList">
+<table cellpadding="0" cellspacing="0" border="0" class="display" width="800px" id="EventList">
 	<thead>
 		<tr>
 			<th>Event Id</th>
