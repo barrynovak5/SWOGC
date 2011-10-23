@@ -11,9 +11,12 @@
     	      var donationEvent = document.getElementById("SelectListEventId");
     	      var fileName = donationEvent.options[donationEvent.selectedIndex].text
     	      // Get rid of the item count in the fileName
-              var fileName = filename.substring(fileName.indexOf(')'))
+    	      var fileName1 = filename.substring(fileName.indexOf(')'));
+    	      var fileName2 = fileName.indexOf(')');
               // Get rid of all characters except numbers and letters
-    	      var fileName = fileName.replace(/[^a-zA-Z0-9]+/g, '');
+    	      var fileName3 = fileName.replace(/[^a-zA-Z0-9]+/g, '');
+
+    	      alert(fileName1);alert(fileName2);alert(fileName3);
             
               window.location = URL + "?ID=" + donationEvent.value + "&Name=" + fileName;
               return false;  
