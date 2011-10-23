@@ -63,7 +63,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
             {                
                 var currencyVal = parseFloat(theForm.x_amount.value);
                 
-                if (currencyVal > 0)
+                if (currencyVal <= 0)
                 {                 
                    alert("Donation amounts must be higher than $1");
                     theForm.x_amount.focus();
