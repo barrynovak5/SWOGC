@@ -23,7 +23,7 @@
 
 <body>
 
-<button type="button" onclick="alert('Value: ' & document.GetElementById('SelectListEventId'))">GetValue</button>
+<button type="button" onclick="alert('Hello World'))">GetValue</button>
 
 <!--#INCLUDE FILE="adminheader.asp"-->
 <form method="post" action="displayEvent.asp">
