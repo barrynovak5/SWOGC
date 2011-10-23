@@ -21,7 +21,7 @@
 
 <body>
 
-<form><input type="button" onclick="alert('Value: ' & document.GetElementById('SelectListEventId').value)">GetValue</Input></form>
+<button type="button" onclick="alert('Value: ' & document.GetElementById('SelectListEventId'))">GetValue</button>
 
 <!--#INCLUDE FILE="adminheader.asp"-->
 <form method="post" action="displayEvent.asp">
