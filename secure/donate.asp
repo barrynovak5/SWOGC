@@ -278,11 +278,6 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         ***********************************************/
     </script>
 
-    <table class="pageBackground" border="0" cellspacing="0" bordercolor="red" cellpadding="0"
-        width="100%" height="100%">
-        
-            <tr>
-                <td class="pageBackgroundTop" height="100%" valign="top" width="100%" align="left">
                     <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="974" align="center"
                         height="100%">
                         
@@ -294,7 +289,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                             <!-- Main 100% height row for left nav and body ---------------->
                             <tr>
                                 <td class="mainAreaBound" height="100%" valign="top" align="left">
-                                    <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%"
+                                    <table border="0" cellspacing="0" cellpadding="0" width="100%"
                                         height="100%">
                                         
                                             <tr>
@@ -436,7 +431,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                         
                                                     </table>
                                                 </td>
-                                                <td class="rightGutterBound" valign="bottom" align="middle">
+                                                <td class="rightGutterBound" valign="bottom" align="center">
                                                     <img border="0" src="images/Donation/RightGutterBottom.jpg" width="15" height="295">
                                                 </td>
                                             </tr>
@@ -458,5 +453,6 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                             </tr>
                         
                     </table>
+                    
 </body>
 </html>
