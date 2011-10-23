@@ -24,9 +24,7 @@ Response.Write("TTTT:" & ReturnEnabled)
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="revisit-after" content="14 Days">
     <link rel="stylesheet" type="text/css" href="styles/css.css" />
-    <style type="text/css">
-            
-    </style>
+
     <script language="JavaScript" type="text/javascript"><!--
 
         function CreateHeaderAndFooterFields() {
@@ -53,7 +51,7 @@ Response.Write("TTTT:" & ReturnEnabled)
 
         function Validator(theForm) {
 
-            if (!theForm.DonationAmount.value.length || trim(theForm.DonationAmount.value) == "") {
+            if (trim(theForm.DonationAmount.value) == "") {
                 alert("Please enter a value for the \"Amount of Donation\" field.");
                 theForm.DonationAmount.focus();
                 return (false);
@@ -161,9 +159,9 @@ Response.Write("TTTT:" & ReturnEnabled)
 //--></script>
 
     <style type="text/css">
-        .leftSideCol
+        .style2
         {
-            width: 650px;
+            width: 618px;
         }
     </style>
 </head>
@@ -400,10 +398,103 @@ Response.Write("TTTT:" & ReturnEnabled)
                                                                                                 </tr>
                                                                                             </table>
                                                                                             <br />
-                                                                                            <!--#include file="customerInformation.asp"-->
                                                                                             <table>
-                                                                                            <tr>
-                                                                                                        <td align="left" class="leftSideCol">
+                                                                                                <tbody>
+                                                                                                    <tr>
+                                                                                                        <th colspan="7">
+                                                                                                            Personal Information:
+                                                                                                        </th>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                            <table>
+                                                                                                <tbody>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            First Name:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="50" size="35" name="x_first_name">
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            Last Name:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="50" size="35" name="x_last_name">
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            &nbsp;E-Mail:
+                                                                                                        </td>
+                                                                                                        <td colspan="6" align="left">
+                                                                                                            <input size="35" name="x_email" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            &nbsp;Address:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="100" size="35" name="x_address">
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input size="35" name="DonorAddress2" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            &nbsp;Company:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="50" size="35" name="x_company" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            &nbsp;City:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="50" size="35" name="x_city" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            &nbsp;State:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="50" size="35" name="x_state" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" class="style2">
+                                                                                                            &nbsp;Zip:
+                                                                                                        </td>
+                                                                                                        <td colspan="6">
+                                                                                                            <input maxlength="15" size="35" name="x_zip" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="right" valign="top" class="style2">
+                                                                                                            &nbsp;Telephone:
+                                                                                                        </td>
+                                                                                                        <td valign="top" align="left">
+                                                                                                            <input size="17" name="x_phone" />
+                                                                                                            <br>
+                                                                                                            Day
+                                                                                                            <input value="D" checked="checked" type="radio" name="DonorPhoneDayOrEvening" />&nbsp;
+                                                                                                            Evening
+                                                                                                            <input value="E" type="radio" name="DonorPhoneDayOrEvening" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="left" class="style2">
                                                                                                             <b>What prompted this online gift? </b>
                                                                                                         </td>
                                                                                                         <td width="370" colspan="6" align="left">
@@ -423,7 +514,7 @@ Response.Write("TTTT:" & ReturnEnabled)
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                     <tr>
-                                                                                                        <td class="leftSideCol">
+                                                                                                        <td class="style2">
                                                                                                             Include me in future notifications:
                                                                                                         </td>
                                                                                                         <td>
@@ -432,6 +523,7 @@ Response.Write("TTTT:" & ReturnEnabled)
                                                                                                             <input value="false" type="radio" name="AddToNewsletter" />&nbsp; No
                                                                                                         </td>
                                                                                                     </tr>
+                                                                                                </tbody>
                                                                                             </table>
                                                                                             <p>
                                                                                                 <input value="Make Donation" type="submit" name="submit" />
