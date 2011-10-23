@@ -5,7 +5,7 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>4c Admin</title>
 
-   <script type="text/javscript">
+   <script type="text/javascript">
           function SubmitForm(theFormId)
 	  {
 		alert(theFormId);
