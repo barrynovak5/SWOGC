@@ -60,6 +60,7 @@
 		<tr>
 			<th>Event Id</th>
 			<th>Event Name</th>
+			<th>Event Type</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -69,6 +70,7 @@
 		<tr>
 			<th>Event Id</th>
 			<th>Event Name</th>
+			<th>Event Type</th>
 		</tr>
 	</tfoot>
 </table>
