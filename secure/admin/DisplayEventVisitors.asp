@@ -1,7 +1,8 @@
 
 <!--#include file=adovbs.inc -->
 <%
-donationEventId = Request.Querystring("Id")
+donationEventId = Request.Querystring("ID")
+donationEventName = Request.Querystring("Name")
 //Response.Write(donationEventId)
 
 Set objConn = Server.CreateObject("ADODB.Connection")
@@ -44,7 +45,7 @@ Next
 %>
 </tr>
 <%
-objRS.MoveFirst
+//objRS.MoveFirst
 Do While Not objRS.EOF
   Response.Write "<tr>"
   For I = 0 To objRS.Fields.Count - 1

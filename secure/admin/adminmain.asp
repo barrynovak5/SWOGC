@@ -6,19 +6,11 @@
 <title>4c Admin</title>
 
    <script type="text/javascript">
-          function SubmitForm(URL) {
-
-              var donationEvent = document.getElementById("SelectListEventId");
-    	      var fileName = donationEvent.options[donationEvent.selectedIndex].text;
-
-    	      // Get rid of the item count in the fileName
-    	      fileName = fileName.substr(fileName.indexOf(")")+1);
-
-              // Get rid of all characters except numbers and letters
-    	      fileName = fileName.replace(/[^a-zA-Z0-9]+/g, '');
-            
-              window.location = URL + "?ID=" + donationEvent.value + "&Name=" + fileName;
-              return false;  
+          function SubmitForm(URL)
+	  {
+                 var donationEvent = document.getElementById("SelectListEventId");
+		 window.location = URL + "?DonationEventID=" + donationEvent.value
+                 return false;  
           }
    </script>	
 </head>
@@ -32,12 +24,13 @@
 <br/>
 <label id="LabelEventVisitors">Event Visitors:</label><br />
 <input name="ButtonEditEvent" type="submit" value="Edit Event" />
+	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 </form>
 
 <form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('displayEventVisitors.asp');">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
-	
+
 </form>
 
 <form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('DownloadEventVisitors.asp');">
