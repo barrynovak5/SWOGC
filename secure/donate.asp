@@ -7,12 +7,12 @@ EventId = "1"
 Dim EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
     ReceiptFormHeader2, ReceiptFormFooter2, _
-    PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
+    PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter, PaymentFormHeader2, PaymentFormFooter2
 
 Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
     ReceiptFormHeader2, ReceiptFormFooter2, _
-    PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter)
+    PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter, PaymentFormHeader2, PaymentFormFooter2)
 
 %>
 

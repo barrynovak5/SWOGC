@@ -4,7 +4,7 @@
 Function LoadEventDetails(EventId, ByRef EventTypeId, ByRef ReceiptPageUrl, ByRef ReceiptPageTitle, ByRef ReceiptPageEnabled, ByRef EventName, _
     ByRef EventDescription, ByRef PaymentFormHeader, ByRef ReceiptFormHeader, ByRef ReceiptEmailHeader, _
     ByRef ReceiptFormHeader2, ByRef ReceiptFormFooter2, _
-    ByRef PaymentFormFooter, ByRef ReceiptFormFooter, ByRef ReceiptEmailFooter)
+    ByRef PaymentFormFooter, ByRef ReceiptFormFooter, ByRef ReceiptEmailFooter,  ByRef PaymentFormHeader2, ByRef PaymentFormFooter2)
 
 set conn= Server.CreateObject("ADODB.Connection")
 set cmd = Server.CreateObject("ADODB.Command")

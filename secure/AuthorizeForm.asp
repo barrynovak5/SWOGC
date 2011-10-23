@@ -16,12 +16,12 @@ EventId = Request.Form("EventId")
 Dim EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
     ReceiptFormHeader2, ReceiptFormFooter2, _
-    PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
+    PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter, PaymentFormHeader2, PaymentFormFooter2
 
 Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
     ReceiptFormHeader2, ReceiptFormFooter2, _
-    PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter)
+    PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter, PaymentFormHeader2, PaymentFormFooter2)
 
 
 ' Get Authorize Credentials
@@ -73,6 +73,18 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
 	<INPUT type='hidden' name='x_test_request' value='<% Response.Write(testModeEnabled) %>' />
 	<INPUT type='hidden' name='x_invoice_num' value='<% Response.Write(invoiceNo) %>' />
 	<INPUT type='hidden' name='x_fp_sequence' value='<% Response.Write(sequence) %>' />
+	<INPUT type='hidden' name='x_header_email_customer' value='<% Response.Write(ReceiptEmailHeader) %>' />
+	<INPUT type='hidden' name='x_footer_email_customer' value='<% Response.Write(ReceiptEmailFooter) %>' />
+	<INPUT type='hidden' name='x_header_html_payment_form' value='<% Response.Write(PaymentFormHeader) %>' />
+	<INPUT type='hidden' name='x_footer_html_payment_form' value='<% Response.Write(PaymentFormFooter) %>' />
+	<INPUT type='hidden' name='x_header2_html_payment_form' value='<% Response.Write(PaymentFormHeader2) %>' />
+	<INPUT type='hidden' name='x_footer2_html_payment_form' value='<% Response.Write(PaymentFormFooter2) %>' />
+	<INPUT type='hidden' name='x_header_html_receipt' value='<% Response.Write(ReceiptFormHeader) %>' />
+	<INPUT type='hidden' name='x_header2_html_receipt' value='<% Response.Write(ReceiptFormHeader2) %>' />
+	<INPUT type='hidden' name='x_footer_html_receipt' value='<% Response.Write(ReceiptFormFooter) %>' />
+	<INPUT type='hidden' name='x_footer2_html_receipt' value='<% Response.Write(ReceiptFormFooter2) %>' />
+	<INPUT type='hidden' name='x_receipt_link_url' value='<% Response.Write(ReceiptPageUrl) %>' />
+	<INPUT type='hidden' name='x_receipt_link_text' value='<% Response.Write(ReceiptPageTitle) %>' />
 	<INPUT type='hidden' name='x_fp_timestamp' value='<% Response.Write(timeStamp) %>' />
 	<INPUT type='hidden' name='x_fp_hash' value='<% Response.Write(fingerprint) %>' />
     <INPUT type='hidden' name='x_show_form' value='PAYMENT_FORM' />
@@ -89,7 +101,6 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
                 End If
             Next
         %>
-
 
         <% If UCase(Request.Form("ReturnEnabled")) = "TRUE" Then
             Response.Write("    <INPUT TYPE=HIDDEN NAME='x_receipt_link_method' VALUE='LINK'>" & vbCrLf)
