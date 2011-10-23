@@ -8,7 +8,7 @@
 <title>4c Admin</title>
 
     <style type="text/css" title="currentStyle">
-			@import "css/demo_table.css";
+			@import "css/table.css";
 	</style>
     <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
     <script type="text/javascript" language="javascript" src="js/jquery.dataTables.min.js"></script>
@@ -43,7 +43,19 @@
 
 <body>
 
-<table cellpadding="0" cellspacing="0" border="0" class="display" id="EventList">
+
+
+<!--#INCLUDE FILE="adminheader.asp"-->
+<form method="post" action="displayEvent.asp">
+    <label id="LabelDonationEvent">Select Event:</label><br />
+    <!--#include file="donationeventlist.asp"-->
+    <br/>
+    <label id="LabelEventVisitors">Event Visitors:</label><br />
+    <input name="ButtonEditEvent" type="submit" value="Edit Event" />
+    <input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
+</form>
+
+<table cellpadding="0" cellspacing="0" border="0" class="display" width="80%" id="EventList">
 	<thead>
 		<tr>
 			<th>Event Id</th>
@@ -60,17 +72,6 @@
 		</tr>
 	</tfoot>
 </table>
-
-
-<!--#INCLUDE FILE="adminheader.asp"-->
-<form method="post" action="displayEvent.asp">
-    <label id="LabelDonationEvent">Select Event:</label><br />
-    <!--#include file="donationeventlist.asp"-->
-    <br/>
-    <label id="LabelEventVisitors">Event Visitors:</label><br />
-    <input name="ButtonEditEvent" type="submit" value="Edit Event" />
-    <input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
-</form>
 
 <form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('displayEventVisitors.asp', false);">
 	<input name="DonationEventId" type="hidden" />
