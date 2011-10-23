@@ -39,12 +39,15 @@ objRS.Open objCmd
 %>
 <%
 
-REsponse.Write("Lines: " & objRs.Fields.Count)
+Response.Write("Lines: " & objRs.Fields.Count)
 
 Do While Not objRS.EOF
+  Response.Write("A");  
   For I = 0 To objRS.Fields.Count - 1
-    	if I > 0 then Response.Write ", "
-	Response.Write """" & objRS(I ) & """"
+    If I > 0 Then 
+        Response.Write ", "
+    End If
+    Response.Write """" & objRS(I ) & """"
   Next
   Response.Write vbcrlf
   objRS.MoveNext
