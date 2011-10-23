@@ -7,7 +7,7 @@ fileName = Request.QueryString("Name")
 
 'Response.Write("<p>EventID=" & CStr(donationEventId) & "</p>")
 
-Call Response.AddHeader("Content-Type", "application/csv")
+Call Response.AddHeader("Content-Type", "text/csv")
 Call Response.AddHeader("Content-Disposition", "attachment; filename=""" & fileName & ".csv""")
 
 Set objConn = Server.CreateObject("ADODB.Connection")
