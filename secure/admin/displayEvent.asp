@@ -43,8 +43,8 @@ Do While Not objRS.EOF
 	<input type="textbox" name="EventDescription" value="<%= objRS.Fields("EventDescription")%>"/>
 </div>
 <div>
-	<label for="ReceiptEmailSender">ReceiptEmailSender:</label>
-	<input type="textbox" name="ReceiptEmailSender" value="<%= objRS.Fields("ReceiptEmailSender")%>"/>
+	<label for="SendEmailReceipt">SendEmailReceipt:</label>
+	<input type="textbox" name="SendEmailReceipt" value="<%= objRS.Fields("SendEmailReceipt")%>"/>
 </div>
 
 <div>
