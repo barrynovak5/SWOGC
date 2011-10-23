@@ -1,5 +1,6 @@
 <!--#INCLUDE FILE="adminheader.asp"-->
 <!--#include file=adovbs.inc -->
+<script src="eventsavevalidators.js" type="text/javascript"></script>
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
 Set objCmd  = Server.CreateObject("ADODB.Command")
@@ -33,13 +34,22 @@ objRS.Open objCmd
 
 Do While Not objRS.EOF
 
+sendEmailReceiptCheckedTrue = ""
+sendEmailReceiptCheckedFalse = ""
+
+if(objRS.Fields("SendEmailReceipt") = "True") then
+	sendEmailReceiptCheckedTrue = "checked"
+else
+	sendEmailReceiptCheckedFalse = "checked"
+end if
+
 %>
 
 
 <p>Event Type: <%= objRS.Fields("EventTypeDescription")%></p>
 <p>Event Id: <%= objRS.Fields("EventID")%></p>
 
-<form method="POST" action="updateevent.asp">
+<form method="POST" action="updateevent.asp" onsubmit="return Validator(this)">
 <div>
 	<input type="hidden" name="EventId" value="<%= objRS.Fields("EVENTID")%>"/>
 	<label for="EventName">Event Name:</label>
@@ -60,7 +70,9 @@ Do While Not objRS.EOF
 
 <div>
 	<label for="SendEmailReceipt">Send Email Receipt:</label>
-	<input type="textbox" name="SendEmailReceipt" value="<%= objRS.Fields("SendEmailReceipt")%>"/>
+	<!--input type="textbox" name="SendEmailReceipt" value="<%= objRS.Fields("SendEmailReceipt")%>"/>-->
+	<input type="radio" name="SendEmailReceipt" value="True" <%=sendEmailReceiptCheckedTrue%>/>Yes
+	<input type="radio" name="SendEmailReceipt" value="False" <%=sendEmailReceiptCheckedFalse%>/> No
 </div>
 
 <div>
