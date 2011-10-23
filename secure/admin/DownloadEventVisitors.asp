@@ -36,8 +36,6 @@ objCmd.Parameters("@EVENTID") = donationEventId
 'Open and display the Recordset.
 
 objRS.Open objCmd
-%>
-<%
 
 Response.Write("Lines: " & objRs.Fields.Count)
 
@@ -52,10 +50,7 @@ Do While Not objRS.EOF
   Response.Write vbcrlf
   objRS.MoveNext
 Loop
-%>
 
-
-<%
 objRS.Close
 objConn.Close
 Set objRS = Nothing
