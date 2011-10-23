@@ -45,7 +45,6 @@
     <br/>
     <label id="LabelEventVisitors">Event Visitors:</label><br />
     <input name="ButtonEditEvent" type="submit" value="Edit Event" />
-    <input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 </form>
 
 <form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('displayEventVisitors.asp', false);">
