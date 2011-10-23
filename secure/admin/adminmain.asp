@@ -42,7 +42,8 @@
 <form method="post" action="displayEvent.asp">
     <label id="LabelDonationEvent">Select Event:</label><br />
     <!--#include file="donationeventlist.asp"-->
-    <br/>
+    <br/><br />
+
     <label id="LabelEventVisitors">Event Visitors:</label><br />
     <input name="ButtonEditEvent" type="submit" value="Edit Event" />
 </form>
@@ -54,16 +55,13 @@
 
 <form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('DownloadEventVisitors.asp', true);">
 	<input name="DonationEventId" type="hidden" />
-	<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" /><br /><br />
-	
+	<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" /><br /><br />	
 </form>
 
 <label id="LabelCustomizeEvent">Customize Event (e.g. payment form)</label><br />
 <form method="post" action="addNewEvent.asp">
     <input name="ButtonAddEvent" type="submit" value="Add New Event" />
-</form>
-<input name="ButtonCopyEvent" type="button" value="Copy an Event" /><br />
-<br />
+</form><BR />
 
 <form method="post" action="DisplayDonationReasons.asp">
     <label id="LabelDonationReason">Donation Reasons</label><br />
