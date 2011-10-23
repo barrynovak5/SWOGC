@@ -444,11 +444,6 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                     </table>
                                 </td>
                             </tr>
-                            <tr>
-                                <td valign="top" align="middle">
-                                    <img border="0" src="images/Donation/ContentBottomSpacer.jpg" width="974" height="2">
-                                </td>
-                            </tr>
                             <!-- Below is for footer, etc. ----------------->
                             <tr>
                                 <td class="baseAreaBound" id="footerTD" valign="top" align="middle">
