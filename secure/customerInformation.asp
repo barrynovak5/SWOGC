@@ -30,7 +30,7 @@
                 &nbsp;E-Mail:
             </td>
             <td colspan="6" align="left">
-                <input size="35" name="x_email" />
+                <input size="35" id="txtEmail" name="x_email" />
             </td>
         </tr>
         <tr>
