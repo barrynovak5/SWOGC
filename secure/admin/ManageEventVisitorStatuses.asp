@@ -3,7 +3,6 @@
 <%
 donationEventId = Request.Querystring("ID")
 donationEventName = Request.Querystring("Name")
-//Response.Write(donationEventId)
 
 Set objConn = Server.CreateObject("ADODB.Connection")
 Set objCmd  = Server.CreateObject("ADODB.Command")
@@ -77,12 +76,10 @@ Do While Not objRS.EOF
  <% Next
  %>  
     <td>
-        <%
-            objRS(objRS.Fields.Count - 1)
-         %>
+        <%=objRS("DonationStatusID") %>
     </td>
     <td>
-        <input type="button" value="Update Status" onclick="return UpdateStatus(<%=objRS(0)%>)" />
+        <input type="button" value="Update Status" onclick="return UpdateStatus(<%=objRS("DonationID")%>)" />
     </td>
  </tr>
 
