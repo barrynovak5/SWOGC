@@ -1,5 +1,5 @@
 <%
-Function AddDonation(invoiceNo, amount)
+Function AddDonation(invoiceNo, amount, addToNewsletter)
 
 Set objConn = Server.CreateObject("ADODB.Connection")
 Set objCmd  = Server.CreateObject("ADODB.Command")
@@ -23,7 +23,7 @@ objRs("DonationAmount") = amount
 objRs("DonorAddress") = Request.Form("x_address")
 objRs("DonorAddress2") = Request.Form("DonorAddress2")
 objRs("DonorPhone") = Request.Form("x_phone")
-objRs("AddToNewsletter") = Request.Form("AddToNewsletter")
+objRs("AddToNewsletter") = addToNewsletter
 objRs("DonorPhoneDayOrEvening") = Request.Form("DonorPhoneDayOrEvening")
 objRs("DonorComments") = Request.Form("DonorComments")
 objRs.Update
