@@ -50,6 +50,7 @@ If Not rs.EOF Then
     End If
 
     EventName = rs.Fields.Item("EventName")
+    EventTypeId = rs.Fields.Item("EventTypeId")
     EventDescription = rs.Fields.Item("EventDescription")
     PaymentFormHeader = rs.Fields.Item("PaymentFormHeader")
     ReceiptFormHeader = rs.Fields.Item("ReceiptFormHeader")
