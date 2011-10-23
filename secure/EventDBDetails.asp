@@ -1,7 +1,7 @@
 <!--#include file="adovbs.inc"-->
 <%
 
-Function LoadEventDetails(ByRef EventTypeId, ByRef ReceiptPageUrl, ByRef ReceiptPageTitle, ByRef ReceiptPageEnabled, ByRef EventName, _
+Function LoadEventDetails(EventId, ByRef EventTypeId, ByRef ReceiptPageUrl, ByRef ReceiptPageTitle, ByRef ReceiptPageEnabled, ByRef EventName, _
     ByRef EventDescription, ByRef PaymentFormHeader, ByRef ReceiptFormHeader, ByRef ReceiptEmailHeader, _
     ByRef ReceiptFormHeader2, ByRef ReceiptFormFooter2, _
     ByRef PaymentFormFooter, ByRef ReceiptFormFooter, ByRef ReceiptEmailFooter)
@@ -26,7 +26,7 @@ cmd.CommandType = adCmdStoredProc
 'Create the parameter and populate it.
 Set param = cmd.CreateParameter("@EventId" , adInteger, adParamInput, 0, 0)
 cmd.Parameters.Append param
-cmd.Parameters("@EventId") = 1 
+cmd.Parameters("@EventId") = EventId
 
 'Open and display the Recordset.
 rs.Open cmd
