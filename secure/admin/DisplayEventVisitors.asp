@@ -57,19 +57,9 @@ Loop
 <table border=1 cellpadding=2 cellspacing=2>
 <tr>
 <%
-  Response.Write "<td><b>" & objRS(I).Name & "</b></td>"
+  Response.Write "<td><b>" & donationEventId & "</b></td>"
 %>
 </tr>
-<%
-Do While Not objRS.EOF
-  Response.Write "<tr>"
-  For I = 0 To objRS.Fields.Count - 1
-    Response.Write "<td>EventID=" & CStr(donationEventId) & "</td>"
-  Next
-  Response.Write "</tr>"
-  objRS.MoveNext
-Loop
-%>
 </table>
 
 <%
