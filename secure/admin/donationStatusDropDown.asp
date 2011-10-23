@@ -16,6 +16,6 @@ Do While Not rs.EOF
 loop
   rs.close
   conn.close
-StatusDropDownText = "</SELECT>"
+StatusDropDownText = StatusDropDownText & "</SELECT>"
 
 %>
