@@ -34,6 +34,15 @@ objRS.Open objCmd
 
 Do While Not objRS.EOF
 
+sendEmailReceiptCheckedTrue = ""
+sendEmailReceiptCheckedFalse = ""
+
+if(objRS.Fields("SendEmailReceipt") = "True") then
+	sendEmailReceiptCheckedTrue = "checked"
+else
+	sendEmailReceiptCheckedFalse = "checked"
+end if
+
 %>
 
 
@@ -61,7 +70,9 @@ Do While Not objRS.EOF
 
 <div>
 	<label for="SendEmailReceipt">Send Email Receipt:</label>
-	<input type="textbox" name="SendEmailReceipt" value="<%= objRS.Fields("SendEmailReceipt")%>"/>
+	<!--input type="textbox" name="SendEmailReceipt" value="<%= objRS.Fields("SendEmailReceipt")%>"/>-->
+	<input type="radio" name="SendEmailReceipt" value="True" <%=sendEmailReceiptCheckedTrue%>/>Yes
+	<input type="radio" name="SendEmailReceipt" value="False" <%=sendEmailReceiptCheckedFalse%>/> No
 </div>
 
 <div>
