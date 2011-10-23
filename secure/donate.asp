@@ -59,6 +59,17 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                 theForm.x_amount.focus();
                 return (false);
             }
+            else
+            {                
+                var currencyVal = parseFloat(theForm.x_amount.value);
+                
+                if (currencyVal > 0)
+                {                 
+                   alert("Donation amounts must be higher than $1");
+                    theForm.x_amount.focus();
+                    return (false);
+                }
+            }
 
             if (theForm.x_email.value.length > 0) {
 
