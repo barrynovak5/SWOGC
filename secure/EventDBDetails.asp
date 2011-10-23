@@ -58,6 +58,8 @@ If Not rs.EOF Then
     PaymentFormFooter = rs.Fields.Item("PaymentFormFooter")
     ReceiptFormFooter = rs.Fields.Item("ReceiptFormFooter")
     ReceiptEmailFooter = rs.Fields.Item("ReceiptEmailFooter")
+    PaymentFormHeader2 = rs.Fields.Item("PaymentFormHeader2")
+    PaymentFormFoote2r = rs.Fields.Item("PaymentFormFooter2")
 
 End If
 
