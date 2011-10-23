@@ -8,7 +8,7 @@
 <title>4c Admin</title>
 
     <style type="text/css" title="currentStyle">
-			@import "css/demo_table.css";
+			@import "css/table.css";
 	</style>
     <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
     <script type="text/javascript" language="javascript" src="js/jquery.dataTables.min.js"></script>
