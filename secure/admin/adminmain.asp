@@ -31,7 +31,7 @@
 
 <form action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this)">
 	<input name="DonationEventId" type="hidden" />
-	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br /><br />
+	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 	
 </form>
 
