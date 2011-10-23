@@ -45,7 +45,9 @@
 
 <form>
     <label id="LabelEventVisitors">Event Visitors:</label><br />
-	<input name="ButtonDisplayEventVisitors" type="submit" onclick="return SubmitForm('displayEventVisitors.asp', false);" value="Display List" /><br />
+	<input name="ButtonDisplayEventVisitors" type="submit" onclick="return SubmitForm('displayEventVisitors.asp', false);" value="Display List" />&nbsp;&nbsp;
+	<input name="ButtonDisplayEventVisitorsStat" type="submit" onclick="return SubmitForm('manageEventVisitorStatuses.asp', false);" value="Event Visitors Status" />&nbsp;&nbsp;
+	
 	<input name="ButtonDownloadEventVisitors" type="submit" onclick="return SubmitForm('DownloadEventVisitors.asp', true);" value="Download List" /><br /><br />	
 </form>
 
