@@ -1,7 +1,7 @@
 
 <!--#include file=adovbs.inc -->
 <%
-donationEventId = Request.Form("Id")
+donationEventId = Request.Querystring("Id")
 Response.Write(donationEventId)
 %>
 
