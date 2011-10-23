@@ -32,7 +32,8 @@ sub UpdateDonationStatus (donationId, statusId)
 
     objCmd.Parameters("@DonationId") = CInt(donationId)
     
-    
+    objCmd.Execute
+        
     objConn.Close
 
 end sub
