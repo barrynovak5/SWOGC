@@ -32,8 +32,8 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
 
         function Load()
         {
-            lblEmail = document.getElementById("lblEmail");
-            lblEmail.className= "required";
+           var lblEmail = document.getElementById("lblEmail");
+           var lblEmail.className= "required";
         }
 
         function Validator(theForm) {
@@ -101,7 +101,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         }
     </style>
 </head>
-<body bottommargin="0" leftmargin="0" onload="Load()" rightmargin="0"
+<body bottommargin="0" leftmargin="0" onload="Load();" rightmargin="0"
     topmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
     <div class="SEODiv">
         <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
@@ -289,7 +289,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                     <td valign="top" align="left">
                                                                                         <p align="left">
                                                                                             You can <b>sign up to our newsletter </b> by completing the
-                                                                                            form below. Be sure to press the "Submit" button at the bottom when you have
+                                                                                            form below. Be sure to press the "Subscribe" button at the bottom when you have
                                                                                             completed this form.<p align="left">
                                                                                             &nbsp;<table border="0" cellpadding="2" align="center">
                                                                                                 <tbody>

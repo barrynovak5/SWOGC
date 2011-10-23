@@ -2,17 +2,17 @@
 
 <%
 Dim EventId
-EventId = "1"
+EventId = "2"
 
-Dim ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
+Dim EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
+    ReceiptFormHeader2, ReceiptFormFooter2, _
     PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
 
-Call LoadEventDetails(ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
+Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
+    ReceiptFormHeader2, ReceiptFormFooter2, _
     PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter)
-
-Response.Write("TTTT:" & ReturnEnabled)
 
 %>
 
@@ -25,116 +25,57 @@ Response.Write("TTTT:" & ReturnEnabled)
     <meta name="revisit-after" content="14 Days">
     <link rel="stylesheet" type="text/css" href="styles/css.css" />
 
+    <style type="text/css">
+            
+    </style>
     <script language="JavaScript" type="text/javascript"><!--
 
-        function CreateHeaderAndFooterFields() {
-            var header1 = document.getElementById("header1")
-            var header2 = document.getElementById("header2");
-            var footer1 = document.getElementById("header2");
-            var footer2 = document.getElementById("footer2");
-
-            var style = "<style type='text/css' media='all'>" +
-                                + "td{ 	font-family: arial, helvetica, verdana;	font-size: 14px; color: #474747;}"
-
-                                + "div{	font-family: arial, helvetica, verdana;	font-size: 14px; color: #474747;}"
-                                + "span{font-family: arial, helvetica, verdana;	font-size: 14px; color: #474747;}"
-                                + "h1{font-family: arial, helvetica, verdana; font-size: 18px;	color: #000000;	font-weight: bold;}"
-                                + "h2{font-family: arial, helvetica, verdana;	font-size: 16px; color: #000000; font-weight: bold;}"
-                                + "h3{	font-family: arial, helvetica, verdana;	font-size: 16px; color: #00529f;	font-weight: bold;}"
-                                + "a{ color: #00539f; text-decoration: underline;}"
-                                + "a:hover{	color: #5995d3;	text-decoration: underline;}"
-                                + "</style>";
-
-
-            header2.value = style;
+        function Load()
+        {
+            var lblEmail = document.getElementById("lblEmail");
+            var lblPhone = document.getElementById("lblPhone");
+            
+            lblEmail.className= "required";
+            lblPhone.className= "required";
         }
 
         function Validator(theForm) {
 
-            if (trim(theForm.DonationAmount.value) == "") {
-                alert("Please enter a value for the \"Amount of Donation\" field.");
-                theForm.DonationAmount.focus();
-                return (false);
-            }
+            if (theForm.x_email.value.length) {
 
-            if (theForm.DonationAmount.value.length < 2) {
-                alert("Please enter at least 2 characters in the \"Amount of Donation\" field.");
-                theForm.DonationAmount.focus();
-                return (false);
-            }
-
-            if (theForm.DonationAmount.value.length > 50) {
-                alert("Please enter at most 50 characters in the \"Amount of Donation\" field.");
-                theForm.DonationAmount.focus();
-                return (false);
-            }
-
-            var checkOK = "0123456789-.,";
-            var checkStr = theForm.DonationAmount.value;
-            var allValid = true;
-            var validGroups = true;
-            var decPoints = 0;
-            var allNum = "";
-            for (i = 0; i < checkStr.length; i++) {
-                ch = checkStr.charAt(i);
-                for (j = 0; j < checkOK.length; j++)
-                    if (ch == checkOK.charAt(j))
-                    break;
-                if (j == checkOK.length) {
-                    allValid = false;
-                    break;
-                }
-                if (ch == ".") {
-                    allNum += ".";
-                    decPoints++;
-                }
-                else if (ch == "," && decPoints != 0) {
-                    validGroups = false;
-                    break;
-                }
-                else if (ch != ",")
-                    allNum += ch;
-            }
-            if (!allValid) {
-                alert("Please enter only digit characters in the \"Amount of Donation\" field.");
-                theForm.DonationAmount.focus();
-                return (false);
-            }
-
-            if (decPoints > 1 || !validGroups) {
-                alert("Please enter a valid number in the \"DonationAmount\" field.");
-                theForm.DonationAmount.focus();
-                return (false);
-            }
-
-            if (theForm.DonorEmailAddress.value.length > 0) {
-
-                if (theForm.DonorEmailAddress.value.length < 6) {
+                if (theForm.x_email.value.length < 6) {
                     alert("Please enter at least 6 characters in the \"E-mail\" field.");
-                    theForm.DonorEmailAddress.focus();
+                    theForm.x_email.focus();
                     return (false);
                 }
                 else {
-                    var emailad = trim(theForm.DonorEmailAddress.value);
+                    var emailad = trim(theForm.x_email.value);
                     var exclude = /[^@\-\.\w]|^[_@\.\-]|[\._\-]{2}|[@\.]{2}|(@)[^@]*\1/;
                     var check = /@[\w\-]+\./;
                     var checkend = /\.[a-zA-Z]{2,3}$/;
 
                     if (((emailad.search(exclude) != -1) || (emailad.search(check)) == -1) || (emailad.search(checkend) == -1)) {
                         alert("Email is invalid. Please enter a       \nvalid email address.");
-                        theForm.DonorEmailAddress.focus();
+                        theForm.x_email.focus();
                         return false;
                     }
 
                 }
             }
-
-            if (theForm.DonorEmailAddress.value.length > 50) {
-                alert("Please enter at most 50 characters in the \"E-mail\" field.");
-                theForm.DonorEmailAddress.focus();
-                return (false);
+            else
+            {
+                if (!theForm.x_phone.value.length)
+                {            
+                    alert("Please enter an email address or an phone number");
+                    return false;
+                }
             }
 
+            if (theForm.x_email.value.length > 50) {
+                alert("Please enter at most 50 characters in the \"E-mail\" field.");
+                theForm.x_email.focus();
+                return (false);
+            }
 
             return (true);
         }
@@ -159,13 +100,13 @@ Response.Write("TTTT:" & ReturnEnabled)
 //--></script>
 
     <style type="text/css">
-        .style2
+        .leftSideCol
         {
-            width: 618px;
+            width: 650px;
         }
     </style>
 </head>
-<body bottommargin="0" leftmargin="0" onload="CreateHeaderAndFooterFields()" rightmargin="0"
+<body bottommargin="0" leftmargin="0" onload="Load();" rightmargin="0"
     topmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
     <div class="SEODiv">
         <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
@@ -333,7 +274,7 @@ Response.Write("TTTT:" & ReturnEnabled)
                                                                                     <h1 class="H1Heading1">
                                                                                         Early Care and Education<br>
                                                                                         <div class="H1Heading2">
-                                                                                            4C for children - Make a Donation</div>
+                                                                                            4C for children - Event Signup</div>
                                                                                     </h1>
                                                                                 </td>
                                                                             </tr>
@@ -352,13 +293,15 @@ Response.Write("TTTT:" & ReturnEnabled)
                                                                                 <tr>
                                                                                     <td valign="top" align="left">
                                                                                         <p align="left">
-                                                                                            <b>A secure online credit-card</b> <b>donation</b> can be made by completing the
-                                                                                            form below. Be sure to press the "Make Donation" button at the bottom when you have
-                                                                                            completed this form.
-                                                                                            <table border="0" cellpadding="2" align="center">
+                                                                                            You can <b>sign up to our events </b> by completing the
+                                                                                            form below. Be sure to press the "Sign Up" button at the bottom when you have
+                                                                                            completed this form.<p align="left">
+                                                                                            &nbsp;<table border="0" cellpadding="2" align="center">
                                                                                                 <tbody>
                                                                                                     <tr>
                                                                                                         <td valign="top" align="right">
+                                                                                                            
+                                                                                                            
                                                                                                             <b>4C is a Better Business Bureau<br>
                                                                                                                 Accredited Charity</b>
                                                                                                         </td>
@@ -369,10 +312,11 @@ Response.Write("TTTT:" & ReturnEnabled)
                                                                                                 </tbody>
                                                                                             </table>
                                                                                             <div align="center" class="required">
-                                                                                                Fields in red are required fields.</div>
+                                                                                                Please enter a valid email address or phone number.</div>
                                                                                             <form language="JavaScript" onsubmit="return Validator(this)" method="post" name="frm1Donation"
                                                                                             action="process.asp">
 
+                                                                                            <input value="<% Response.Write(EventTypeId) %>" type="hidden" name="EventTypeId" />
                                                                                             <input value="<% Response.Write(EventId) %>" type="hidden" name="EventID" />
                                                                                             <input value="<% Response.Write(ReceiptPageUrl) %>" type="hidden" name="ReturnUrl" />
                                                                                             <input value="<% Response.Write(ReceiptPageTitle) %>" type="hidden" name="ReturnTitle" />
@@ -380,156 +324,29 @@ Response.Write("TTTT:" & ReturnEnabled)
                                                                                             <input value="<% Response.Write(EventName) %>" type="hidden" name="EventName" />
                                                                                             <input value="<% Response.Write(EventDescription) %>" type="hidden" name="x_description" />
                                                                                             <input value="<% Response.Write(PaymentFormHeader) %>" type="hidden" name="x_header_html_payment_form" />
+                                                                                            <input value="<% Response.Write(PaymentFormHeader) %>" type="hidden" name="x_header2_html_payment_form" />
                                                                                             <input value="<% Response.Write(ReceiptFormHeader) %>" type="hidden" name="x_header_html_receipt" />
                                                                                             <input value="<% Response.Write(ReceiptEmailHeader) %>" type="hidden" name="x_header_email_receipt" />
 
                                                                                             <input value="<% Response.Write(PaymentFormFooter) %>" type="hidden" name="x_Footer_html_payment_form" />
+                                                                                            <input value="<% Response.Write(PaymentFormFooter) %>" type="hidden" name="x_Footer2_html_payment_form" />
                                                                                             <input value="<% Response.Write(ReceiptFormFooter) %>" type="hidden" name="x_Footer_html_receipt" />
                                                                                             <input value="<% Response.Write(ReceiptEmailFooter) %>" type="hidden" name="x_Footer_email_receipt" />
                                                                                             
-                                                                                            <table>
+                                                                                            <br />
+                                                                                            <table width="100%">
                                                                                                 <tr>
-                                                                                                    <td class="required">
-                                                                                                        <b>Donation Amount: </b>
-                                                                                                    </td>
                                                                                                     <td>
-                                                                                                        <input value="" type="text" name="x_amount" />
+                                                                                                        <!--#include file="customerInformation.asp"-->                                                                                           
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="right">
+                                                                                                        <input value="Sign Up" type="submit" name="submit" />         
                                                                                                     </td>
                                                                                                 </tr>
                                                                                             </table>
-                                                                                            <br />
-                                                                                            <table>
-                                                                                                <tbody>
-                                                                                                    <tr>
-                                                                                                        <th colspan="7">
-                                                                                                            Personal Information:
-                                                                                                        </th>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                            <table>
-                                                                                                <tbody>
-                                                                                                    <tr>
-                                                                                                        <td align="right" class="style2">
-                                                                                                            First Name:
-                                                                                                        </td>
-                                                                                                        <td colspan="6">
-                                                                                                            <input maxlength="50" size="35" name="x_first_name">
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td align="right" class="style2">
-                                                                                                            Last Name:
-                                                                                                        </td>
-                                                                                                        <td colspan="6">
-                                                                                                            <input maxlength="50" size="35" name="x_last_name">
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td align="right" class="style2">
-                                                                                                            &nbsp;E-Mail:
-                                                                                                        </td>
-                                                                                                        <td colspan="6" align="left">
-                                                                                                            <input size="35" name="x_email" />
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td align="right" class="style2">
-                                                                                                            &nbsp;Address:
-                                                                                                        </td>
-                                                                                                        <td colspan="6">
-                                                                                                            <input maxlength="100" size="35" name="x_address">
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td align="right" class="style2">
-                                                                                                        </td>
-                                                                                                        <td colspan="6">
-                                                                                                            <input size="35" name="DonorAddress2" />
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td align="right" class="style2">
-                                                                                                            &nbsp;Company:
-                                                                                                        </td>
-                                                                                                        <td colspan="6">
-                                                                                                            <input maxlength="50" size="35" name="x_company" />
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td align="right" class="style2">
-                                                                                                            &nbsp;City:
-                                                                                                        </td>
-                                                                                                        <td colspan="6">
-                                                                                                            <input maxlength="50" size="35" name="x_city" />
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td align="right" class="style2">
-                                                                                                            &nbsp;State:
-                                                                                                        </td>
-                                                                                                        <td colspan="6">
-                                                                                                            <input maxlength="50" size="35" name="x_state" />
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td align="right" class="style2">
-                                                                                                            &nbsp;Zip:
-                                                                                                        </td>
-                                                                                                        <td colspan="6">
-                                                                                                            <input maxlength="15" size="35" name="x_zip" />
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td align="right" valign="top" class="style2">
-                                                                                                            &nbsp;Telephone:
-                                                                                                        </td>
-                                                                                                        <td valign="top" align="left">
-                                                                                                            <input size="17" name="x_phone" />
-                                                                                                            <br>
-                                                                                                            Day
-                                                                                                            <input value="D" checked="checked" type="radio" name="DonorPhoneDayOrEvening" />&nbsp;
-                                                                                                            Evening
-                                                                                                            <input value="E" type="radio" name="DonorPhoneDayOrEvening" />
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td align="left" class="style2">
-                                                                                                            <b>What prompted this online gift? </b>
-                                                                                                        </td>
-                                                                                                        <td width="370" colspan="6" align="left">
-                                                                                                            <!--#include file="picklist.asp"-->
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td colspan="2">
-                                                                                                            <b>
-                                                                                                                <br />
-                                                                                                                Comments (if any):</b>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td colspan="2">
-                                                                                                            <textarea wrap="physical" rows="7" cols="45" maxlength="1000" name="DonorComments"></textarea>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td class="style2">
-                                                                                                            Include me in future notifications:
-                                                                                                        </td>
-                                                                                                        <td>
-                                                                                                            <input value="true" type="radio" checked="checked" name="AddToNewsletter" />&nbsp;
-                                                                                                            Yes
-                                                                                                            <input value="false" type="radio" name="AddToNewsletter" />&nbsp; No
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                            <p>
-                                                                                                <input value="Make Donation" type="submit" name="submit" />
-                                                                                            </p>
-                                                                                            <p>
-                                                                                                <b>Thank You!</b></p>
+                                                                                           
                                                                                             </form>
                                                                                     </td>
                                                                                 </tr>
