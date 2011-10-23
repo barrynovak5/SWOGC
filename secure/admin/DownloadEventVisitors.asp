@@ -49,7 +49,7 @@ Do While Not objRS.EOF
         Response.Write ","
     End If
     ' Write it out to a file, surrounding it with double-quotes 
-    Response.Write objRs(I) & vbCrLf
+    Response.Write """" & objRs(I) & """"
   Next
   Response.Write vbcrlf
   objRS.MoveNext
