@@ -42,12 +42,9 @@ objCmd.Parameters("@EVENTID") = donationEventId
 objRS.Open objCmd
 
 Response.Write(fieldList & vbCrLf)
-Response.Write("Count: " + objRs.Fields.Count)
 
 Do While Not objRS.EOF
-  Response.Write("A")
   For I = 0 To objRS.Fields.Count - 1
-    Response.Write("B")
     If I > 0 Then 
         Response.Write ","
     End If
