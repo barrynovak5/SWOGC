@@ -28,7 +28,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     <style type="text/css">
             
     </style>
-    <script language="JavaScript" type="text/javascript"><!--
+    <script language="JavaScript" type="text/javascript">
 
         function Load()
         {
@@ -99,7 +99,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         }
       
 
-//--></script>
+</script>
 
     <style type="text/css">
         .leftSideCol
@@ -108,7 +108,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         }
     </style>
 </head>
-<body bottommargin="0" leftmargin="0" onload="javascript:LoadData();" rightmargin="0"
+<body bottommargin="0" leftmargin="0" onload="return LoadData()" rightmargin="0"
     topmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
     <div class="SEODiv">
         <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
