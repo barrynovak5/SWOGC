@@ -9,7 +9,7 @@ Dim EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName
     ReceiptFormHeader2, ReceiptFormFooter2, _
     PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
 
-Call LoadEventDetails(ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
+Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
     ReceiptFormHeader2, ReceiptFormFooter2, _
     PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter)

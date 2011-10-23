@@ -3,19 +3,39 @@
 
 <%
 
+Function Sanitize(str)
+    Sanitize = Replace(CStr(str) , """", "")
+End Function
+
 Function ShowAuthorizeForm(invoiceNo)
+
+Dim EventId
+EventId = Request.Form("EventId")
+
+Dim EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
+    EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
+    ReceiptFormHeader2, ReceiptFormFooter2, _
+    PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
+
+Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
+    EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
+    ReceiptFormHeader2, ReceiptFormFooter2, _
+    PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter)
+
 
 ' Get Authorize Credentials
 Dim loginID, transactionKey, testModeEnabled, authorizeUrl
 Call getAuthorizeCredentials(loginId, transactionKey, testModeEnabled, authorizeUrl)
 
+dim Amount
+Amount = CStr(CSng(Request.Form("x_amount")))
 
 ' Get the data we need from the POST info
 dim lineItem, lineItemQuantity, lineItemIsTaxable
 lineItemQuantity = "1"
 lineItemIsTaxable = "N"
-lineItem = Request.Form("EventId") & "<|>" & Request.Form("EventName") & "<|>" & Request.Form("x_description") & "<|>" & _
-    lineItemQuantity & "<|>" & Request.Form("x_amount") & "<|>" & lineItemIsTaxable
+lineItem = EventId & "<|>" & EventName & "<|>" & EventDescription & "<|>" & _
+    lineItemQuantity & "<|>" & Amount & "<|>" & lineItemIsTaxable
 
 ' a sequence number is randomly generated
 Dim sequence
@@ -26,7 +46,7 @@ Dim timeStamp
 timeStamp = simTimeStamp()
 ' a fingerprint is generated using the functions from simlib.asp and md5.asp
 Dim fingerprint
-fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp & "^" & Request.Form("x_amount") & "^")
+fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp & "^" & Amount & "^")
 
 ' Create the HTML form containing necessary SIM post values
 ' Additional fields can be added here as outlined in the SIM integration guide
@@ -65,7 +85,8 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
             Dim i
             For i = 1 to Request.Form.Count
                 If Left(Request.Form.Key(i),2) = "x_" Then
-                    Response.Write("        <input type='hidden' name='" & CStr(Request.Form.Key(i)) & "' value=""" & CStr(Request.Form.Item(i)) & """ />" & vbCrLf) 
+                    Dim Key, Value
+                    Response.Write("        <input type='hidden' name=""" & Sanitize(Request.Form.Key(i)) & """ value=""" & Sanitize(Request.Form.Item(i)) & """ />" & vbCrLf) 
                 End If
             Next
         %>
@@ -73,8 +94,8 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
 
         <% If UCase(Request.Form("ReturnEnabled")) = "TRUE" Then
             Response.Write("    <INPUT TYPE=HIDDEN NAME='x_receipt_link_method' VALUE='LINK'>" & vbCrLf)
-            Response.Write("    <INPUT TYPE=HIDDEN NAME='x_receipt_link_text' VALUE='" & Request.Form("ReturnTitle") & "'>" & vbCrLf)
-            Response.Write("    <INPUT TYPE=HIDDEN NAME='x_receipt_link_URL' VALUE='" & Request.Form("ReturnUrl") & "'>" & vbCrLf)
+            Response.Write("    <INPUT TYPE=HIDDEN NAME='x_receipt_link_text' VALUE=""" & Sanitize(Request.Form("ReturnTitle")) & """>" & vbCrLf)
+            Response.Write("    <INPUT TYPE=HIDDEN NAME='x_receipt_link_URL' VALUE=""" & Sanitize(Request.Form("ReturnUrl")) & """>" & vbCrLf)
         End If %>
 
     </div>
