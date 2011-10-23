@@ -4,4 +4,5 @@ function Validator(theForm) {
                 theForm.EventName.focus();
                 return (false);
             }
+    return true;        
 }
