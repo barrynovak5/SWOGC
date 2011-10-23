@@ -34,18 +34,18 @@ objCmd.Parameters("@EVENTID") = donationEventId
 
 objRS.Open objCmd
 %>
-<table border=1 cellpadding=2 cellspacing=2>
 <%
 Do While Not objRS.EOF
+  Response.Write "<p>"
   For I = 0 To objRS.Fields.Count - 1
     	if I > 0 then Response.Write ", "
 	Response.Write objRS(I)
   Next
-  Response.Write "</tr>"
+  Response.Write "</p>"
   objRS.MoveNext
 Loop
 %>
-</table>
+
 
 <%
 objRS.Close

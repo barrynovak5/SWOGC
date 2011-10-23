@@ -16,7 +16,7 @@ Set objCmd.ActiveConnection = objConn
 'CommandType is adCmdText.  If a query name is specified, then
 'the CommandType is adCmdStoredProc.
 
-objCmd.CommandText = "SELECT * FROM EVENTS WHERE EVENTID = ?"
+objCmd.CommandText = "SELECT * FROM EVENTS INNER JOIN EVENTTYPE ON EVENTS.EventTypeID = EVENTTYPE.EventTypeID WHERE EVENTID = ?"
 objCmd.CommandType = adCmdText
 
 'Create the parameter and populate it.
@@ -33,6 +33,7 @@ objRS.Open objCmd
 
 Do While Not objRS.EOF
 %>
+<p>EventType: <%= objRS.Fields("EventTypeDescription")%></p>
 <form method="POST" action="updateevent.asp">
 <div>
 	<input type="hidden" name="EventId" value="<%= objRS.Fields("EVENTID")%>"/>
