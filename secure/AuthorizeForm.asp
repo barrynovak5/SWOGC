@@ -62,9 +62,7 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
 
     <script type="text/javascript">
         function load() {
-            if (confirm("Post to Authorize.Net?")) {
-                document.forms["authorizedotnetform"].submit();
-            }
+            document.forms["authorizedotnetform"].submit();           
         }
     </script>
 </HEAD>

@@ -1,10 +1,12 @@
 <!--#INCLUDE FILE="adddonation.asp"-->
 <!--#INCLUDE FILE="AuthorizeForm.asp"-->
+<!--#INCLUDE FILE="ThankYou.asp"-->
 
 <%
 
 Dim EventTypeId, invoiceNo
 EventTypeId = Request.Form("EventTypeId")
+
 
 
 If EventTypeId = "1" Then 'Donation
@@ -20,9 +22,11 @@ If EventTypeId = "1" Then 'Donation
 ElseIf EventTypeId = "2" Or EventTypeId = "3" Then '2 = Event, 3 = Newsletter
     'the user is purpursely choosing to be in this communications.
     Call AddDonation("", "0", true)
-    Call ShowThankYou 
+    Call ShowThankYou(Request.Form("EventName"))
 
 End If
 
 
 %>
+
+

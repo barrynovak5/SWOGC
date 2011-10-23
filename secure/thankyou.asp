@@ -1,3 +1,9 @@
+<%
+'Renders this when called
+Sub ShowThankYou (eventName)
+
+ %>
+
 <html>
 <head>
     <title>4C for Children, Early Childhood Education, Community Child Care</title>
@@ -182,7 +188,7 @@
                                                                                     <h1 class="H1Heading1">
                                                                                         Early Care and Education<br>
                                                                                         <div class="H1Heading2">
-                                                                                            4C for children - Thank you for signing up for <% Response.Write(Request.Form("EventName")) %></div>
+                                                                                            4C for children - Thank you for signing up for <% Response.Write(eventName) %></div>
                                                                                     </h1>
                                                                                 </td>
                                                                             </tr>
@@ -222,3 +228,5 @@
                     </table>
 </body>
 </html>
+
+<%end sub %>
