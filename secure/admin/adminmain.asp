@@ -59,9 +59,9 @@
 <table cellpadding="0" cellspacing="0" border="0" class="display" id="EventList">
 	<thead>
 		<tr>
-			<th width="20px">Event Id</th>
+			<th width="15px">Event Id</th>
 			<th>Event Name</th>
-			<th>Event Type</th>
+			<th width="50px">Event Type</th>
 		</tr>
 	</thead>
 	<tbody>
