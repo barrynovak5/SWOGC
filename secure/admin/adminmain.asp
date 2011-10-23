@@ -4,6 +4,19 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>4c Admin</title>
+
+   <script type="text/javscript">
+          function SubmitForm(theFormId)
+	  {
+
+		 var theForm = document.getElementById(theFormId);
+                 var donationEvent = document.getElementById("DonationEventId");
+
+		 theForm.DonationEventId.value = donationEvent.value;
+		
+                 return true;  
+          }
+   </script>	
 </head>
 
 <body>
@@ -13,10 +26,17 @@
 <!--#include file="donationeventlist.asp"-->
 <br/>
 <label id="LabelEventVisitors">Event Visitors:</label><br />
-<input name="ButtonDownloadEventVisitors" type="button" value="Download List" />
-<input name="ButtonDisplayEventVisitors" type="button" value="Display List" /><br /><br />
-<label id="LabelCustomizeEvent">Customize Event (e.g. payment form)</label><br />
 <input name="ButtonEditEvent" type="submit" value="Edit Event" />
+</form>
+
+<form action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this)">
+	<input name="DonationEventId" type="hidden" />
+	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br /><br />
+	
+</form>
+
+<input name="ButtonDownloadEventVisitors" type="button" value="Download List" />
+<label id="LabelCustomizeEvent">Customize Event (e.g. payment form)</label><br />
 <input name="ButtonAddEvent" type="button" value="Add New Event" />
 <input name="ButtonCopyEvent" type="button" value="Copy an Event" /><br />
 <br />
