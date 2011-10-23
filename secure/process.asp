@@ -16,9 +16,9 @@ If EventTypeId = "1" Then 'Donation
     ShowAuthorizeForm(invoiceNo)
 
 ElseIf EventTypeId = "2" Or EventTypeId = "3" Then '2 = Event, 3 = Newsletter
-    =
+    
     AddDonation("", 0)
-    ShowThankYou()    
+    ShowThankYou 
 
 End If
 
