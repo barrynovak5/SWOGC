@@ -27,12 +27,12 @@
 
 <!--#INCLUDE FILE="adminheader.asp"-->
 <form method="post" action="displayEvent.asp">
-<label id="LabelDonationEvent">Select Event:</label><br />
-<!--#include file="donationeventlist.asp"-->
-<br/>
-<label id="LabelEventVisitors">Event Visitors:</label><br />
-<input name="ButtonEditEvent" type="submit" value="Edit Event" />
-<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
+    <label id="LabelDonationEvent">Select Event:</label><br />
+    <!--#include file="donationeventlist.asp"-->
+    <br/>
+    <label id="LabelEventVisitors">Event Visitors:</label><br />
+    <input name="ButtonEditEvent" type="submit" value="Edit Event" />
+    <input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 </form>
 
 <form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('displayEventVisitors.asp');">
@@ -48,14 +48,14 @@
 
 <label id="LabelCustomizeEvent">Customize Event (e.g. payment form)</label><br />
 <form method="post" action="addNewEvent.asp">
-<input name="ButtonAddEvent" type="submit" value="Add New Event" />
+    <input name="ButtonAddEvent" type="submit" value="Add New Event" />
 </form>
 <input name="ButtonCopyEvent" type="button" value="Copy an Event" /><br />
 <br />
-</form>
+
 <form method="post" action="DisplayDonationReasons.asp">
-<label id="LabelDonationReason">Donation Reasons</label><br />
-<input name="ButtonManageDonation" type=submit value="Manage Donation Reasons" />
+    <label id="LabelDonationReason">Donation Reasons</label><br />
+    <input name="ButtonManageDonation" type=submit value="Manage Donation Reasons" />
 </form>
 
 </body>
