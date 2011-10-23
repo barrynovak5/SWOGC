@@ -11,7 +11,7 @@
               var donationEvent = document.getElementById("SelectListEventId");
               alert(donationEvent.selectedIndex);
     	      var fileName = donationEvent.options[donationEvent.selectedIndex].text
-    	      alert('b');
+    	      alert('b' + fileName);
     	      // Get rid of the item count in the fileName
     	      var fileName1 = filename.substring(fileName.indexOf(')'));
     	      var fileName2 = fileName.indexOf(')');
