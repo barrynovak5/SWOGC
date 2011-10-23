@@ -14,10 +14,10 @@
 		alert(URL);
                  var donationEvent = document.getElementById("SelectListEventId");
 		 alert(donationEvent.value);
-	        alert(URL & "&DonationEventID=" & donationEvent.value);
+	        alert(URL + "&DonationEventID=" + donationEvent.value);
 
 		 //theForm.DonationEventId.value = donationEvent.value;
-		 window.location = URL & "&DonationEventID=" & donationEvent.value
+		 window.location = URL + "&DonationEventID=" + donationEvent.value
 		 
 
                  return false;  
