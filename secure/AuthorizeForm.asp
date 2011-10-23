@@ -73,8 +73,8 @@ fingerprint = HMAC (transactionKey, loginID & "^" & sequence & "^" & timeStamp &
 	<INPUT type='hidden' name='x_test_request' value='<% Response.Write(testModeEnabled) %>' />
 	<INPUT type='hidden' name='x_invoice_num' value='<% Response.Write(invoiceNo) %>' />
 	<INPUT type='hidden' name='x_fp_sequence' value='<% Response.Write(sequence) %>' />
-	<INPUT type='hidden' name='x_header_email_customer' value='<% Response.Write(ReceiptEmailHeader) %>' />
-	<INPUT type='hidden' name='x_footer_email_customer' value='<% Response.Write(ReceiptEmailFooter) %>' />
+	<INPUT type='hidden' name='x_header_email_receipt' value='<% Response.Write(ReceiptEmailHeader) %>' />
+	<INPUT type='hidden' name='x_footer_email_receipt' value='<% Response.Write(ReceiptEmailFooter) %>' />
 	<INPUT type='hidden' name='x_header_html_payment_form' value='<% Response.Write(PaymentFormHeader) %>' />
 	<INPUT type='hidden' name='x_footer_html_payment_form' value='<% Response.Write(PaymentFormFooter) %>' />
 	<INPUT type='hidden' name='x_header2_html_payment_form' value='<% Response.Write(PaymentFormHeader2) %>' />
