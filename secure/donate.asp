@@ -35,16 +35,15 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         var isCurrency_re    = /^\s*(\+|-)?((\d+(\.\d\d)?)|(\.\d\d))\s*$/;  
 
         function isCurrency (s) {  
-
-                return String(s).search (isCurrency_re) != -1  
-
+                return String(s).search (isCurrency_re) != -1 ; 
         }
         
         // checks that an input string looks like a valid email address.
         var isEmail_re       = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-        function isEmail (s) {
+        function isEmail (s) 
+        {
             return String(s).search (isEmail_re) != -1;
-       }
+        }
         
         function Validator(theForm) {
 
@@ -71,6 +70,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                 else {
                     var emailad = trim(theForm.x_email.value);
                     if (!isEmail(emailad))
+                    {
                         alert("Email is invalid. Please enter a       \nvalid email address.");
                         theForm.x_email.focus();
                         return false;
