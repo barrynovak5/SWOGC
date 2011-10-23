@@ -24,13 +24,7 @@
               window.location = URL + "?ID=" + donationEvent.value + "&Name=" + fileName;
               return false;
           }
-
-          $(document).ready(function () {
-              $('#EventList').dataTable({
-                  "bProcessing": true,
-                  "sAjaxSource": 'EventListJson.asp'
-              });
-          });
+          
    </script>	
 </head>
 

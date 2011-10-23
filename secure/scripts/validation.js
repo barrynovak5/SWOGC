@@ -34,11 +34,6 @@
                     }
                 }
             }
-            else
-            {
-                alert("Please enter an email address");
-                return false;
-            }
 
             if (emailad.length > 50) {
                 alert("Please enter at most 50 characters in the \"E-mail\" field.");

@@ -54,19 +54,19 @@ end if
 <div>
 	<input type="hidden" name="EventId" value="<%= objRS.Fields("EVENTID")%>"/>
 	<label for="EventName">Event Name:</label>
-	<input type="textbox" name="EventName" value="<%= objRS.Fields("EventName")%>"/>
+	<input type="text" name="EventName" value="<%= objRS.Fields("EventName")%>"/>
 </div>
 <div>
 	<label for="EventDescription">Event Description:</label>
-	<input type="textbox" name="EventDescription" value="<%= objRS.Fields("EventDescription")%>"/>
+	<input type="text" name="EventDescription" value="<%= objRS.Fields("EventDescription")%>"/>
 </div>
 <div>
 	<label for="ReceiptLink">Receipt Link:</label>
-	<input type="textbox" name="ReceiptLink" value="<%= objRS.Fields("ReceiptLink")%>"/>
+	<input type="text" name="ReceiptLink" value="<%= objRS.Fields("ReceiptLink")%>"/>
 </div>	
 <div>
 	<label for="ReceiptMethod">Receipt Method:</label>
-	<input type="textbox" name="ReceiptMethod" value="<%= objRS.Fields("ReceiptMethod")%>"/>
+	<input type="text" name="ReceiptMethod" value="<%= objRS.Fields("ReceiptMethod")%>"/>
 </div>
 
 <div>
@@ -77,57 +77,57 @@ end if
 
 <div>
 	<label for="ReceiptEmailSender">Receipt Email Sender:</label>
-	<input type="textbox" name="ReceiptEmailSender" value="<%= objRS.Fields("ReceiptEmailSender")%>"/>
+	<input type="text" name="ReceiptEmailSender" value="<%= objRS.Fields("ReceiptEmailSender")%>"/>
 </div>
 
 <div>
 	<label for="ReceiptEmailFooter">Receipt Email Footer:</label>
-	<input type="textbox" name="ReceiptEmailFooter" value="<%= objRS.Fields("ReceiptEmailFooter")%>"/>
+	<input type="text" name="ReceiptEmailFooter" value="<%= objRS.Fields("ReceiptEmailFooter")%>"/>
 </div>
 
 <div>
 	<label for="PaymentFormHeader">Payment Form Header:</label>
-	<input type="textbox" name="PaymentFormHeader" value="<%= objRS.Fields("PaymentFormHeader")%>"/>
+	<input type="text" name="PaymentFormHeader" value="<%= objRS.Fields("PaymentFormHeader")%>"/>
 </div>
 
 <div>
 	<label for="PaymentFormFooter">Payment Form Footer:</label>
-	<input type="textbox" name="PaymentFormFooter" value="<%= objRS.Fields("PaymentFormFooter")%>"/>
+	<input type="text" name="PaymentFormFooter" value="<%= objRS.Fields("PaymentFormFooter")%>"/>
 </div>
 
 <div>
 	<label for="ReceiptFormHeader">Receipt Form Header:</label>
-	<input type="textbox" name="ReceiptFormHeader" value="<%= objRS.Fields("ReceiptFormHeader")%>"/>
+	<input type="text" name="ReceiptFormHeader" value="<%= objRS.Fields("ReceiptFormHeader")%>"/>
 </div>
 
 <div>
 	<label for="ReceiptFormFooter">Receipt Form Footer:</label>
-	<input type="textbox" name="ReceiptFormFooter" value="<%= objRS.Fields("ReceiptFormFooter")%>"/>
+	<input type="text" name="ReceiptFormFooter" value="<%= objRS.Fields("ReceiptFormFooter")%>"/>
 </div>
 
 <div>
 	<label for="CancelURL">Cancel URL:</label>
-	<input type="textbox" name="CancelURL" value="<%= objRS.Fields("CancelURL")%>"/>
+	<input type="text" name="CancelURL" value="<%= objRS.Fields("CancelURL")%>"/>
 </div>
 
 <div>
 	<label for="ReceiptPageURL">Receipt Page URL:</label>
-	<input type="textbox" name="ReceiptPageURL" value="<%= objRS.Fields("ReceiptPageURL")%>"/>
+	<input type="text" name="ReceiptPageURL" value="<%= objRS.Fields("ReceiptPageURL")%>"/>
 </div>
 
 <div>
 	<label for="ReceiptPageTitle">Receipt Page Title:</label>
-	<input type="textbox" name="ReceiptPageTitle" value="<%= objRS.Fields("ReceiptPageTitle")%>"/>
+	<input type="text" name="ReceiptPageTitle" value="<%= objRS.Fields("ReceiptPageTitle")%>"/>
 </div>
 
 <div>
 	<label for="EventConfirmation">Event Confirmation:</label>
-	<input type="textbox" name="EventConfirmation" value="<%= objRS.Fields("EventConfirmation")%>"/>
+	<input type="text" name="EventConfirmation" value="<%= objRS.Fields("EventConfirmation")%>"/>
 </div>
 
 <div>
 	<label for="EventEmailConfirmation">Event Email Confirmation:</label>
-	<input type="textbox" name="EventEmailConfirmation" value="<%= objRS.Fields("EventEmailConfirmation")%>"/>
+	<input type="text" name="EventEmailConfirmation" value="<%= objRS.Fields("EventEmailConfirmation")%>"/>
 </div>
 
 <input type="submit" value="Save"/>
