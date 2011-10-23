@@ -21,7 +21,7 @@
 
 <body>
 
-<p onclick=alert(document.GetElementById("DonationEventId").value)>GetValue</p>
+<button text="ClickMe" onclick=alert(document.GetElementById("DonationEventId").value)>GetValue</button>
 
 <!--#INCLUDE FILE="adminheader.asp"-->
 <form method="post" action="displayEvent.asp">
