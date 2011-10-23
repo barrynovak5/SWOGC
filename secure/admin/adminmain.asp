@@ -6,6 +6,7 @@
 <title>4c Admin</title>
 
    <script type="text/javascript">
+<<<<<<< HEAD
           function SubmitForm(URL) {
 
               var donationEvent = document.getElementById("SelectListEventId");
@@ -19,6 +20,13 @@
 
               window.location = URL + "?ID=" + donationEvent.value + "&Name=" + fileName;
               return false;  
+=======
+          function SubmitForm(URL)
+	  {
+                 var donationEvent = document.getElementById("SelectListEventId");
+		 window.location = URL + "?DonationEventID=" + donationEvent.value
+                 return false;  
+>>>>>>> 8ef6daa83e1fca5cc2cfa8dde895c90b5807a354
           }
    </script>	
 </head>
@@ -32,12 +40,20 @@
 <br/>
 <label id="LabelEventVisitors">Event Visitors:</label><br />
 <input name="ButtonEditEvent" type="submit" value="Edit Event" />
+<<<<<<< HEAD
+=======
+	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
+>>>>>>> 8ef6daa83e1fca5cc2cfa8dde895c90b5807a354
 </form>
 
 <form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('displayEventVisitors.asp');">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 8ef6daa83e1fca5cc2cfa8dde895c90b5807a354
 </form>
 
 <form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('DownloadEventVisitors.asp');">
