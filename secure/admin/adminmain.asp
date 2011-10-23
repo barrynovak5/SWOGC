@@ -55,7 +55,7 @@
     <input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 </form>
 
-<div style="width:80%">
+<div style="width:800px">
 <table cellpadding="0" cellspacing="0" border="0" class="display" width="800px" id="EventList">
 	<thead>
 		<tr>
