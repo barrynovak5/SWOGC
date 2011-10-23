@@ -1,4 +1,5 @@
 <!--#INCLUDE FILE="adminheader.asp"-->
+<script src="eventsavevalidators.js" type="text/javascript"></script>
 <%
 set conn=Server.CreateObject("ADODB.Connection")
 conn.Open "FourC"
@@ -7,7 +8,7 @@ set rs=Server.CreateObject("ADODB.recordset")
 sql="SELECT * FROM EVENTTYPE"
 rs.Open sql, conn
 %>
-<form method="post" action="saveNewEvent.asp">
+<form method="post" action="saveNewEvent.asp" onsubmit="return Validator(this)">
 <div>
 <label for="EventTypeID">EventType:</label>
 <SELECT name="EventTypeID">
