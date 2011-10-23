@@ -40,7 +40,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
 
             currency = parseFloat(theForm.x_amount.value.replace(/^[^\d\.]*/, ''))
             
-            if (isNaN(currency)
+            if (isNaN(currency))
             {  
                 alert("Please enter a valid number in the \"Amount of Donation\" field.");
                 theForm.x_amount.focus();
