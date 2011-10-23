@@ -150,11 +150,11 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     topmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
     <div class="SEODiv">
         <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
-            <tbody>
+            
                 <tr>
                     <td valign="top" width="100%" align="middle">
                         <table border="0" cellspacing="0" bordercolor="green" cellpadding="0" width="974">
-                            <tbody>
+                            
                                 <tr>
                                     <td class="SEOCell" valign="top" nowrap align="left">
                                         <a class="homeLink" href="http://secure.4cforchildren.org/" nowrap>4C for Children Home</a>
@@ -163,11 +163,11 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                         Early Childhood Education - Southwest Ohio &amp; Northern Kentucky
                                     </td>
                                 </tr>
-                            </tbody>
+                            
                         </table>
                     </td>
                 </tr>
-            </tbody>
+            
         </table>
     </div>
     <!-- Top Menu Mouseover Code ----------------------------------->
@@ -280,12 +280,12 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
 
     <table class="pageBackground" border="0" cellspacing="0" bordercolor="red" cellpadding="0"
         width="100%" height="100%">
-        <tbody>
+        
             <tr>
                 <td class="pageBackgroundTop" height="100%" valign="top" width="100%" align="left">
                     <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="974" align="center"
                         height="100%">
-                        <tbody>
+                        
                             <tr>
                                 <td class="bannerCell" id="headerTD" valign="top" width="100%" align="left">
                                     <!--#include file="header.asp"-->
@@ -296,7 +296,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                 <td class="mainAreaBound" height="100%" valign="top" align="left">
                                     <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%"
                                         height="100%">
-                                        <tbody>
+                                        
                                             <tr>
                                                 <td class="leftGutterBound" valign="top" align="left">
                                                     <img border="0" src="images/Donation/LeftGutterTop.jpg" width="15" height="204">
@@ -304,11 +304,11 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                 <td class="contentBound" height="100%" valign="top" width="100%" align="left">
                                                     <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%"
                                                         height="100%">
-                                                        <tbody>
+                                                        
                                                             <tr>
                                                                 <td valign="top" width="100%" align="left">
                                                                     <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
-                                                                        <tbody>
+                                                                        
                                                                             <tr>
                                                                                 <td class="h1HeadingCell" valign="top" align="left">
                                                                                     <h1 class="H1Heading1">
@@ -318,7 +318,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                     </h1>
                                                                                 </td>
                                                                             </tr>
-                                                                        </tbody>
+                                                                        
                                                                     </table>
                                                                 </td>
                                                             </tr>
@@ -329,7 +329,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                     <!----------------------------------->
                                                                     <div align="center">
                                                                         <table border="0" cellpadding="5" width="60%">
-                                                                            <tbody>
+                                                                            
                                                                                 <tr>
                                                                                     <td valign="top" align="left">
                                                                                         <p align="left">
@@ -337,7 +337,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                             form below. Be sure to press the "Make Donation" button at the bottom when you have
                                                                                             completed this form.
                                                                                             <table border="0" cellpadding="2" align="center">
-                                                                                                <tbody>
+                                                                                                
                                                                                                     <tr>
                                                                                                         <td valign="top" align="right">
                                                                                                             <b>4C is a Better Business Bureau<br>
@@ -347,7 +347,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                                             <img hspace="3" align="right" src="images/Donation/charityblue.jpg" width="50" height="87">
                                                                                                         </td>
                                                                                                     </tr>
-                                                                                                </tbody>
+                                                                                                
                                                                                             </table>
                                                                                             <div align="center" class="required">
                                                                                                 Fields in red are required fields.</div>
@@ -425,7 +425,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                             </form>
                                                                                     </td>
                                                                                 </tr>
-                                                                            </tbody>
+                                                                            
                                                                         </table>
                                                                     </div>
                                                                     <!----------------------------------->
@@ -433,14 +433,14 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                     <!----------------------------------->
                                                                 </td>
                                                             </tr>
-                                                        </tbody>
+                                                        
                                                     </table>
                                                 </td>
                                                 <td class="rightGutterBound" valign="bottom" align="middle">
                                                     <img border="0" src="images/Donation/RightGutterBottom.jpg" width="15" height="295">
                                                 </td>
                                             </tr>
-                                        </tbody>
+                                        
                                     </table>
                                 </td>
                             </tr>
@@ -456,7 +456,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                     <br />
                                 </td>
                             </tr>
-                        </tbody>
+                        
                     </table>
 </body>
 </html>
