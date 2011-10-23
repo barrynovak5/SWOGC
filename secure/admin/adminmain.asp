@@ -10,7 +10,7 @@
 	  {
 
 		 var theForm = document.getElementById(theFormId);
-                 var donationEvent = document.getElementById("DonationEventId");
+                 var donationEvent = document.getElementById("SelectListEventId");
 
 		 theForm.DonationEventId.value = donationEvent.value;
 		
@@ -21,7 +21,7 @@
 
 <body>
 
-<button type="button" onclick="alert(document.GetElementById('DonationEventId').value)">GetValue</button>
+<button type="button" onclick="alert(document.GetElementById('SelectListEventId').value)">GetValue</button>
 
 <!--#INCLUDE FILE="adminheader.asp"-->
 <form method="post" action="displayEvent.asp">
@@ -32,13 +32,13 @@
 <input name="ButtonEditEvent" type="submit" value="Edit Event" />
 </form>
 
-<form action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this)">
+<form action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this);">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 	
 </form>
 
-<form action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this)">
+<form action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this);">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" /><br /><br />
 	
