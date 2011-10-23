@@ -32,28 +32,28 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
 
         function Load()
         {
-            txtEmail = document.getElementById("txtEmail");
-            txtEmail.className= "required";
+            lblEmail = document.getElementById("lblEmail");
+            lblEmail.className= "required";
         }
 
         function Validator(theForm) {
 
-            if (theForm.DonorEmailAddress.value.length) {
+            if (theForm.x_email.value.length) {
 
-                if (theForm.DonorEmailAddress.value.length < 6) {
+                if (theForm.x_email.value.length < 6) {
                     alert("Please enter at least 6 characters in the \"E-mail\" field.");
-                    theForm.DonorEmailAddress.focus();
+                    theForm.x_email.focus();
                     return (false);
                 }
                 else {
-                    var emailad = trim(theForm.DonorEmailAddress.value);
+                    var emailad = trim(theForm.x_email.value);
                     var exclude = /[^@\-\.\w]|^[_@\.\-]|[\._\-]{2}|[@\.]{2}|(@)[^@]*\1/;
                     var check = /@[\w\-]+\./;
                     var checkend = /\.[a-zA-Z]{2,3}$/;
 
                     if (((emailad.search(exclude) != -1) || (emailad.search(check)) == -1) || (emailad.search(checkend) == -1)) {
                         alert("Email is invalid. Please enter a       \nvalid email address.");
-                        theForm.DonorEmailAddress.focus();
+                        theForm.x_email.focus();
                         return false;
                     }
 
@@ -65,9 +65,9 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                 return false;
             }
 
-            if (theForm.DonorEmailAddress.value.length > 50) {
+            if (theForm.x_email.value.length > 50) {
                 alert("Please enter at most 50 characters in the \"E-mail\" field.");
-                theForm.DonorEmailAddress.focus();
+                theForm.x_email.focus();
                 return (false);
             }
 

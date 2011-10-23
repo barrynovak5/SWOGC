@@ -10,6 +10,14 @@
 <table>
     <tbody>
         <tr>
+            <td id="lblEmail" align="right" class="leftSideCol">
+                &nbsp;E-Mail:
+            </td>
+            <td colspan="6" align="left">
+                <input size="35" id="txtEmail" name="x_email" />
+            </td>
+        </tr>        
+        <tr>
             <td align="right" class="leftSideCol">
                 First Name:
             </td>
@@ -23,14 +31,6 @@
             </td>
             <td colspan="6">
                 <input maxlength="50" size="35" name="x_last_name">
-            </td>
-        </tr>
-        <tr>
-            <td align="right" class="leftSideCol">
-                &nbsp;E-Mail:
-            </td>
-            <td colspan="6" align="left">
-                <input size="35" id="txtEmail" name="x_email" />
             </td>
         </tr>
         <tr>
