@@ -36,18 +36,15 @@
 
 <body>
 
-
-
 <!--#INCLUDE FILE="adminheader.asp"-->
 <form method="post" action="displayEvent.asp">
     <label id="LabelDonationEvent">Select Event:</label><br />
     <!--#include file="donationeventlist.asp"-->
     <br/><br />
+    <label id="LabelCustomizeEvent">Customize Event (e.g. payment form)</label><br />
     <input name="ButtonEditEvent" type="submit" value="Edit Event" />
 </form>
-
 <form method="post" action="addNewEvent.asp">
-    <label id="LabelCustomizeEvent">Customize Event (e.g. payment form)</label><br />
     <input name="ButtonAddEvent" type="submit" value="Add New Event" />
 </form><BR />
 
