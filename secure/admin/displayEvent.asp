@@ -47,10 +47,64 @@ Do While Not objRS.EOF
 	<input type="textbox" name="ReceiptEmailSender" value="<%= objRS.Fields("ReceiptEmailSender")%>"/>
 </div>
 
+<div>
+	<label for="ReceiptEmailSender">ReceiptEmailSender:</label>
+	<input type="textbox" name="ReceiptEmailSender" value="<%= objRS.Fields("ReceiptEmailSender")%>"/>
+</div>
+
+<div>
+	<label for="ReceiptEmailFooter">ReceiptEmailFooter:</label>
+	<input type="textbox" name="ReceiptEmailFooter" value="<%= objRS.Fields("ReceiptEmailFooter")%>"/>
+</div>
+
+<div>
+	<label for="PaymentFormHeader">PaymentFormHeader:</label>
+	<input type="textbox" name="PaymentFormHeader" value="<%= objRS.Fields("PaymentFormHeader")%>"/>
+</div>
+
+<div>
+	<label for="PaymentFormFooter">PaymentFormFooter:</label>
+	<input type="textbox" name="PaymentFormFooter" value="<%= objRS.Fields("PaymentFormFooter")%>"/>
+</div>
+
+<div>
+	<label for="ReceiptFormHeader">ReceiptFormHeader:</label>
+	<input type="textbox" name="ReceiptFormHeader" value="<%= objRS.Fields("ReceiptFormHeader")%>"/>
+</div>
+
+<div>
+	<label for="ReceiptFormFooter">ReceiptFormFooter:</label>
+	<input type="textbox" name="ReceiptFormFooter" value="<%= objRS.Fields("ReceiptFormFooter")%>"/>
+</div>
+
+<div>
+	<label for="CancelURL">CancelURL:</label>
+	<input type="textbox" name="CancelURL" value="<%= objRS.Fields("CancelURL")%>"/>
+</div>
+
+<div>
+	<label for="ReceiptPageURL">ReceiptPageURL:</label>
+	<input type="textbox" name="ReceiptPageURL" value="<%= objRS.Fields("ReceiptPageURL")%>"/>
+</div>
+
+<div>
+	<label for="ReceiptPageTitle">ReceiptPageTitle:</label>
+	<input type="textbox" name="ReceiptPageTitle" value="<%= objRS.Fields("ReceiptPageTitle")%>"/>
+</div>
+
+<div>
+	<label for="EventConfirmation">EventConfirmation:</label>
+	<input type="textbox" name="EventConfirmation" value="<%= objRS.Fields("EventConfirmation")%>"/>
+</div>
+
+<div>
+	<label for="EventEmailConfirmation">EventEmailConfirmation:</label>
+	<input type="textbox" name="EventEmailConfirmation" value="<%= objRS.Fields("EventEmailConfirmation")%>"/>
+</div>
+
 <input type="submit" value="Save"/>
 <div>
-todo:
-ReceiptEmailHeader	ReceiptEmailFooter	PaymentFormHeader	PaymentFormFooter	ReceiptFormHeader	ReceiptFormFooter	CancelURL	ReceiptPageURL	ReceiptPageTitle	EventConfirmation	EventEmailConfirmation
+todo:										
 
 </div>
 </form>

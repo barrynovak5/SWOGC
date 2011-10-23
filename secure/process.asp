@@ -3,14 +3,23 @@
 
 <%
 
-Dim EventTypeId
+Dim EventTypeId, invoiceNo
 EventTypeId = Request.Form("EventTypeId")
 
-' an invoice ID is generated using the date and time
-Dim invoiceNo
-invoiceNo = Year(Date) & Month(Date) &  Day(Date) & Hour(Now) & Minute(Now) & Second(Now)
+If EventTypeId = "1" Then 'Donation
 
-AddDonation(invoiceNo)
-ShowAuthorizeForm(invoiceNo)
+    ' an invoice ID is generated using the date and time
+    invoiceNo = Year(Date) & Month(Date) &  Day(Date) & Hour(Now) & Minute(Now) & Second(Now)
+
+    AddDonation(invoiceNo)
+    ShowAuthorizeForm(invoiceNo)
+
+ElseIf EventTypeId = "2" Or EventTypeId = "3" Then '2 = Event, 3 = Newsletter
+    
+    AddDonation(invoiceNo)
+    ShowThankYou()    
+
+End If
+
 
 %>
