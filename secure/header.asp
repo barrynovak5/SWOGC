@@ -1,5 +1,4 @@
 <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
-                                        <tbody>
                                             <tr>
                                                 <td valign="top" align="left">
                                                     <!-- Check for home page, if home, don't link the Logo ------------->
@@ -9,20 +8,20 @@
                                                 </td>
                                                 <td valign="top" width="100%" align="right">
                                                     <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
-                                                        <tbody>
+                                                        
                                                             <tr>
                                                                 <td style="padding-bottom: 80px; padding-left: 0px; padding-right: 0px; padding-top: 0px"
                                                                     valign="top" align="right">
                                                                     <!-- Top Menu --------------------------------------->
                                                                     <table border="0" cellspacing="0" bordercolor="red" cellpadding="0">
-                                                                        <tbody>
+                                                                        
                                                                             <tr>
                                                                                 <td valign="top" align="left">
                                                                                     <img title="" border="0" src="images/Donation/TopMenuLeft.jpg" width="12" height="37">
                                                                                 </td>
                                                                                 <td class="topMenuBack" valign="center" align="left">
                                                                                     <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
-                                                                                        <tbody>
+                                                                                        
                                                                                             <tr>
                                                                                                 <td valign="center" width="100%" align="left">
                                                                                                     <td class="menuCellTop" valign="center" align="middle">
@@ -80,23 +79,22 @@
                                                                                                         </a>
                                                                                                     </td>
                                                                                             </tr>
-                                                                                        </tbody>
+                                                                                        
                                                                                     </table>
                                                                                 </td>
                                                                                 <td valign="top" align="left">
                                                                                     <img title="" border="0" src="images/Donation/TopMenuRight.jpg" width="12" height="37">
                                                                                 </td>
                                                                             </tr>
-                                                                        </tbody>
+                                                                        
                                                                     </table>
                                                                 </td>
                                                             </tr>
-                                                                                                                    </tbody>
+                                                                                                                    
                                                     </table>
                                                 </td>
-                                                <td align="right">
-                                                    <img border="0" src="images/Donation/BannerRight.jpg" width="14" height="174">
+                                                <td align="right" valign="top">
+                                                    <img border="0" src="images/Donation/BannerRight.jpg" width="14" height="174"/>
                                                 </td>
                                             </tr>
-                                        </tbody>
                                     </table>
