@@ -27,8 +27,8 @@ Set objCmd.ActiveConnection = objConn
 'the CommandType is adCmdStoredProc.
 
 Dim fieldList
-fieldList = "DonorFirstName, DonorLastName, DonorCompany, DonorAddress, DonorAddress2, DonorCity, DonorState, DonorZipCode, DonorPhoneDayOrEvening, DonorEmailAddress" 
-objCmd.CommandText = "SELECT " & fieldList & " FROM Donations WHERE Donations.AddToNewsletter = True AND Donations.EventID = ?"
+fieldList = "DonorFirstName, DonorLastName, AddToNewsletter, DonorCompany, DonorAddress, DonorAddress2, DonorCity, DonorState, DonorZipCode, DonorPhoneDayOrEvening, DonorEmailAddress" 
+objCmd.CommandText = "SELECT " & fieldList & " FROM Donations WHERE Donations.EventID = ?"
 objCmd.CommandType = adCmdText
 
 'Create the parameter and populate it.

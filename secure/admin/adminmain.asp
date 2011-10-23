@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -6,16 +8,18 @@
 <title>4c Admin</title>
 
    <script type="text/javascript">
-          function SubmitForm(URL) {
+          function SubmitForm(URL, sanitizeName) {
 
               var donationEvent = document.getElementById("SelectListEventId");
     	      var fileName = donationEvent.options[donationEvent.selectedIndex].text;
-
+            
     	      // Get rid of the item count in the fileName
     	      fileName = fileName.substr(fileName.indexOf(")")+1);
 
-              // Get rid of all characters except numbers and letters
-    	      fileName = fileName.replace(/[^a-zA-Z0-9]+/g, '');
+    	      if (sanitizeName) {
+    	          // Get rid of all characters except numbers and letters
+    	          fileName = fileName.replace(/[^a-zA-Z0-9]+/g, '');
+    	      }
 
               window.location = URL + "?ID=" + donationEvent.value + "&Name=" + fileName;
               return false;  
@@ -35,12 +39,12 @@
     <input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 </form>
 
-<form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('displayEventVisitors.asp');">
+<form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('displayEventVisitors.asp', false);">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 </form>
 
-<form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('DownloadEventVisitors.asp');">
+<form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('DownloadEventVisitors.asp', true);">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" /><br /><br />
 	
