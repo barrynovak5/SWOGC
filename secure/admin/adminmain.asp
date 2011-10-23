@@ -29,13 +29,13 @@
 <input name="ButtonEditEvent" type="submit" value="Edit Event" />
 </form>
 
-<form method="post" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this)">
+<form action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this)">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br /><br />
 	
 </form>
 
-<form method="post" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this)">
+<form action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this)">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" /><br /><br />
 	
