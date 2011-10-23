@@ -1,3 +1,4 @@
+<!--#INCLUDE FILE="adminheader.asp"-->
 <!--#include file=adovbs.inc -->
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
@@ -32,6 +33,9 @@ objRS.Open objCmd
 
 objRS("EventName") = Request.Form("EventName")
 objRS("EventDescription") = Request.Form("EventDescription")
+objRS("ReceiptMethod") = Request.Form("ReceiptMethod")
+objRS("ReceiptLink") = Request.Form("ReceiptLink")
+objRS("SendEmailReceipt") = Request.Form("SendEmailReceipt")
 objRS("ReceiptEmailSender") = Request.Form("ReceiptEmailSender")
 objRS("ReceiptEmailFooter") = Request.Form("ReceiptEmailFooter")
 objRS("PaymentFormHeader") = Request.Form("PaymentFormHeader")

@@ -20,7 +20,7 @@
 </head>
 
 <body>
-
+<!--#INCLUDE FILE="adminheader.asp"-->
 <form method="post" action="displayEvent.asp">
 <label id="LabelDonationEvent">Select Event:</label><br />
 <!--#include file="donationeventlist.asp"-->
@@ -37,7 +37,9 @@
 
 <input name="ButtonDownloadEventVisitors" type="button" value="Download List" />
 <label id="LabelCustomizeEvent">Customize Event (e.g. payment form)</label><br />
-<input name="ButtonAddEvent" type="button" value="Add New Event" />
+<form method="post" action="addNewEvent.asp">
+<input name="ButtonAddEvent" type="submit" value="Add New Event" />
+</form>
 <input name="ButtonCopyEvent" type="button" value="Copy an Event" /><br />
 <br />
 </form>

@@ -4,7 +4,6 @@
 donationEventId = Request.Form("DonationEventId")
 Response.Write(donationEventId)
 %>
-
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
 Set objCmd  = Server.CreateObject("ADODB.Command")
@@ -21,7 +20,7 @@ Set objCmd.ActiveConnection = objConn
 'CommandType is adCmdText.  If a query name is specified, then
 'the CommandType is adCmdStoredProc.
 
-objCmd.CommandText = "SELECT DonorFirstName, DonorLastName FROM Donations WHERE EVENTID = ?"
+objCmd.CommandText = "SELECT DonorFirstName, DonorLastName FROM Donations"
 objCmd.CommandType = adCmdText
 
 'Create the parameter and populate it.
@@ -35,42 +34,18 @@ objCmd.Parameters("@EVENTID") = donationEventId
 
 objRS.Open objCmd
 %>
-<table border=1 cellpadding=2 cellspacing=2>
-<tr>
-<%
-For I = 0 To objRS.Fields.Count - 1
-  Response.Write "<td><b>" & objRS(I).Name & "</b></td>"
-Next
-%>
-</tr>
 <%
 Do While Not objRS.EOF
-  Response.Write "<tr>"
+  Response.Write "<p>"
   For I = 0 To objRS.Fields.Count - 1
-    Response.Write "<td>" & objRS(I) & "</td>"
+    	if I > 0 then Response.Write ", "
+	Response.Write objRS(I)
   Next
-  Response.Write "</tr>"
+  Response.Write "</p>"
   objRS.MoveNext
 Loop
 %>
-</table>
-<table border=1 cellpadding=2 cellspacing=2>
-<tr>
-<%
-  Response.Write "<td><b>" & objRS(I).Name & "</b></td>"
-%>
-</tr>
-<%
-Do While Not objRS.EOF
-  Response.Write "<tr>"
-  For I = 0 To objRS.Fields.Count - 1
-    Response.Write "<td>EventID=" & CStr(donationEventId) & "</td>"
-  Next
-  Response.Write "</tr>"
-  objRS.MoveNext
-Loop
-%>
-</table>
+
 
 <%
 objRS.Close

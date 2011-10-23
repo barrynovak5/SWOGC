@@ -1,3 +1,4 @@
+<!--#INCLUDE FILE="adminheader.asp"-->
 <!--#include file=adovbs.inc -->
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
@@ -15,7 +16,7 @@ Set objCmd.ActiveConnection = objConn
 'CommandType is adCmdText.  If a query name is specified, then
 'the CommandType is adCmdStoredProc.
 
-objCmd.CommandText = "SELECT * FROM EVENTS WHERE EVENTID = ?"
+objCmd.CommandText = "SELECT * FROM EVENTS INNER JOIN EVENTTYPE ON EVENTS.EventTypeID = EVENTTYPE.EventTypeID WHERE EVENTID = ?"
 objCmd.CommandType = adCmdText
 
 'Create the parameter and populate it.
@@ -43,8 +44,22 @@ Do While Not objRS.EOF
 	<input type="textbox" name="EventDescription" value="<%= objRS.Fields("EventDescription")%>"/>
 </div>
 <div>
-	<label for="ReceiptEmailSender">ReceiptEmailSender:</label>
-	<input type="textbox" name="ReceiptEmailSender" value="<%= objRS.Fields("ReceiptEmailSender")%>"/>
+	<label for="ReceiptLink">ReceiptLink:</label>
+	<input type="textbox" name="ReceiptLink" value="<%= objRS.Fields("ReceiptLink")%>"/>
+</div>	
+<div>
+	<label for="ReceiptMethod">ReceiptMethod:</label>
+	<input type="textbox" name="ReceiptMethod" value="<%= objRS.Fields("ReceiptMethod")%>"/>
+</div>
+
+<div>
+	<label for="SendEmailReceipt">SendEmailReceipt:</label>
+	<input type="textbox" name="SendEmailReceipt" value="<%= objRS.Fields("SendEmailReceipt")%>"/>
+</div>
+
+<div>
+	<label for="SendEmailReceipt">SendEmailReceipt:</label>
+	<input type="textbox" name="SendEmailReceipt" value="<%= objRS.Fields("SendEmailReceipt")%>"/>
 </div>
 
 <div>
