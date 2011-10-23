@@ -29,6 +29,7 @@
           }
 
           $(document).ready(function () {
+              alert('test');
               $('#EventList').dataTable({
                   "bProcessing": true,
                   "sAjaxSource": 'EventListJson.asp'
