@@ -80,8 +80,8 @@ objRS.Open objCmd
             var theForm = document.getElementById("ManageEventVisitorStatuses");
             var status = document.getElementById("DonationStatuses" + donationID);
             
-            theForm.DonationID = donationID;
-            theForm.DonationStatusID = status.value;
+            theForm.DonationID.value = donationID;
+            theForm.DonationStatusID.value = status.value;
             theForm.submit();
             return true;
         }
