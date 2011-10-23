@@ -17,7 +17,7 @@ sub UpdateDonationStatus (donationId, statusId)
 
     Set objCmd.ActiveConnection = objConn
     
-    objCmd.CommandText = "UPDATE Donations WHERE Set DonationStatusID = ? Donations.DonationID = ?"
+    objCmd.CommandText = "UPDATE Donations Set DonationStatusID = ? WHERE Donations.DonationID = ?"
     objCmd.CommandType = adCmdText
 
     'Create the parameter and populate it.
