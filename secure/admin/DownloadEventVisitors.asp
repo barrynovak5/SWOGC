@@ -4,7 +4,6 @@
 donationEventId = Request.Form("DonationEventId")
 Response.Write(donationEventId)
 %>
-
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
 Set objCmd  = Server.CreateObject("ADODB.Command")
@@ -35,25 +34,18 @@ objCmd.Parameters("@EVENTID") = donationEventId
 
 objRS.Open objCmd
 %>
-<table border=1 cellpadding=2 cellspacing=2>
-<tr>
-<%
-For I = 0 To objRS.Fields.Count - 1
-  Response.Write "<td><b>" & objRS(I).Name & "</b></td>"
-Next
-%>
-</tr>
 <%
 Do While Not objRS.EOF
-  Response.Write "<tr>"
+  Response.Write "<p>"
   For I = 0 To objRS.Fields.Count - 1
-    Response.Write "<td>" & objRS(I) & "</td>"
+    	if I > 0 then Response.Write ", "
+	Response.Write """" & objRS(I) & """"
   Next
-  Response.Write "</tr>"
+  Response.Write "</p>"
   objRS.MoveNext
 Loop
 %>
-</table>
+
 
 <%
 objRS.Close
