@@ -55,6 +55,7 @@
     <input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 </form>
 
+<div style="width:80%">
 <table cellpadding="0" cellspacing="0" border="0" class="display" width="800px" id="EventList">
 	<thead>
 		<tr>
@@ -74,6 +75,7 @@
 		</tr>
 	</tfoot>
 </table>
+</div>
 
 <form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('displayEventVisitors.asp', false);">
 	<input name="DonationEventId" type="hidden" />
