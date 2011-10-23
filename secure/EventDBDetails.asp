@@ -53,14 +53,18 @@ If Not rs.EOF Then
     EventTypeId = rs.Fields.Item("EventTypeId")
     EventDescription = rs.Fields.Item("EventDescription")
     PaymentFormHeader = rs.Fields.Item("PaymentFormHeader")
-    ReceiptFormHeader = rs.Fields.Item("ReceiptFormHeader")
-    ReceiptEmailHeader = rs.Fields.Item("ReceiptEmailHeader")
     PaymentFormFooter = rs.Fields.Item("PaymentFormFooter")
-    ReceiptFormFooter = rs.Fields.Item("ReceiptFormFooter")
-    ReceiptEmailFooter = rs.Fields.Item("ReceiptEmailFooter")
     PaymentFormHeader2 = rs.Fields.Item("PaymentFormHeader2")
-    PaymentFormFoote2r = rs.Fields.Item("PaymentFormFooter2")
-
+    PaymentFormFooter2 = rs.Fields.Item("PaymentFormFooter2")
+    
+    ReceiptFormHeader = rs.Fields.Item("ReceiptFormHeader")
+    ReceiptFormFooter = rs.Fields.Item("ReceiptFormFooter")
+    ReceiptFormHeader2 = rs.Fields.Item("ReceiptFormHeader2")
+    ReceiptFormFooter2 = rs.Fields.Item("ReceiptFormFooter2")
+    
+    ReceiptEmailHeader = rs.Fields.Item("ReceiptEmailHeader")
+    ReceiptEmailFooter = rs.Fields.Item("ReceiptEmailFooter")
+ 
 End If
 
 rs.Close
