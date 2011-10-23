@@ -2,7 +2,7 @@
 <!--#include file=adovbs.inc -->
 <%
 donationEventId = Request.Form("DonationEventId")
-Response.Write(donationEventId)
+Response.Write("<p>EventID=" & donationEventId & "</p>")
 %>
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
