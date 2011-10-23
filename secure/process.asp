@@ -11,13 +11,13 @@ If EventTypeId = "1" Then 'Donation
 
     ' an invoice ID is generated using the date and time
     invoiceNo = Year(Date) & Month(Date) &  Day(Date) & Hour(Now) & Minute(Now) & Second(Now)
-
-    AddDonation(invoiceNo, Request.Form("x_amount"))
+    amount = Request.Form("x_amount") 
+    AddDonation(invoiceNo, amount )
     ShowAuthorizeForm(invoiceNo)
 
 ElseIf EventTypeId = "2" Or EventTypeId = "3" Then '2 = Event, 3 = Newsletter
     
-    AddDonation("", 0)
+    AddDonation("", "0")
     ShowThankYou 
 
 End If
