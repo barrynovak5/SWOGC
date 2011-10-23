@@ -11,13 +11,15 @@
 		//alert(theFormId);
 		 //var theForm = document.getElementById(theFormId);
 		//alerForm.name);
-	
+		alert(URL);
                  var donationEvent = document.getElementById("SelectListEventId");
 		 alert(donationEvent.value);
+	        alert(URL & "&DonationEventID=" & donationEvent.value);
 
 		 //theForm.DonationEventId.value = donationEvent.value;
 		 window.location = URL & "&DonationEventID=" & donationEvent.value
-		
+		 
+
                  return false;  
           }
    </script>	
@@ -36,13 +38,13 @@
 <input name="ButtonEditEvent" type="submit" value="Edit Event" />
 </form>
 
-<form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('./displayEventVisitors.asp');">
+<form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('displayEventVisitors.asp');">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 	
 </form>
 
-<form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('./DownloadEventVisitors.asp');">
+<form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('DownloadEventVisitors.asp');">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" /><br /><br />
 	
