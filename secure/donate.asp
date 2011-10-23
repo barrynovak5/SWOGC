@@ -30,10 +30,21 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     </style>
     <script language="JavaScript" type="text/javascript"><!--
 
-        function validateCurrency(amount) {
-            var regex = /^[1-9]\d*(?:\.\d{0,2})?$/;
-            return regex.test(amount);
+         // Check if string is currency  
+
+        var isCurrency_re    = /^\s*(\+|-)?((\d+(\.\d\d)?)|(\.\d\d))\s*$/;  
+
+        function isCurrency (s) {  
+
+                return String(s).search (isCurrency_re) != -1  
+
         }
+        
+        // checks that an input string looks like a valid email address.
+        var isEmail_re       = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+        function isEmail (s) {
+            return String(s).search (isEmail_re) != -1;
+       }
         
         function Validator(theForm) {
 
@@ -43,7 +54,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                 return (false);
             }            
             
-            if (validateCurrency(theForm.x_amount.value))
+            if (!isCurrency(theForm.x_amount.value))
             {  
                 alert("Please enter a valid number in the \"Amount of Donation\" field.");
                 theForm.x_amount.focus();
@@ -59,11 +70,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                 }
                 else {
                     var emailad = trim(theForm.x_email.value);
-                    var exclude = /[^@\-\.\w]|^[_@\.\-]|[\._\-]{2}|[@\.]{2}|(@)[^@]*\1/;
-                    var check = /@[\w\-]+\./;
-                    var checkend = /\.[a-zA-Z]{2,3}$/;
-
-                    if (((emailad.search(exclude) != -1) || (emailad.search(check)) == -1) || (emailad.search(checkend) == -1)) {
+                    if (!isEmail(emailad))
                         alert("Email is invalid. Please enter a       \nvalid email address.");
                         theForm.x_email.focus();
                         return false;
