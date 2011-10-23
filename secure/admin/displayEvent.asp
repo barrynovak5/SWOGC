@@ -33,6 +33,11 @@ objRS.Open objCmd
 
 Do While Not objRS.EOF
 
+Dim x
+For x = 0 To objRs.Fields.Count - 1
+  Response.Write(objRs.Fields(x).Name & ", ")
+Next
+
 %>
 
 
