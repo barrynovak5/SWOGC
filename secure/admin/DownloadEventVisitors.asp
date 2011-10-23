@@ -25,7 +25,9 @@ Set objCmd.ActiveConnection = objConn
 'CommandType is adCmdText.  If a query name is specified, then
 'the CommandType is adCmdStoredProc.
 
-objCmd.CommandText = "SELECT Donations.DonorFirstName, Donations.DonorLastName, Donations.DonorCompany, Donations.DonorAddress, Donations.DonorAddress2, Donations.DonorCity, Donations.DonorState, Donations.DonorZipCode, Donations.DonorPhoneDayOrEvening, Donations.DonorEmailAddress FROM Donations WHERE Donations.AddToNewsletter = True AND Donations.EventID = ?"
+Dim fieldList
+fieldList = "DonorFirstName, DonorLastName, DonorCompany, DonorAddress, DonorAddress2, DonorCity, DonorState, DonorZipCode, DonorPhoneDayOrEvening, DonorEmailAddress" 
+objCmd.CommandText = "SELECT " & fieldList & " FROM Donations WHERE Donations.AddToNewsletter = True AND Donations.EventID = ?"
 objCmd.CommandType = adCmdText
 
 'Create the parameter and populate it.
@@ -39,7 +41,7 @@ objCmd.Parameters("@EVENTID") = donationEventId
 
 objRS.Open objCmd
 
-Response.Write("Lines: " & objRs.Fields.Count)
+Response.Write(fieldList & vbCrLf)
 
 Do While Not objRS.EOF
   Response.Write("A")
