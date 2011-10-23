@@ -32,14 +32,16 @@ objCmd.Parameters("@EVENTID") = donationEventId
 objRS.Open objCmd
 
 Do While Not objRS.EOF
+
 %>
 
+
 <p>Event Type: <%= objRS.Fields("EventTypeDescription")%></p>
-<p>Event Id: <%= objRs.Fields("EventId") %></p>
+<p>Event Id: <%= objRS.Fields("EventID")%></p>
 
 <form method="POST" action="updateevent.asp">
-<input type="hidden" name="EventId" value="<%= objRS.Fields("EVENTID")%>"/>
-<div>    
+<div>
+	<input type="hidden" name="EventId" value="<%= objRS.Fields("EVENTID")%>"/>
 	<label for="EventName">Event Name:</label>
 	<input type="textbox" name="EventName" value="<%= objRS.Fields("EventName")%>"/>
 </div>
@@ -54,11 +56,6 @@ Do While Not objRS.EOF
 <div>
 	<label for="ReceiptMethod">Receipt Method:</label>
 	<input type="textbox" name="ReceiptMethod" value="<%= objRS.Fields("ReceiptMethod")%>"/>
-</div>
-
-<div>
-	<label for="SendEmailReceipt">Send Email Receipt:</label>
-	<input type="textbox" name="SendEmailReceipt" value="<%= objRS.Fields("SendEmailReceipt")%>"/>
 </div>
 
 <div>
