@@ -8,7 +8,7 @@
 <title>4c Admin</title>
 
     <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+    <script type="text/javascript" language="javascript" src="js/jquery.dataTables.min.js"></script>
 
    <script type="text/javascript">
           function SubmitForm(URL, sanitizeName) {
