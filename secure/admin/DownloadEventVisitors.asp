@@ -38,6 +38,9 @@ objCmd.Parameters("@EVENTID") = donationEventId
 objRS.Open objCmd
 %>
 <%
+
+REsponse.Write("Lines: " & objRs.Fields.Count)
+
 Do While Not objRS.EOF
   For I = 0 To objRS.Fields.Count - 1
     	if I > 0 then Response.Write ", "
