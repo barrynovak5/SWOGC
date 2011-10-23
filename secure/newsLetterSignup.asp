@@ -30,6 +30,12 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     </style>
     <script language="JavaScript" type="text/javascript"><!--
 
+        function Load()
+        {
+            txtEmail = document.getElementById("txtEmail");
+            txtEmail.css= "required";
+        }
+
         function Validator(theForm) {
 
             if (theForm.DonorEmailAddress.value.length) {
@@ -95,7 +101,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         }
     </style>
 </head>
-<body bottommargin="0" leftmargin="0" onload="CreateHeaderAndFooterFields()" rightmargin="0"
+<body bottommargin="0" leftmargin="0" onload="Load()" rightmargin="0"
     topmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
     <div class="SEODiv">
         <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
@@ -263,7 +269,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                     <h1 class="H1Heading1">
                                                                                         Early Care and Education<br>
                                                                                         <div class="H1Heading2">
-                                                                                            4C for children - Make a Donation</div>
+                                                                                            4C for children - Subscribe to Newsletter</div>
                                                                                     </h1>
                                                                                 </td>
                                                                             </tr>
@@ -331,7 +337,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td align="right">
-                                                                                                        <input value="Submit" type="submit" name="submit" />         
+                                                                                                        <input value="Subscribe" type="submit" name="submit" />         
                                                                                                     </td>
                                                                                                 </tr>
                                                                                             </table>
