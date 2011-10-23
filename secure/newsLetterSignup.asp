@@ -32,8 +32,8 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
 
         function Load()
         {
-            lblEmail = document.getElementById("lblEmail");
-            lblEmail.className= "required";
+           var  lblEmail = document.getElementById("lblEmail");
+           var  lblEmail.className= "required";
         }
 
         function Validator(theForm) {

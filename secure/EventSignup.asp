@@ -32,8 +32,8 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
 
         function Load()
         {
-            lblEmail = document.getElementById("lblEmail");
-            lblPhone = document.getElementById("lblPhone");
+            var lblEmail = document.getElementById("lblEmail");
+            var lblPhone = document.getElementById("lblPhone");
             
             lblEmail.className= "required";
             lblPhone.className= "required";
