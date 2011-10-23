@@ -278,6 +278,11 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         ***********************************************/
     </script>
 
+    <table class="pageBackground" border="0" cellspacing="0" bordercolor="red" cellpadding="0"
+        width="100%" height="100%">
+        
+            <tr>
+                <td class="pageBackgroundTop" height="100%" valign="top" width="100%" align="left">
                     <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="974" align="center"
                         height="100%">
                         
@@ -453,6 +458,8 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                             </tr>
                         
                     </table>
+                 </td></tr>
+      </table>   
                     
 </body>
 </html>
