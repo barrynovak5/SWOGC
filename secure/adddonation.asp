@@ -28,7 +28,7 @@ objRs("DonorPhoneDayOrEvening") = Request.Form("DonorPhoneDayOrEvening")
 objRs("DonorComments") = Request.Form("DonorComments")
 objRs.Update
 
-conn.close
+objConn.close
 
 End Function
 %>
