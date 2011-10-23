@@ -24,7 +24,8 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="revisit-after" content="14 Days">
     <link rel="stylesheet" type="text/css" href="styles/css.css" />
-
+    <script language="javascript" type="text/javascript" src="scripts/validation.js"></script>
+    
     <style type="text/css">
             
     </style>
@@ -45,24 +46,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
 
             if (theForm.x_email.value.length) {
 
-                if (theForm.x_email.value.length < 6) {
-                    alert("Please enter at least 6 characters in the \"E-mail\" field.");
-                    theForm.x_email.focus();
-                    return (false);
-                }
-                else {
-                    var emailad = trim(theForm.x_email.value);
-                    var exclude = /[^@\-\.\w]|^[_@\.\-]|[\._\-]{2}|[@\.]{2}|(@)[^@]*\1/;
-                    var check = /@[\w\-]+\./;
-                    var checkend = /\.[a-zA-Z]{2,3}$/;
-
-                    if (((emailad.search(exclude) != -1) || (emailad.search(check)) == -1) || (emailad.search(checkend) == -1)) {
-                        alert("Email is invalid. Please enter a       \nvalid email address.");
-                        theForm.x_email.focus();
-                        return false;
-                    }
-
-                }
+                return ValidateEmail(theForm.x_email);
             }
             else
             {
@@ -72,13 +56,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                     return false;
                 }
             }
-
-            if (theForm.x_email.value.length > 50) {
-                alert("Please enter at most 50 characters in the \"E-mail\" field.");
-                theForm.x_email.focus();
-                return (false);
-            }
-
+            
             return (true);
         }
 

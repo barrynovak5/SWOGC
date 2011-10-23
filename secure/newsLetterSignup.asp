@@ -25,6 +25,8 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     <meta name="revisit-after" content="14 Days">
     <link rel="stylesheet" type="text/css" href="styles/css.css" />
 
+  <script language="javascript" type="text/javascript" src="scripts/validation.js"></script>
+    
    <script language="javascript" type="text/javascript">
 
         function LoadData()
@@ -37,60 +39,8 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         }
 
         function Validator(theForm) {
-
-            if (theForm.x_email.value.length) {
-
-                if (theForm.x_email.value.length < 6) {
-                    alert("Please enter at least 6 characters in the \"E-mail\" field.");
-                    theForm.x_email.focus();
-                    return (false);
-                }
-                else {
-                    var emailad = trim(theForm.x_email.value);
-                    var exclude = /[^@\-\.\w]|^[_@\.\-]|[\._\-]{2}|[@\.]{2}|(@)[^@]*\1/;
-                    var check = /@[\w\-]+\./;
-                    var checkend = /\.[a-zA-Z]{2,3}$/;
-
-                    if (((emailad.search(exclude) != -1) || (emailad.search(check)) == -1) || (emailad.search(checkend) == -1)) {
-                        alert("Email is invalid. Please enter a       \nvalid email address.");
-                        theForm.x_email.focus();
-                        return false;
-                    }
-
-                }
-            }
-            else
-            {
-                alert("Please enter an email address");
-                return false;
-            }
-
-            if (theForm.x_email.value.length > 50) {
-                alert("Please enter at most 50 characters in the \"E-mail\" field.");
-                theForm.x_email.focus();
-                return (false);
-            }
-
-
-            return (true);
-        }
-
-        function trim(inputStringTrim) {
-            fixedTrim = "";
-            lastCh = " ";
-            for (x = 0; x < inputStringTrim.length; x++) {
-                ch = inputStringTrim.charAt(x);
-                if ((ch != " ") || (lastCh != " ")) {
-                    fixedTrim += ch;
-                }
-                lastCh = ch;
-            }
-            if (fixedTrim.charAt(fixedTrim.length - 1) == " ") {
-                fixedTrim = fixedTrim.substring(0, fixedTrim.length - 1);
-            }
-            return fixedTrim;
-        }
-      
+            return ValidateEmail(theForm.x_email);
+        }      
 
 </script>
 

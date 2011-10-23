@@ -24,27 +24,9 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="revisit-after" content="14 Days">
     <link rel="stylesheet" type="text/css" href="styles/css.css" />
-
-    <style type="text/css">
-            
-    </style>
+    <script language="javascript" type="text/javascript" src="scripts/validation.js"></script>
     <script language="JavaScript" type="text/javascript"><!--
 
-         // Check if string is currency  
-
-        var isCurrency_re    = /^(?:(?:\d{0,3}(?:[, ]\d{0,3})*[, ])+\d{3}|\d+)(?:\.\d*)?(?:\s*\$)?$/;
-
-        function isCurrency (s) {  
-                return String(s).search (isCurrency_re) != -1 ; 
-        }
-        
-        // checks that an input string looks like a valid email address.
-        var isEmail_re       = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-        function isEmail (s) 
-        {
-            return String(s).search (isEmail_re) != -1;
-        }
-        
         function Validator(theForm) {
 
             if (!theForm.x_amount.value.length || trim(theForm.x_amount.value) == "") {
@@ -71,49 +53,8 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                 }
             }
 
-            if (theForm.x_email.value.length > 0) {
-
-                if (theForm.x_email.value.length < 6) {
-                    alert("Please enter at least 6 characters in the \"E-mail\" field.");
-                    theForm.x_email.focus();
-                    return (false);
-                }
-                else {
-                    var emailad = trim(theForm.x_email.value);
-                    if (!isEmail(emailad))
-                    {
-                        alert("Email is invalid. Please enter a       \nvalid email address.");
-                        theForm.x_email.focus();
-                        return false;
-                    }
-
-                }
-            }
-
-            if (theForm.x_email.value.length > 50) {
-                alert("Please enter at most 50 characters in the \"E-mail\" field.");
-                theForm.x_email.focus();
-                return (false);
-            }
-
-
-            return (true);
-        }
-
-        function trim(inputStringTrim) {
-            fixedTrim = "";
-            lastCh = " ";
-            for (x = 0; x < inputStringTrim.length; x++) {
-                ch = inputStringTrim.charAt(x);
-                if ((ch != " ") || (lastCh != " ")) {
-                    fixedTrim += ch;
-                }
-                lastCh = ch;
-            }
-            if (fixedTrim.charAt(fixedTrim.length - 1) == " ") {
-                fixedTrim = fixedTrim.substring(0, fixedTrim.length - 1);
-            }
-            return fixedTrim;
+            return ValidateEmail(theForm.x_email);           
+            
         }
       
 
