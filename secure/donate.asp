@@ -4,15 +4,15 @@
 Dim EventId
 EventId = "1"
 
-Dim ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
+Dim EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
+    ReceiptFormHeader2, ReceiptFormFooter2, _
     PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
 
 Call LoadEventDetails(ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
+    ReceiptFormHeader2, ReceiptFormFooter2, _
     PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter)
-
-Response.Write("TTTT:" & ReturnEnabled)
 
 %>
 
@@ -32,7 +32,7 @@ Response.Write("TTTT:" & ReturnEnabled)
         function CreateHeaderAndFooterFields() {
             var header1 = document.getElementById("header1")
             var header2 = document.getElementById("header2");
-            var footer1 = document.getElementById("header2");
+            var footer1 = document.getElementById("footer1");
             var footer2 = document.getElementById("footer2");
 
             var style = "<style type='text/css' media='all'>" +
@@ -375,6 +375,7 @@ Response.Write("TTTT:" & ReturnEnabled)
                                                                                             <form language="JavaScript" onsubmit="return Validator(this)" method="post" name="frm1Donation"
                                                                                             action="process.asp">
 
+                                                                                            <input value="<% Response.Write(EventTypeId) %>" type="hidden" name="EventTypeId" />
                                                                                             <input value="<% Response.Write(EventId) %>" type="hidden" name="EventID" />
                                                                                             <input value="<% Response.Write(ReceiptPageUrl) %>" type="hidden" name="ReturnUrl" />
                                                                                             <input value="<% Response.Write(ReceiptPageTitle) %>" type="hidden" name="ReturnTitle" />
@@ -382,10 +383,12 @@ Response.Write("TTTT:" & ReturnEnabled)
                                                                                             <input value="<% Response.Write(EventName) %>" type="hidden" name="EventName" />
                                                                                             <input value="<% Response.Write(EventDescription) %>" type="hidden" name="x_description" />
                                                                                             <input value="<% Response.Write(PaymentFormHeader) %>" type="hidden" name="x_header_html_payment_form" />
+                                                                                            <input value="<% Response.Write(PaymentFormHeader) %>" type="hidden" name="x_header2_html_payment_form" />
                                                                                             <input value="<% Response.Write(ReceiptFormHeader) %>" type="hidden" name="x_header_html_receipt" />
                                                                                             <input value="<% Response.Write(ReceiptEmailHeader) %>" type="hidden" name="x_header_email_receipt" />
 
                                                                                             <input value="<% Response.Write(PaymentFormFooter) %>" type="hidden" name="x_Footer_html_payment_form" />
+                                                                                            <input value="<% Response.Write(PaymentFormFooter) %>" type="hidden" name="x_Footer2_html_payment_form" />
                                                                                             <input value="<% Response.Write(ReceiptFormFooter) %>" type="hidden" name="x_Footer_html_receipt" />
                                                                                             <input value="<% Response.Write(ReceiptEmailFooter) %>" type="hidden" name="x_Footer_email_receipt" />
                                                                                             

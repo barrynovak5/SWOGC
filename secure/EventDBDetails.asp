@@ -1,8 +1,9 @@
 <!--#include file="adovbs.inc"-->
 <%
 
-Function LoadEventDetails(ByRef ReceiptPageUrl, ByRef ReceiptPageTitle, ByRef ReceiptPageEnabled, ByRef EventName, _
+Function LoadEventDetails(ByRef EventTypeId, ByRef ReceiptPageUrl, ByRef ReceiptPageTitle, ByRef ReceiptPageEnabled, ByRef EventName, _
     ByRef EventDescription, ByRef PaymentFormHeader, ByRef ReceiptFormHeader, ByRef ReceiptEmailHeader, _
+    ByRef ReceiptFormHeader2, ByRef ReceiptFormFooter2, _
     ByRef PaymentFormFooter, ByRef ReceiptFormFooter, ByRef ReceiptEmailFooter)
 
 set conn= Server.CreateObject("ADODB.Connection")
@@ -33,26 +34,20 @@ rs.Open cmd
 If Not rs.EOF Then
 
     ReceiptPageUrl = rs.Fields.Item("ReceiptPageURL") 'http://www.4c.org
-Response.Write("MMMM:" + ReceiptPageEnabled)
     ReceiptPageTitle = rs.Fields.Item("ReceiptPageTitle")
     DefaultReceiptPageTitle = ""  ' UPDATE AFTER DB UPDATE rs.Fields.Item("DefaultReceiptPageTitle")
     DefaultReceiptPageUrl = rs.Fields.Item("DefaultReceiptPageUrl")
-Response.Write("NNNN:" + ReceiptPageEnabled)
     If ReceiptPageTitle = "" OR ReceiptPageUrl = "" Then
         If DefaultReceiptPageTitle = "" OR DefaultReceiptPageUrl = "" Then
             ReceiptPageEnabled = "false"
-Response.Write("QQQQ:" + ReceiptPageEnabled)
         Else
             ReceiptPageEnabled = "true"
             ReceiptPageTitle = DefaultReceiptPageTitle
             ReceiptPageUrl = DefaultReceiptPageUrl
-Response.Write("OOOO:" + ReceiptPageEnabled)
         End If
     Else
         ReceiptPageEnabled = "true"
-Response.Write("PPPP:" + ReceiptPageEnabled)
     End If
-Response.Write("RRRR:" + ReceiptPageEnabled)
 
     EventName = rs.Fields.Item("EventName")
     EventDescription = rs.Fields.Item("EventDescription")
