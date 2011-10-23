@@ -2,7 +2,7 @@
 
 <%
 Dim EventId
-EventId = "1"
+EventId = "3"
 
 Dim EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
@@ -32,87 +32,36 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
 
         function Validator(theForm) {
 
-            if (!theForm.x_amount.value.length || trim(theForm.x_amount.value) == "") {
-                alert("Please enter a value for the \"Amount of Donation\" field.");
-                theForm.x_amount.focus();
-                return (false);
-            }
+            if (theForm.DonorEmailAddress.value.length) {
 
-            if (theForm.x_amount.value.length < 2) {
-                alert("Please enter at least 2 characters in the \"Amount of Donation\" field.");
-                theForm.x_amount.focus();
-                return (false);
-            }
-
-            if (theForm.x_amount.value.length > 50) {
-                alert("Please enter at most 50 characters in the \"Amount of Donation\" field.");
-                theForm.x_amount.focus();
-                return (false);
-            }
-
-            var checkOK = "0123456789-.,";
-            var checkStr = theForm.x_amount.value;
-            var allValid = true;
-            var validGroups = true;
-            var decPoints = 0;
-            var allNum = "";
-            for (i = 0; i < checkStr.length; i++) {
-                ch = checkStr.charAt(i);
-                for (j = 0; j < checkOK.length; j++)
-                    if (ch == checkOK.charAt(j))
-                    break;
-                if (j == checkOK.length) {
-                    allValid = false;
-                    break;
-                }
-                if (ch == ".") {
-                    allNum += ".";
-                    decPoints++;
-                }
-                else if (ch == "," && decPoints != 0) {
-                    validGroups = false;
-                    break;
-                }
-                else if (ch != ",")
-                    allNum += ch;
-            }
-            if (!allValid) {
-                alert("Please enter only digit characters in the \"Amount of Donation\" field.");
-                theForm.x_amount.focus();
-                return (false);
-            }
-
-            if (decPoints > 1 || !validGroups) {
-                alert("Please enter a valid number in the \"Amount of Donation\" field.");
-                theForm.x_amount.focus();
-                return (false);
-            }
-
-            if (theForm.x_email.value.length > 0) {
-
-                if (theForm.x_email.value.length < 6) {
+                if (theForm.DonorEmailAddress.value.length < 6) {
                     alert("Please enter at least 6 characters in the \"E-mail\" field.");
-                    theForm.x_email.focus();
+                    theForm.DonorEmailAddress.focus();
                     return (false);
                 }
                 else {
-                    var emailad = trim(theForm.x_email.value);
+                    var emailad = trim(theForm.DonorEmailAddress.value);
                     var exclude = /[^@\-\.\w]|^[_@\.\-]|[\._\-]{2}|[@\.]{2}|(@)[^@]*\1/;
                     var check = /@[\w\-]+\./;
                     var checkend = /\.[a-zA-Z]{2,3}$/;
 
                     if (((emailad.search(exclude) != -1) || (emailad.search(check)) == -1) || (emailad.search(checkend) == -1)) {
                         alert("Email is invalid. Please enter a       \nvalid email address.");
-                        theForm.x_email.focus();
+                        theForm.DonorEmailAddress.focus();
                         return false;
                     }
 
                 }
             }
+            else
+            {
+                alert("Please enter an email address");
+                return false;
+            }
 
-            if (theForm.x_email.value.length > 50) {
+            if (theForm.DonorEmailAddress.value.length > 50) {
                 alert("Please enter at most 50 characters in the \"E-mail\" field.");
-                theForm.x_email.focus();
+                theForm.DonorEmailAddress.focus();
                 return (false);
             }
 
@@ -146,7 +95,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         }
     </style>
 </head>
-<body bottommargin="0" leftmargin="0" rightmargin="0"
+<body bottommargin="0" leftmargin="0" onload="CreateHeaderAndFooterFields()" rightmargin="0"
     topmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
     <div class="SEODiv">
         <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
@@ -333,13 +282,15 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                 <tr>
                                                                                     <td valign="top" align="left">
                                                                                         <p align="left">
-                                                                                            <b>A secure online credit-card</b> <b>donation</b> can be made by completing the
-                                                                                            form below. Be sure to press the "Make Donation" button at the bottom when you have
-                                                                                            completed this form.
-                                                                                            <table border="0" cellpadding="2" align="center">
+                                                                                            You can <b>sign up to our newsletter </b> by completing the
+                                                                                            form below. Be sure to press the "Submit" button at the bottom when you have
+                                                                                            completed this form.<p align="left">
+                                                                                            &nbsp;<table border="0" cellpadding="2" align="center">
                                                                                                 <tbody>
                                                                                                     <tr>
                                                                                                         <td valign="top" align="right">
+                                                                                                            
+                                                                                                            
                                                                                                             <b>4C is a Better Business Bureau<br>
                                                                                                                 Accredited Charity</b>
                                                                                                         </td>
@@ -371,57 +322,20 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                             <input value="<% Response.Write(ReceiptFormFooter) %>" type="hidden" name="x_Footer_html_receipt" />
                                                                                             <input value="<% Response.Write(ReceiptEmailFooter) %>" type="hidden" name="x_Footer_email_receipt" />
                                                                                             
-                                                                                            <table>
+                                                                                            <br />
+                                                                                            <table width="100%">
                                                                                                 <tr>
-                                                                                                    <td class="required">
-                                                                                                        <b>Donation Amount: </b>
-                                                                                                    </td>
                                                                                                     <td>
-                                                                                                        <input value="" type="text" name="x_amount" />
+                                                                                                        <!--#include file="customerInformation.asp"-->                                                                                           
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="right">
+                                                                                                        <input value="Submit" type="submit" name="submit" />         
                                                                                                     </td>
                                                                                                 </tr>
                                                                                             </table>
-                                                                                            <br />
-                                                                                            <!--#include file="customerInformation.asp"-->
                                                                                            
-                                                                                            <table>
-                                                                                                <tr>
-                                                                                                        <td align="left" class="leftSideCol">
-                                                                                                            <b>What prompted this online gift? </b>
-                                                                                                        </td>
-                                                                                                        <td width="370" colspan="6" align="left">
-                                                                                                            <!--#include file="picklist.asp"-->
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td colspan="2">
-                                                                                                            <b>
-                                                                                                                <br />
-                                                                                                                Comments (if any):</b>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td colspan="2">
-                                                                                                            <textarea wrap="physical" rows="7" cols="45" maxlength="1000" name="DonorComments"></textarea>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td class="leftSideCol">
-                                                                                                            Include me in future notifications:
-                                                                                                        </td>
-                                                                                                        <td>
-                                                                                                            <input value="true" type="radio" checked="checked" name="AddToNewsletter" />&nbsp;
-                                                                                                            Yes
-                                                                                                            <input value="false" type="radio" name="AddToNewsletter" />&nbsp; No
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                            
-                                                                                            </table>
-                                                                                            <p>
-                                                                                                <input value="Make Donation" type="submit" name="submit" />
-                                                                                            </p>
-                                                                                            <p>
-                                                                                                <b>Thank You!</b></p>
                                                                                             </form>
                                                                                     </td>
                                                                                 </tr>
