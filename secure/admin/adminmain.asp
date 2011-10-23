@@ -7,7 +7,7 @@
 
    <script type="text/javascript">
           function SubmitForm(URL)
-	  {
+    	  {
                  var donationEvent = document.getElementById("SelectListEventId");
                  window.location = URL + "?ID=" + donationEvent.value + "&Name=" + donationEvent.text;
                  return false;  
