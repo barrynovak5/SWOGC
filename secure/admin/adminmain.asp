@@ -7,8 +7,12 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>4c Admin</title>
 
+    <style type="text/css" title="currentStyle">
+			@import "css/demo_table.css";
+	</style>
     <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
     <script type="text/javascript" language="javascript" src="js/jquery.dataTables.min.js"></script>
+
 
    <script type="text/javascript">
           function SubmitForm(URL, sanitizeName) {
