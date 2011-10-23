@@ -4,7 +4,7 @@ Function QueryToJSON(dbc, sql)
         Set rs = dbc.Execute(sql)
         Set jsa = jsArray()
         While Not (rs.EOF Or rs.BOF)
-                Set jsa(Null) = jsObject()
+                Set jsa(Null) = jsArray()
                 For Each col In rs.Fields
                         jsa(Null)(col.Name) = col.Value
                 Next
