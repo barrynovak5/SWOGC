@@ -5,12 +5,14 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>4c Admin</title>
 
-   <script type="text/javscript">
+   <script type="text/javascript">
           function SubmitForm(theFormId)
 	  {
-
+		alert(theFormId);
 		 var theForm = document.getElementById(theFormId);
+		alert('x');
                  var donationEvent = document.getElementById("SelectListEventId");
+		alert(donationEvent.value);
 
 		 theForm.DonationEventId.value = donationEvent.value;
 		
@@ -21,7 +23,7 @@
 
 <body>
 
-<button type="button" onclick="alert('Value: ' & document.GetElementById('SelectListEventId'))">GetValue</button>
+<button type="button" onclick="alert('Hello World'))">GetValue</button>
 
 <!--#INCLUDE FILE="adminheader.asp"-->
 <form method="post" action="displayEvent.asp">
