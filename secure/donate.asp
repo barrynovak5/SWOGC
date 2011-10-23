@@ -32,26 +32,26 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
 
         function Validator(theForm) {
 
-            if (!theForm.DonationAmount.value.length || trim(theForm.DonationAmount.value) == "") {
+            if (!theForm.x_amount.value.length || trim(theForm.x_amount.value) == "") {
                 alert("Please enter a value for the \"Amount of Donation\" field.");
-                theForm.DonationAmount.focus();
+                theForm.x_amount.focus();
                 return (false);
             }
 
-            if (theForm.DonationAmount.value.length < 2) {
+            if (theForm.x_amount.value.length < 2) {
                 alert("Please enter at least 2 characters in the \"Amount of Donation\" field.");
-                theForm.DonationAmount.focus();
+                theForm.x_amount.focus();
                 return (false);
             }
 
-            if (theForm.DonationAmount.value.length > 50) {
+            if (theForm.x_amount.value.length > 50) {
                 alert("Please enter at most 50 characters in the \"Amount of Donation\" field.");
-                theForm.DonationAmount.focus();
+                theForm.x_amount.focus();
                 return (false);
             }
 
             var checkOK = "0123456789-.,";
-            var checkStr = theForm.DonationAmount.value;
+            var checkStr = theForm.x_amount.value;
             var allValid = true;
             var validGroups = true;
             var decPoints = 0;
@@ -78,13 +78,13 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
             }
             if (!allValid) {
                 alert("Please enter only digit characters in the \"Amount of Donation\" field.");
-                theForm.DonationAmount.focus();
+                theForm.x_amount.focus();
                 return (false);
             }
 
             if (decPoints > 1 || !validGroups) {
-                alert("Please enter a valid number in the \"DonationAmount\" field.");
-                theForm.DonationAmount.focus();
+                alert("Please enter a valid number in the \"Amount of Donation\" field.");
+                theForm.x_amount.focus();
                 return (false);
             }
 
@@ -377,7 +377,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                                         <b>Donation Amount: </b>
                                                                                                     </td>
                                                                                                     <td>
-                                                                                                        <input value="" type="text" id="DonationAmount" name="x_amount" />
+                                                                                                        <input value="" type="text" name="x_amount" />
                                                                                                     </td>
                                                                                                 </tr>
                                                                                             </table>
