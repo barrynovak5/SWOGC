@@ -35,7 +35,7 @@ If Not rs.EOF Then
 
     ReceiptPageUrl = rs.Fields.Item("ReceiptPageURL") 'http://www.4c.org
     ReceiptPageTitle = rs.Fields.Item("ReceiptPageTitle")
-    DefaultReceiptPageTitle = ""  ' UPDATE AFTER DB UPDATE rs.Fields.Item("DefaultReceiptPageTitle")
+    DefaultReceiptPageTitle = rs.Fields.Item("DefaultReceiptPageTitle")
     DefaultReceiptPageUrl = rs.Fields.Item("DefaultReceiptPageUrl")
     If ReceiptPageTitle = "" OR ReceiptPageUrl = "" Then
         If DefaultReceiptPageTitle = "" OR DefaultReceiptPageUrl = "" Then
