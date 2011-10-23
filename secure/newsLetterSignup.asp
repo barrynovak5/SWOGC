@@ -33,7 +33,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         function Load()
         {
             txtEmail = document.getElementById("txtEmail");
-            txtEmail.css= "required";
+            txtEmail.className= "required";
         }
 
         function Validator(theForm) {
