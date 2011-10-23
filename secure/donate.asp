@@ -354,7 +354,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                             <table>
                                                                                                 <tr>
                                                                                                     <td class="required">
-                                                                                                        <b>Donation Amount: </b>
+                                                                                                        <b>Donation Amount ($): </b>
                                                                                                     </td>
                                                                                                     <td>
                                                                                                         <input value="" type="text" name="x_amount" />
