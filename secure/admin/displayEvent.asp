@@ -1,10 +1,4 @@
-
 <!--#include file=adovbs.inc -->
-<%
-donationEventId = Request.Form("DonationEventId")
-Response.Write(donationEventId)
-%>
-
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
 Set objCmd  = Server.CreateObject("ADODB.Command")
@@ -29,6 +23,7 @@ objCmd.CommandType = adCmdText
 Set objParam = objCmd.CreateParameter("@EVENTID" , adInteger, adParamInput, 0, 0)
 objCmd.Parameters.Append objParam
 
+donationEventId = Request.Form("DonationEventId")
 objCmd.Parameters("@EVENTID") = donationEventId
 
 'Open and display the Recordset.
@@ -37,21 +32,27 @@ objRS.Open objCmd
 
 Do While Not objRS.EOF
 %>
-<form method="POST" action="updateevent.asp"
-<input type="hidden" value="<%= objRS.Fields("EVENTID")%>"/>
-<label for="EventName">EventName:</label>
-<input type="textbox" name="EventName" value="<%= objRS.Fields("EventName")%>"/>
+<form method="POST" action="updateevent.asp">
+<div>
+	<input type="hidden" name="EventId" value="<%= objRS.Fields("EVENTID")%>"/>
+	<label for="EventName">EventName:</label>
+	<input type="textbox" name="EventName" value="<%= objRS.Fields("EventName")%>"/>
+</div>
+<div>
+	<label for="EventDescription">EventDescription:</label>
+	<input type="textbox" name="EventDescription" value="<%= objRS.Fields("EventDescription")%>"/>
+</div>
+<div>
+	<label for="ReceiptEmailSender">ReceiptEmailSender:</label>
+	<input type="textbox" name="ReceiptEmailSender" value="<%= objRS.Fields("ReceiptEmailSender")%>"/>
+</div>
 
-<label for="EventDescription">EventDescription:</label>
-<input type="textbox" name="EventDescription" value="<%= objRS.Fields("EventDescription")%>"/>
-
-<label for="ReceiptEmailSender">ReceiptEmailSender:</label>
-<input type="textbox" name="ReceiptEmailSender" value="<%= objRS.Fields("ReceiptEmailSender")%>"/>
-
+<input type="submit" value="Save"/>
+<div>
 todo:
 ReceiptEmailHeader	ReceiptEmailFooter	PaymentFormHeader	PaymentFormFooter	ReceiptFormHeader	ReceiptFormFooter	CancelURL	ReceiptPageURL	ReceiptPageTitle	EventConfirmation	EventEmailConfirmation
 
-<input type="submit" value="Save"/>
+</div>
 </form>
 <%
 objRS.MoveNext
