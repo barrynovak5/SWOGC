@@ -82,7 +82,7 @@
         </tr>
         <tr>
             <td align="right" valign="top" class="leftSideCol">
-                &nbsp;Telephone:
+                <span id="lblPhone">&nbsp;Telephone: </span>
             </td>
             <td valign="top" align="left">
                 <input size="17" name="x_phone" />
