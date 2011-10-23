@@ -6,13 +6,13 @@
 <title>4c Admin</title>
 
    <script type="text/javascript">
-          function SubmitForm(theFormId)
+          function SubmitForm(theForm)
 	  {
-		alert(theFormId);
-		 var theForm = document.getElementById(theFormId);
-		alert('x');
+		//alert(theFormId);
+		 //var theForm = document.getElementById(theFormId);
+		//alerForm.name);
                  var donationEvent = document.getElementById("SelectListEventId");
-		alert(donationEvent.value);
+		//alert(donationEvent.value);
 
 		 theForm.DonationEventId.value = donationEvent.value;
 		
@@ -34,13 +34,13 @@
 <input name="ButtonEditEvent" type="submit" value="Edit Event" />
 </form>
 
-<form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this.id);">
+<form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this);">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 	
 </form>
 
-<form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this.id);">
+<form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this);">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" /><br /><br />
 	
