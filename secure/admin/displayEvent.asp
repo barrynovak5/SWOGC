@@ -1,10 +1,4 @@
-
 <!--#include file=adovbs.inc -->
-<%
-donationEventId = Request.Form("DonationEventId")
-Response.Write(donationEventId)
-%>
-
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
 Set objCmd  = Server.CreateObject("ADODB.Command")
@@ -29,6 +23,7 @@ objCmd.CommandType = adCmdText
 Set objParam = objCmd.CreateParameter("@EVENTID" , adInteger, adParamInput, 0, 0)
 objCmd.Parameters.Append objParam
 
+donationEventId = Request.Form("DonationEventId")
 objCmd.Parameters("@EVENTID") = donationEventId
 
 'Open and display the Recordset.
@@ -37,10 +32,81 @@ objRS.Open objCmd
 
 Do While Not objRS.EOF
 %>
-<form method="POST" action="updateevent.asp"
-<input type="hidden" value="<%= objRS.Fields("EVENTID")%>"/>
-<input type="textbox" name="EventName"><%= objRS.Fields("EventName")%></input>
+<form method="POST" action="updateevent.asp">
+<div>
+	<input type="hidden" name="EventId" value="<%= objRS.Fields("EVENTID")%>"/>
+	<label for="EventName">EventName:</label>
+	<input type="textbox" name="EventName" value="<%= objRS.Fields("EventName")%>"/>
+</div>
+<div>
+	<label for="EventDescription">EventDescription:</label>
+	<input type="textbox" name="EventDescription" value="<%= objRS.Fields("EventDescription")%>"/>
+</div>
+<div>
+	<label for="ReceiptEmailSender">ReceiptEmailSender:</label>
+	<input type="textbox" name="ReceiptEmailSender" value="<%= objRS.Fields("ReceiptEmailSender")%>"/>
+</div>
+
+<div>
+	<label for="ReceiptEmailSender">ReceiptEmailSender:</label>
+	<input type="textbox" name="ReceiptEmailSender" value="<%= objRS.Fields("ReceiptEmailSender")%>"/>
+</div>
+
+<div>
+	<label for="ReceiptEmailFooter">ReceiptEmailFooter:</label>
+	<input type="textbox" name="ReceiptEmailFooter" value="<%= objRS.Fields("ReceiptEmailFooter")%>"/>
+</div>
+
+<div>
+	<label for="PaymentFormHeader">PaymentFormHeader:</label>
+	<input type="textbox" name="PaymentFormHeader" value="<%= objRS.Fields("PaymentFormHeader")%>"/>
+</div>
+
+<div>
+	<label for="PaymentFormFooter">PaymentFormFooter:</label>
+	<input type="textbox" name="PaymentFormFooter" value="<%= objRS.Fields("PaymentFormFooter")%>"/>
+</div>
+
+<div>
+	<label for="ReceiptFormHeader">ReceiptFormHeader:</label>
+	<input type="textbox" name="ReceiptFormHeader" value="<%= objRS.Fields("ReceiptFormHeader")%>"/>
+</div>
+
+<div>
+	<label for="ReceiptFormFooter">ReceiptFormFooter:</label>
+	<input type="textbox" name="ReceiptFormFooter" value="<%= objRS.Fields("ReceiptFormFooter")%>"/>
+</div>
+
+<div>
+	<label for="CancelURL">CancelURL:</label>
+	<input type="textbox" name="CancelURL" value="<%= objRS.Fields("CancelURL")%>"/>
+</div>
+
+<div>
+	<label for="ReceiptPageURL">ReceiptPageURL:</label>
+	<input type="textbox" name="ReceiptPageURL" value="<%= objRS.Fields("ReceiptPageURL")%>"/>
+</div>
+
+<div>
+	<label for="ReceiptPageTitle">ReceiptPageTitle:</label>
+	<input type="textbox" name="ReceiptPageTitle" value="<%= objRS.Fields("ReceiptPageTitle")%>"/>
+</div>
+
+<div>
+	<label for="EventConfirmation">EventConfirmation:</label>
+	<input type="textbox" name="EventConfirmation" value="<%= objRS.Fields("EventConfirmation")%>"/>
+</div>
+
+<div>
+	<label for="EventEmailConfirmation">EventEmailConfirmation:</label>
+	<input type="textbox" name="EventEmailConfirmation" value="<%= objRS.Fields("EventEmailConfirmation")%>"/>
+</div>
+
 <input type="submit" value="Save"/>
+<div>
+todo:										
+
+</div>
 </form>
 <%
 objRS.MoveNext
