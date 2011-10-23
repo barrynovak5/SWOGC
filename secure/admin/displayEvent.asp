@@ -104,8 +104,6 @@ Do While Not objRS.EOF
 
 <input type="submit" value="Save"/>
 <div>
-todo:										
-
 </div>
 </form>
 <%

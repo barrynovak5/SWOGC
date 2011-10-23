@@ -9,7 +9,7 @@ Dim EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName
     ReceiptFormHeader2, ReceiptFormFooter2, _
     PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter
 
-Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
+Call LoadEventDetails(ReceiptPageUrl, ReceiptPageTitle, ReceiptPageEnabled, EventName, _
     EventDescription, PaymentFormHeader, ReceiptFormHeader, ReceiptEmailHeader, _
     ReceiptFormHeader2, ReceiptFormFooter2, _
     PaymentFormFooter, ReceiptFormFooter, ReceiptEmailFooter)
@@ -24,7 +24,6 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="revisit-after" content="14 Days">
     <link rel="stylesheet" type="text/css" href="styles/css.css" />
-
     <style type="text/css">
             
     </style>
@@ -32,7 +31,11 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
 
         function CreateHeaderAndFooterFields() {
             var header1 = document.getElementById("header1")
+<<<<<<< HEAD
             var header2 = document.getElementById("header2");
+=======
+            var header2 = document.getElementById("header2");
+>>>>>>> dfdeef1787a4f7b7a73c51b8f11665da4e3dcbda
             var footer1 = document.getElementById("footer1");
             var footer2 = document.getElementById("footer2");
 
@@ -405,9 +408,8 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                             </table>
                                                                                             <br />
                                                                                             <!--#include file="customerInformation.asp"-->
-                                                                                           
                                                                                             <table>
-                                                                                                <tr>
+                                                                                            <tr>
                                                                                                         <td align="left" class="leftSideCol">
                                                                                                             <b>What prompted this online gift? </b>
                                                                                                         </td>
@@ -437,7 +439,6 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                                             <input value="false" type="radio" name="AddToNewsletter" />&nbsp; No
                                                                                                         </td>
                                                                                                     </tr>
-                                                                                            
                                                                                             </table>
                                                                                             <p>
                                                                                                 <input value="Make Donation" type="submit" name="submit" />
