@@ -2,7 +2,7 @@
 <!--#include file=adovbs.inc -->
 <%
 donationEventId = Request.Form("DonationEventId")
-Response.Write(donationEventId)
+Response.Write("<p>EventID=" & donationEventId & "</p>")
 %>
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
@@ -20,7 +20,7 @@ Set objCmd.ActiveConnection = objConn
 'CommandType is adCmdText.  If a query name is specified, then
 'the CommandType is adCmdStoredProc.
 
-objCmd.CommandText = "SELECT Donations.DonorFirstName, Donations.DonorLastName, Donations.DonorCompany, Donations.DonorAddress, Donations.DonorAddress2, Donations.DonorCity, Donations.DonorState, Donations.DonorZipCode, Donations.DonorPhoneDayOrEvening, Donations.DonorEmailAddress FROM Donations WHERE Donations.AddToNewsletter = True AND Donations.EventID = ?"
+objCmd.CommandText = "SELECT Donations.DonorFirstName, Donations.DonorLastName, Donations.DonorCompany, Donations.DonorAddress, Donations.DonorAddress2, Donations.DonorCity, Donations.DonorState, Donations.DonorZipCode, Donations.DonorPhoneDayOrEvening, Donations.DonorEmailAddress FROM Donations WHERE Donations.EventID = 1 AND Donations.AddToNewsletter = True"
 objCmd.CommandType = adCmdText
 
 'Create the parameter and populate it.
