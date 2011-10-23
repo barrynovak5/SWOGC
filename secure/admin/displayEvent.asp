@@ -33,96 +33,88 @@ objRS.Open objCmd
 
 Do While Not objRS.EOF
 
-Dim x
-For x = 0 To objRs.Fields.Count - 1
-  Response.Write(objRs.Fields(x).Name & ", ")
-Next
-
 %>
 
 
-<p>EventType: <%= objRS.Fields("EventTypeDescription")%></p>
+<p>Event Type: <%= objRS.Fields("EventTypeDescription")%></p>
+<p>Event Id: <%= objRS.Fields("EventID")%></p>
+
 <form method="POST" action="updateevent.asp">
 <div>
 	<input type="hidden" name="EventId" value="<%= objRS.Fields("EVENTID")%>"/>
-	<label for="EventName">EventName:</label>
+	<label for="EventName">Event Name:</label>
 	<input type="textbox" name="EventName" value="<%= objRS.Fields("EventName")%>"/>
 </div>
 <div>
-	<label for="EventDescription">EventDescription:</label>
+	<label for="EventDescription">Event Description:</label>
 	<input type="textbox" name="EventDescription" value="<%= objRS.Fields("EventDescription")%>"/>
 </div>
 <div>
-	<label for="ReceiptLink">ReceiptLink:</label>
+	<label for="ReceiptLink">Receipt Link:</label>
 	<input type="textbox" name="ReceiptLink" value="<%= objRS.Fields("ReceiptLink")%>"/>
 </div>	
 <div>
-	<label for="ReceiptMethod">ReceiptMethod:</label>
+	<label for="ReceiptMethod">Receipt Method:</label>
 	<input type="textbox" name="ReceiptMethod" value="<%= objRS.Fields("ReceiptMethod")%>"/>
 </div>
 
 <div>
-	<label for="SendEmailReceipt">SendEmailReceipt:</label>
+	<label for="SendEmailReceipt">Send Email Receipt:</label>
 	<input type="textbox" name="SendEmailReceipt" value="<%= objRS.Fields("SendEmailReceipt")%>"/>
 </div>
 
 <div>
-	<label for="SendEmailReceipt">SendEmailReceipt:</label>
-	<input type="textbox" name="SendEmailReceipt" value="<%= objRS.Fields("SendEmailReceipt")%>"/>
-</div>
-
-<div>
-	<label for="ReceiptEmailSender">ReceiptEmailSender:</label>
+	<label for="ReceiptEmailSender">Receipt Email Sender:</label>
 	<input type="textbox" name="ReceiptEmailSender" value="<%= objRS.Fields("ReceiptEmailSender")%>"/>
 </div>
 
 <div>
-	<label for="ReceiptEmailFooter">ReceiptEmailFooter:</label>
+	<label for="ReceiptEmailFooter">Receipt Email Footer:</label>
 	<input type="textbox" name="ReceiptEmailFooter" value="<%= objRS.Fields("ReceiptEmailFooter")%>"/>
 </div>
 
 <div>
-	<label for="PaymentFormHeader">PaymentFormHeader:</label>
+	<label for="PaymentFormHeader">Payment Form Header:</label>
 	<input type="textbox" name="PaymentFormHeader" value="<%= objRS.Fields("PaymentFormHeader")%>"/>
 </div>
 
 <div>
-	<label for="PaymentFormFooter">PaymentFormFooter:</label>
+	<label for="PaymentFormFooter">Payment Form Footer:</label>
 	<input type="textbox" name="PaymentFormFooter" value="<%= objRS.Fields("PaymentFormFooter")%>"/>
 </div>
 
 <div>
-	<label for="ReceiptFormHeader">ReceiptFormHeader:</label>
+	<label for="ReceiptFormHeader">Receipt Form Header:</label>
 	<input type="textbox" name="ReceiptFormHeader" value="<%= objRS.Fields("ReceiptFormHeader")%>"/>
 </div>
 
 <div>
-	<label for="ReceiptFormFooter">ReceiptFormFooter:</label>
+	<label for="ReceiptFormFooter">Receipt Form Footer:</label>
 	<input type="textbox" name="ReceiptFormFooter" value="<%= objRS.Fields("ReceiptFormFooter")%>"/>
 </div>
 
 <div>
-	<label for="CancelURL">CancelURL:</label>
+	<label for="CancelURL">Cancel URL:</label>
 	<input type="textbox" name="CancelURL" value="<%= objRS.Fields("CancelURL")%>"/>
 </div>
 
 <div>
-	<label for="ReceiptPageURL">ReceiptPageURL:</label>
+	<label for="ReceiptPageURL">Receipt Page URL:</label>
 	<input type="textbox" name="ReceiptPageURL" value="<%= objRS.Fields("ReceiptPageURL")%>"/>
 </div>
 
 <div>
-	<label for="ReceiptPageTitle">ReceiptPageTitle:</label>
+	<label for="ReceiptPageTitle">Receipt Page Title:</label>
 	<input type="textbox" name="ReceiptPageTitle" value="<%= objRS.Fields("ReceiptPageTitle")%>"/>
 </div>
 
 <div>
-	<label for="EventConfirmation">EventConfirmation:</label>
+	<label for="EventConfirmation">Event Confirmation:</label>
 	<input type="textbox" name="EventConfirmation" value="<%= objRS.Fields("EventConfirmation")%>"/>
 </div>
 
 <div>
-	<label for="EventEmailConfirmation">EventEmailConfirmation:</label>
+	<label for="EventEmailConfirmation">Event Email Confirmation:</label>
 	<input type="textbox" name="EventEmailConfirmation" value="<%= objRS.Fields("EventEmailConfirmation")%>"/>
 </div>
 
