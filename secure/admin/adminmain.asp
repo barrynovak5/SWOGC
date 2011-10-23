@@ -43,25 +43,21 @@
     <label id="LabelDonationEvent">Select Event:</label><br />
     <!--#include file="donationeventlist.asp"-->
     <br/><br />
-
-	<input name="ButtonDownloadEventVisitors" type="submit" onclick="return SubmitForm('DownloadEventVisitors.asp', true);" value="Download List" /><br /><br />	
-
     <input name="ButtonEditEvent" type="submit" value="Edit Event" />
 </form>
 
-<label id="LabelEventVisitors">Event Visitors:</label><br />
-<form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('displayEventVisitors.asp', false);">
-	<input name="DonationEventId" type="hidden" />
-	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
-</form>
-
-<form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="">
-</form>
-
-<label id="LabelCustomizeEvent">Customize Event (e.g. payment form)</label><br />
 <form method="post" action="addNewEvent.asp">
+    <label id="LabelCustomizeEvent">Customize Event (e.g. payment form)</label><br />
     <input name="ButtonAddEvent" type="submit" value="Add New Event" />
 </form><BR />
+
+
+<form>
+    <label id="LabelEventVisitors">Event Visitors:</label><br />
+	<input name="ButtonDisplayEventVisitors" type="submit" onclick="return SubmitForm('displayEventVisitors.asp', false);" value="Display List" /><br />
+	<input name="ButtonDownloadEventVisitors" type="submit" onclick="return SubmitForm('DownloadEventVisitors.asp', true);" value="Download List" /><br /><br />	
+</form>
+
 
 <form method="post" action="DisplayDonationReasons.asp">
     <label id="LabelDonationReason">Donation Reasons</label><br />
