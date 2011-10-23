@@ -10,7 +10,7 @@
 
               var donationEvent = document.getElementById("SelectListEventId");
               alert(donationEvent.selectedIndex);
-    	      var fileName = donationEvent.options[donationEvent.selectedIndex].text
+    	      var fileName = donationEvent.options[donationEvent.selectedIndex].text;
     	      alert(fileName);
     	      // Get rid of the item count in the fileName
               alert(fileName.IndexOf(')');
