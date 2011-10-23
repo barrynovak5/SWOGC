@@ -48,10 +48,8 @@ Do While Not objRS.EOF
     If I > 0 Then 
         Response.Write ","
     End If
-    ' Write it out to a file, surrounding it with double-quotes and replacing
-    ' all internal double-quotes with double-double-quotes
-    Response.Write "A" & objRs(I) & "B" & vbCrLf
-    Response.Write """" & Replace(objRS(I),"a", "b") & """"
+    ' Write it out to a file, surrounding it with double-quotes 
+    Response.Write objRs(I) & vbCrLf
   Next
   Response.Write vbcrlf
   objRS.MoveNext
