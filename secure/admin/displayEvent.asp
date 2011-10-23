@@ -32,7 +32,15 @@ objCmd.Parameters("@EVENTID") = donationEventId
 objRS.Open objCmd
 
 Do While Not objRS.EOF
+
+Dim x
+For x = 1 To objRs.Fields.Count - 1
+  Response.Write(objRs.Fields(x).Name & ", ")
+End For
+
 %>
+
+
 <p>EventType: <%= objRS.Fields("EventType")%></p>
 <form method="POST" action="updateevent.asp">
 <div>
