@@ -2,11 +2,13 @@
 <!--#include file=adovbs.inc -->
 
 <%
-donationEventId = Request.QueryString("DonationEventId")
+donationEventId = Request.QueryString("Id")
+fileName = Request.QueryString("Name")
+
 'Response.Write("<p>EventID=" & CStr(donationEventId) & "</p>")
 
 Call Response.AddHeader("Content-Type", "application/csv")
-Call Response.AddHeader("Content-Disposition", "attachment; filename=""file.csv""")
+Call Response.AddHeader("Content-Disposition", "attachment; filename=""" & fileName & ".csv""")
 
 Set objConn = Server.CreateObject("ADODB.Connection")
 Set objCmd  = Server.CreateObject("ADODB.Command")
