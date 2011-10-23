@@ -43,6 +43,20 @@ Do While Not objRS.EOF
 	<input type="textbox" name="EventDescription" value="<%= objRS.Fields("EventDescription")%>"/>
 </div>
 <div>
+	<label for="ReceiptLink">ReceiptLink:</label>
+	<input type="textbox" name="ReceiptLink" value="<%= objRS.Fields("ReceiptLink")%>"/>
+</div>	
+<div>
+	<label for="ReceiptMethod">ReceiptMethod:</label>
+	<input type="textbox" name="ReceiptMethod" value="<%= objRS.Fields("ReceiptMethod")%>"/>
+</div>
+
+<div>
+	<label for="SendEmailReceipt">SendEmailReceipt:</label>
+	<input type="textbox" name="SendEmailReceipt" value="<%= objRS.Fields("SendEmailReceipt")%>"/>
+</div>
+
+<div>
 	<label for="SendEmailReceipt">SendEmailReceipt:</label>
 	<input type="textbox" name="SendEmailReceipt" value="<%= objRS.Fields("SendEmailReceipt")%>"/>
 </div>
