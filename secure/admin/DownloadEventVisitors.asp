@@ -15,8 +15,8 @@ fileName = Request.QueryString("Name")
 
 'Response.Write("<p>EventID=" & CStr(donationEventId) & "</p>")
 
-'Call Response.AddHeader("Content-Type", "application/csv")
-'Call Response.AddHeader("Content-Disposition", "attachment; filename=""" & fileName & ".csv""")
+Call Response.AddHeader("Content-Type", "application/csv")
+Call Response.AddHeader("Content-Disposition", "attachment; filename=""" & fileName & ".csv""")
 
 >>>>>>> fa31079602572ab9b0ac67b01c40c8bd91d6797a
 Set objConn = Server.CreateObject("ADODB.Connection")
@@ -58,7 +58,7 @@ Do While Not objRS.EOF
         Response.Write ","
     End If
     ' Write it out to a file, surrounding it with double-quotes 
-    Response.Write objRs(I) & vbCrLf
+    Response.Write """" & objRs(I) & """"
   Next
   Response.Write vbcrlf
   objRS.MoveNext
