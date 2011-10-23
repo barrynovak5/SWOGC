@@ -9,7 +9,7 @@
           function SubmitForm(URL)
     	  {
                  var donationEvent = document.getElementById("SelectListEventId");
-                 window.location = URL + "?ID=" + donationEvent.value + "&Name=" + donationEvent.text;
+                 window.location = URL + "?ID=" + donationEvent.value + "&Name=" + donationEvent.options[donationEvent.selectedIndex].text;
                  return false;  
           }
    </script>	
