@@ -42,7 +42,8 @@
 <form method="post" action="displayEvent.asp">
     <label id="LabelDonationEvent">Select Event:</label><br />
     <!--#include file="donationeventlist.asp"-->
-    <br/>
+    <br/><br />
+
     <label id="LabelEventVisitors">Event Visitors:</label><br />
     <input name="ButtonEditEvent" type="submit" value="Edit Event" />
 </form>
@@ -62,8 +63,6 @@
 <form method="post" action="addNewEvent.asp">
     <input name="ButtonAddEvent" type="submit" value="Add New Event" />
 </form>
-<input name="ButtonCopyEvent" type="button" value="Copy an Event" /><br />
-<br />
 
 <form method="post" action="DisplayDonationReasons.asp">
     <label id="LabelDonationReason">Donation Reasons</label><br />
