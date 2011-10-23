@@ -52,3 +52,6 @@ Set objRS = Nothing
 Set objCmd = Nothing
 Set objConn = Nothing
 %>
+
+<p>Record Saved!<p>
+<a href="adminmain.asp">Back</a>
