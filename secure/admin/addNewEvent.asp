@@ -9,6 +9,7 @@ sql="SELECT * FROM EVENTTYPE"
 rs.Open sql, conn
 %>
 <form method="post" action="saveNewEvent.asp" onsubmit="return Validator(this)">
+	Do not include quotes (") in fields.  The field will not be saved as quotes are rejected by Authorize.Net
 <div>
 <label for="EventTypeID">EventType:</label>
 <SELECT name="EventTypeID">
