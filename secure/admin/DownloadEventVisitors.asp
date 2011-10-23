@@ -15,7 +15,7 @@ fileName = Request.QueryString("Name")
 
 'Response.Write("<p>EventID=" & CStr(donationEventId) & "</p>")
 
-Call Response.AddHeader("Content-Type", "application/csv")
+Call Response.AddHeader("Content-Type", "text/csv")
 Call Response.AddHeader("Content-Disposition", "attachment; filename=""" & fileName & ".csv""")
 
 >>>>>>> fa31079602572ab9b0ac67b01c40c8bd91d6797a
