@@ -1,15 +1,6 @@
-
 <!--#include file=adovbs.inc -->
 
 <%
-<<<<<<< HEAD
-donationEventId = Request.QueryString("DonationEventId")
-//Response.Write("<p>EventID=" & CStr(donationEventId) & "</p>")
-Call Response.AddHeader("Content-Type", "application/csv")
-Call Response.AddHeader("Content-Disposition", "attachment: filename=file.csv")
-%>
-<%
-=======
 donationEventId = Request.QueryString("Id")
 fileName = Request.QueryString("Name")
 
@@ -21,7 +12,6 @@ Call Response.AddHeader("Content-type", "application/vnd.ms-excel")
 'Call Response.AddHeader("Content-Type", "text/csv")
 Call Response.AddHeader("Content-Disposition", "attachment; filename=""" & fileName & ".csv""")
 
->>>>>>> fa31079602572ab9b0ac67b01c40c8bd91d6797a
 Set objConn = Server.CreateObject("ADODB.Connection")
 Set objCmd  = Server.CreateObject("ADODB.Command")
 Set objRS   = Server.CreateObject("ADODB.Recordset")
