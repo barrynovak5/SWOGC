@@ -1,13 +1,49 @@
 
 <!--#include file=adovbs.inc -->
+
+
+<!--#include file=DonationStatusDropdown.asp -->
+
 <%
 donationEventId = Request.Querystring("ID")
 donationEventName = Request.Querystring("Name")
 
 Set objConn = Server.CreateObject("ADODB.Connection")
 Set objCmd  = Server.CreateObject("ADODB.Command")
-Set objRS   = Server.CreateObject("ADODB.Recordset")
 
+sub UpdateDonationStatus (donationId, statusId)
+
+    objConn.Open "FourC"
+
+    Set objCmd.ActiveConnection = objConn
+    
+    objCmd.CommandText = "UPDATE Donations WHERE Set DonationStatusID = ? Donations.DonationID = ?"
+    objCmd.CommandType = adCmdText
+
+    'Create the parameter and populate it.
+
+    Set objParam = objCmd.CreateParameter("@DonationStatusId" , adInteger, adParamInput, 0, 0)
+    objCmd.Parameters.Append objParam
+
+    objCmd.Parameters("@DonationStatusId") = statusId
+
+    Set objParam = objCmd.CreateParameter("@DonationId" , adInteger, adParamInput, 0, 0)
+    objCmd.Parameters.Append objParam
+
+    objCmd.Parameters("@DonationId") = donationEventId
+    
+    
+    objConn.Close
+
+end sub
+
+if (Request.Form("PostAction") = "U") then
+    
+    Call UpdateDonationStatus(Request.Form("DonationID"), Request.Form("DonationStatusID"))
+
+endif
+
+Set objRS   = Server.CreateObject("ADODB.Recordset")
 objConn.Open "FourC"
 
 objRS.CursorType = adOpenForwardOnly
@@ -41,7 +77,13 @@ objRS.Open objCmd
     <script type="text/javascript">
         function UpdateStatus(donationID)
         {
-            return false;
+            var theForm = document.getElementById("ManageEventVisitorStatuses");
+            var status = document.getElementById("DonationStatuses" + donationID);
+            
+            theForm.DonationID = donationID;
+            theForm.DonationStatusID = status.value;
+            theForm.submit();
+            return true;
         }
     </script>
 </head>
@@ -49,15 +91,17 @@ objRS.Open objCmd
 <table border=1 cellpadding=2 cellspacing=2>
 <tr>
 <td> ID </td>
-<%
-
-For I = 1 To objRS.Fields.Count - 2
-%>
-  <td><b>  <%=objRS(I).Name%> </b></td>
-<%Next
-%>
 <td>
-   Donation Status
+    First Name
+</td>
+<td>
+    Last Name
+</td>
+<td>
+    Company
+</td>
+<td>
+  <b> Donation Status</b>
 </td>
 <td></td>
 </tr>
@@ -66,17 +110,18 @@ For I = 1 To objRS.Fields.Count - 2
 Do While Not objRS.EOF
  %> 
  <tr>
-
-  <%
-  For I = 0 To objRS.Fields.Count - 2
-  %>
-    <td>  
-        <%=objRS(I) %> 
-    </td>
- <% Next
- %>  
     <td>
-        <%=objRS("DonationStatusID") %>
+        <%=objRS("DonationID") %>
+    </td>
+    <td>
+        <%=objRS("DonorFirstName") %>
+    </td><td>
+        <%=objRS("DonorLastName") %>
+    </td><td>
+        <%=objRS("DonorCompany") %>
+    </td>
+    <td>
+        <%=Replace(StatusDropDownText, "DonationStatusDropDown", "DonationStatuses" & objRS("DonationID"))%>
     </td>
     <td>
         <input type="button" value="Update Status" onclick="return UpdateStatus(<%=objRS("DonationID")%>)" />
@@ -88,7 +133,11 @@ objRS.MoveNext
 Loop
 %>
 </table>
-
+ <form name="ManageEventVisitorStatuses" id="ManageEventVisitorStatuses?ID<%=donationEventId%>&Name=<%=donationEventName%>" action="ManageEventVisitorStatuses.asp">
+        <input value="U" type="hidden" name="PostAction"/>
+        <input value="" name="DonationID" type="hidden" />
+        <input value="" name="DonationStatusID" type="hidden" />      
+</form>
 <%
 objRS.Close
 objConn.Close
