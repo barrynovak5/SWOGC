@@ -289,7 +289,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                                                                                     <td valign="top" align="left">
                                                                                         <p align="left">
                                                                                             You can <b>sign up to our newsletter </b> by completing the
-                                                                                            form below. Be sure to press the "Submit" button at the bottom when you have
+                                                                                            form below. Be sure to press the "Subscribe" button at the bottom when you have
                                                                                             completed this form.<p align="left">
                                                                                             &nbsp;<table border="0" cellpadding="2" align="center">
                                                                                                 <tbody>
