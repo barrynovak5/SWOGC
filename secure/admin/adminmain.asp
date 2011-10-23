@@ -15,6 +15,7 @@
     	      // Get rid of the item count in the fileName
               alert(fileName.IndexOf(')');
     	      var fileName1 = filename.substring(fileName.indexOf(')'));
+              alert('g');
     	      var fileName2 = fileName.indexOf(')');
               // Get rid of all characters except numbers and letters
     	      var fileName3 = fileName.replace(/[^a-zA-Z0-9]+/g, '');
