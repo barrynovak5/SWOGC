@@ -133,7 +133,7 @@ objRS.MoveNext
 Loop
 %>
 </table>
- <form name="ManageEventVisitorStatuses" id="ManageEventVisitorStatuses" action="ManageEventVisitorStatuses.asp?ID<%=donationEventId%>&Name=<%=donationEventName%>">
+ <form method="post" name="ManageEventVisitorStatuses" id="ManageEventVisitorStatuses" action="ManageEventVisitorStatuses.asp?ID<%=donationEventId%>&Name=<%=donationEventName%>">
         <input value="U" type="hidden" name="PostAction"/>
         <input value="" name="DonationID" type="hidden" />
         <input value="" name="DonationStatusID" type="hidden" />      
