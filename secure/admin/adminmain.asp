@@ -20,6 +20,9 @@
 </head>
 
 <body>
+
+<p onclick=alert(document.GetElementById("DonationEventId").value)>GetValue</p>
+
 <!--#INCLUDE FILE="adminheader.asp"-->
 <form method="post" action="displayEvent.asp">
 <label id="LabelDonationEvent">Select Event:</label><br />
