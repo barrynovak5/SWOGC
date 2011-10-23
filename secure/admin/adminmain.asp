@@ -9,17 +9,15 @@
           function SubmitForm(URL) {
 
               var donationEvent = document.getElementById("SelectListEventId");
-              alert(donationEvent.selectedIndex);
     	      var fileName = donationEvent.options[donationEvent.selectedIndex].text;
+
     	      // Get rid of the item count in the fileName
-              alert(fileName.indexOf(")"));
-    	      var fileName1 = fileName.substr(fileName.indexOf(")"));
-              alert('g:' + fileName1);
-    	      var fileName2 = fileName.indexOf(")");
+    	      var fileName1 = fileName.substr(fileName.indexOf(")")+1);
+              alert(fileName1);
+
               // Get rid of all characters except numbers and letters
     	      var fileName3 = fileName.replace(/[^a-zA-Z0-9]+/g, '');
-    	      alert('c');
-    	      alert(fileName1);
+
     	      alert(fileName2);
               alert(fileName3);
             
