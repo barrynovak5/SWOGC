@@ -25,17 +25,15 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     <meta name="revisit-after" content="14 Days">
     <link rel="stylesheet" type="text/css" href="styles/css.css" />
 
-    <style type="text/css">
-            
-    </style>
-    <script language="javascript" type="text/javascript">
+   <script language="javascript" type="text/javascript">
 
         function LoadData()
         {
-           var lblEmail = document.getElementById("lblEmail");
-           var lblEmail.className= "required";
-           
-           return true;
+            var lblEmail = document.getElementById("lblEmail");
+            
+            lblEmail.className= "required";
+            
+            return true;
         }
 
         function Validator(theForm) {
