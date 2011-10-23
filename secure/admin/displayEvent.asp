@@ -34,7 +34,7 @@ objRS.Open objCmd
 Do While Not objRS.EOF
 %>
 
-<p>Event Type: <%= objRS.Fields("EventType")%></p>
+<p>Event Type: <%= objRS.Fields("EventTypeDescription")%></p>
 <p>Event Id: <%= objRs.Fields("EventId") %></p>
 
 <form method="POST" action="updateevent.asp">
