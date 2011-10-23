@@ -41,13 +41,13 @@
 <input name="ButtonEditEvent" type="submit" value="Edit Event" />
 </form>
 
-<form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('displayEventVisitors.asp');">
+<form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="SubmitForm('displayEventVisitors.asp');">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 	
 </form>
 
-<form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('DownloadEventVisitors.asp');">
+<form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="SubmitForm('DownloadEventVisitors.asp');">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" /><br /><br />
 	
