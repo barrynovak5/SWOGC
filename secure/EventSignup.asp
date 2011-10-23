@@ -28,9 +28,9 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     <style type="text/css">
             
     </style>
-    <script language="JavaScript" type="text/javascript">
+    <script language="javascript" type="text/javascript">
 
-        function Load()
+        function LoadData()
         {
             var lblEmail = document.getElementById("lblEmail");
             var lblPhone = document.getElementById("lblPhone");
@@ -108,7 +108,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         }
     </style>
 </head>
-<body bottommargin="0" leftmargin="0" onload="return LoadData()" rightmargin="0"
+<body bottommargin="0" leftmargin="0" onload="LoadData();" rightmargin="0"
     topmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
     <div class="SEODiv">
         <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
