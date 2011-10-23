@@ -37,6 +37,8 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
             
             lblEmail.className= "required";
             lblPhone.className= "required";
+            
+            return true;
         }
 
         function Validator(theForm) {
@@ -106,7 +108,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         }
     </style>
 </head>
-<body bottommargin="0" leftmargin="0" onload="Load();" rightmargin="0"
+<body bottommargin="0" leftmargin="0" onload="return Load()" rightmargin="0"
     topmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
     <div class="SEODiv">
         <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">
