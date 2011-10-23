@@ -1,4 +1,4 @@
-<!--#INCLUDE FILE="adminheader.asp"-->
+
 <!--#include file=adovbs.inc -->
 <%
 donationEventId = Request.Form("DonationEventId")
@@ -39,7 +39,7 @@ objRS.Open objCmd
 Do While Not objRS.EOF
   For I = 0 To objRS.Fields.Count - 1
     	if I > 0 then Response.Write ", "
-	Response.Write "<td>" & objRS(I) & "</td>"
+	Response.Write objRS(I)
   Next
   Response.Write "</tr>"
   objRS.MoveNext
