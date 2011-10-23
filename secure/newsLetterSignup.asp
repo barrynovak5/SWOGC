@@ -242,14 +242,14 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                         height="100%">
                         
                             <tr>
-                                <td class="bannerCell" id="headerTD" valign="top" width="100%" align="left">
+                                <td class="bannerCell" id="headerTD" valign="bottom" width="100%" align="left">
                                     <!--#include file="header.asp"-->
                                 </td>
                             </tr>
                             <!-- Main 100% height row for left nav and body ---------------->
                             <tr>
                                 <td class="mainAreaBound" height="100%" valign="top" align="left">
-                                    <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%"
+                                    <table border="0" cellspacing="0" style="margin-top:-1px; padding-top: -1px;" bordercolor="red" cellpadding="0" width="100%"
                                         height="100%">
                                         
                                             <tr>
