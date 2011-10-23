@@ -21,8 +21,6 @@
 
 <body>
 
-<form 
-
 <form method="post" action="displayEvent.asp">
 <label id="LabelDonationEvent">Select Event:</label><br />
 <!--#include file="donationeventlist.asp"-->
