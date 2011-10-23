@@ -29,13 +29,18 @@
 <input name="ButtonEditEvent" type="submit" value="Edit Event" />
 </form>
 
-<form action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this)">
+<form method="post" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this)">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br /><br />
 	
 </form>
 
-<input name="ButtonDownloadEventVisitors" type="button" value="Download List" />
+<form method="post" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm(this)">
+	<input name="DonationEventId" type="hidden" />
+	<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" /><br /><br />
+	
+</form>
+
 <label id="LabelCustomizeEvent">Customize Event (e.g. payment form)</label><br />
 <form method="post" action="addNewEvent.asp">
 <input name="ButtonAddEvent" type="submit" value="Add New Event" />
