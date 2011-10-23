@@ -3,8 +3,8 @@
 <%
 donationEventId = Request.QueryString("DonationEventId")
 //Response.Write("<p>EventID=" & CStr(donationEventId) & "</p>")
-Response.AddHeader("Content-Type", "application/csv");
-Response.AddHeader("Content-Disposition", "attachment: filename=file.csv");
+Call Response.AddHeader("Content-Type", "application/csv")
+Call Response.AddHeader("Content-Disposition", "attachment: filename=file.csv")
 %>
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
