@@ -8,9 +8,13 @@
    <script type="text/javascript">
           function SubmitForm(URL)
     	  {
-                 var donationEvent = document.getElementById("SelectListEventId");
-                 window.location = URL + "?ID=" + donationEvent.value + "&Name=" + donationEvent.options[donationEvent.selectedIndex].text;
-                 return false;  
+    	      var donationEvent = document.getElementById("SelectListEventId");
+    	      var fileName = donationEvent.options[donationEvent.selectedIndex].text
+              // Get rid of all characters except numbers and letters
+    	      var fileName = fileName.replace(/[^a-zA-Z0-9]+/g, '');
+            
+              window.location = URL + "?ID=" + donationEvent.value + "&Name=" + fileName;
+              return false;  
           }
    </script>	
 </head>
