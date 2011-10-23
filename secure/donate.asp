@@ -38,51 +38,10 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                 return (false);
             }
 
-            if (theForm.x_amount.value.length < 2) {
-                alert("Please enter at least 2 characters in the \"Amount of Donation\" field.");
-                theForm.x_amount.focus();
-                return (false);
-            }
-
-            if (theForm.x_amount.value.length > 50) {
-                alert("Please enter at most 50 characters in the \"Amount of Donation\" field.");
-                theForm.x_amount.focus();
-                return (false);
-            }
-
-            var checkOK = "0123456789-.,";
-            var checkStr = theForm.x_amount.value;
-            var allValid = true;
-            var validGroups = true;
-            var decPoints = 0;
-            var allNum = "";
-            for (i = 0; i < checkStr.length; i++) {
-                ch = checkStr.charAt(i);
-                for (j = 0; j < checkOK.length; j++)
-                    if (ch == checkOK.charAt(j))
-                    break;
-                if (j == checkOK.length) {
-                    allValid = false;
-                    break;
-                }
-                if (ch == ".") {
-                    allNum += ".";
-                    decPoints++;
-                }
-                else if (ch == "," && decPoints != 0) {
-                    validGroups = false;
-                    break;
-                }
-                else if (ch != ",")
-                    allNum += ch;
-            }
-            if (!allValid) {
-                alert("Please enter only digit characters in the \"Amount of Donation\" field.");
-                theForm.x_amount.focus();
-                return (false);
-            }
-
-            if (decPoints > 1 || !validGroups) {
+            currency = parseFloat(theForm.x_amount.value.replace(/^[^\d\.]*/, ''))
+            
+            if (isNaN(currency))
+            {  
                 alert("Please enter a valid number in the \"Amount of Donation\" field.");
                 theForm.x_amount.focus();
                 return (false);
