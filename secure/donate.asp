@@ -30,50 +30,28 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     </style>
     <script language="JavaScript" type="text/javascript"><!--
 
-        function CreateHeaderAndFooterFields() {
-            var header1 = document.getElementById("header1")
-            var header2 = document.getElementById("header2");
-            var footer1 = document.getElementById("footer1");
-            var footer2 = document.getElementById("footer2");
-
-            var style = "<style type='text/css' media='all'>" +
-                                + "td{ 	font-family: arial, helvetica, verdana;	font-size: 14px; color: #474747;}"
-
-                                + "div{	font-family: arial, helvetica, verdana;	font-size: 14px; color: #474747;}"
-                                + "span{font-family: arial, helvetica, verdana;	font-size: 14px; color: #474747;}"
-                                + "h1{font-family: arial, helvetica, verdana; font-size: 18px;	color: #000000;	font-weight: bold;}"
-                                + "h2{font-family: arial, helvetica, verdana;	font-size: 16px; color: #000000; font-weight: bold;}"
-                                + "h3{	font-family: arial, helvetica, verdana;	font-size: 16px; color: #00529f;	font-weight: bold;}"
-                                + "a{ color: #00539f; text-decoration: underline;}"
-                                + "a:hover{	color: #5995d3;	text-decoration: underline;}"
-                                + "</style>";
-
-
-            header2.value = style;
-        }
-
         function Validator(theForm) {
 
-            if (!theForm.DonationAmount.value.length || trim(theForm.DonationAmount.value) == "") {
+            if (!theForm.x_amount.value.length || trim(theForm.x_amount.value) == "") {
                 alert("Please enter a value for the \"Amount of Donation\" field.");
-                theForm.DonationAmount.focus();
+                theForm.x_amount.focus();
                 return (false);
             }
 
-            if (theForm.DonationAmount.value.length < 2) {
+            if (theForm.x_amount.value.length < 2) {
                 alert("Please enter at least 2 characters in the \"Amount of Donation\" field.");
-                theForm.DonationAmount.focus();
+                theForm.x_amount.focus();
                 return (false);
             }
 
-            if (theForm.DonationAmount.value.length > 50) {
+            if (theForm.x_amount.value.length > 50) {
                 alert("Please enter at most 50 characters in the \"Amount of Donation\" field.");
-                theForm.DonationAmount.focus();
+                theForm.x_amount.focus();
                 return (false);
             }
 
             var checkOK = "0123456789-.,";
-            var checkStr = theForm.DonationAmount.value;
+            var checkStr = theForm.x_amount.value;
             var allValid = true;
             var validGroups = true;
             var decPoints = 0;
@@ -100,41 +78,41 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
             }
             if (!allValid) {
                 alert("Please enter only digit characters in the \"Amount of Donation\" field.");
-                theForm.DonationAmount.focus();
+                theForm.x_amount.focus();
                 return (false);
             }
 
             if (decPoints > 1 || !validGroups) {
-                alert("Please enter a valid number in the \"DonationAmount\" field.");
-                theForm.DonationAmount.focus();
+                alert("Please enter a valid number in the \"Amount of Donation\" field.");
+                theForm.x_amount.focus();
                 return (false);
             }
 
-            if (theForm.DonorEmailAddress.value.length > 0) {
+            if (theForm.x_email.value.length > 0) {
 
-                if (theForm.DonorEmailAddress.value.length < 6) {
+                if (theForm.x_email.value.length < 6) {
                     alert("Please enter at least 6 characters in the \"E-mail\" field.");
-                    theForm.DonorEmailAddress.focus();
+                    theForm.x_email.focus();
                     return (false);
                 }
                 else {
-                    var emailad = trim(theForm.DonorEmailAddress.value);
+                    var emailad = trim(theForm.x_email.value);
                     var exclude = /[^@\-\.\w]|^[_@\.\-]|[\._\-]{2}|[@\.]{2}|(@)[^@]*\1/;
                     var check = /@[\w\-]+\./;
                     var checkend = /\.[a-zA-Z]{2,3}$/;
 
                     if (((emailad.search(exclude) != -1) || (emailad.search(check)) == -1) || (emailad.search(checkend) == -1)) {
                         alert("Email is invalid. Please enter a       \nvalid email address.");
-                        theForm.DonorEmailAddress.focus();
+                        theForm.x_email.focus();
                         return false;
                     }
 
                 }
             }
 
-            if (theForm.DonorEmailAddress.value.length > 50) {
+            if (theForm.x_email.value.length > 50) {
                 alert("Please enter at most 50 characters in the \"E-mail\" field.");
-                theForm.DonorEmailAddress.focus();
+                theForm.x_email.focus();
                 return (false);
             }
 
@@ -168,7 +146,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         }
     </style>
 </head>
-<body bottommargin="0" leftmargin="0" onload="CreateHeaderAndFooterFields()" rightmargin="0"
+<body bottommargin="0" leftmargin="0" rightmargin="0"
     topmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
     <div class="SEODiv">
         <table border="0" cellspacing="0" bordercolor="red" cellpadding="0" width="100%">

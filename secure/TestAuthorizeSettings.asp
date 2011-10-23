@@ -1,4 +1,3 @@
-<!--#INCLUDE FILE="simlib.asp"-->
 <!--#INCLUDE FILE="AuthorizeSettings.asp"-->
 
 <%
