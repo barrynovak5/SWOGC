@@ -29,7 +29,6 @@
           }
 
           $(document).ready(function () {
-              alert('test');
               $('#EventList').dataTable({
                   "bProcessing": true,
                   "sAjaxSource": 'EventListJson.asp'
@@ -40,8 +39,23 @@
 
 <body>
 
-<table cellpadding="0" cellspacing="0" border="0" class="display" id="EventList"></table>
-
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="EventList">
+	<thead>
+		<tr>
+			<th>Event Id</th>
+			<th>Event Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>Event Id</th>
+			<th>Event Name</th>
+		</tr>
+	</tfoot>
+</table>
 
 
 <!--#INCLUDE FILE="adminheader.asp"-->
