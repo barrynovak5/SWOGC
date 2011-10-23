@@ -6,11 +6,19 @@
 <title>4c Admin</title>
 
    <script type="text/javascript">
-          function SubmitForm(URL)
-	  {
-                 var donationEvent = document.getElementById("SelectListEventId");
-		 window.location = URL + "?DonationEventID=" + donationEvent.value
-                 return false;  
+          function SubmitForm(URL) {
+
+              var donationEvent = document.getElementById("SelectListEventId");
+    	      var fileName = donationEvent.options[donationEvent.selectedIndex].text;
+
+    	      // Get rid of the item count in the fileName
+    	      fileName = fileName.substr(fileName.indexOf(")")+1);
+
+              // Get rid of all characters except numbers and letters
+    	      fileName = fileName.replace(/[^a-zA-Z0-9]+/g, '');
+            
+              window.location = URL + "?ID=" + donationEvent.value + "&Name=" + fileName;
+              return false;  
           }
    </script>	
 </head>
