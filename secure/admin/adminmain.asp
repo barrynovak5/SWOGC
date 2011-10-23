@@ -7,6 +7,9 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>4c Admin</title>
 
+    <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+
    <script type="text/javascript">
           function SubmitForm(URL, sanitizeName) {
 
@@ -22,8 +25,15 @@
     	      }
 
               window.location = URL + "?ID=" + donationEvent.value + "&Name=" + fileName;
-              return false;  
+              return false;
           }
+
+          $(document).ready(function () {
+              $('#EventList').dataTable({
+                  "bProcessing": true,
+                  "sAjaxSource": 'EventListJson.asp'
+              });
+          });
    </script>	
 </head>
 
