@@ -39,7 +39,7 @@ rs.Open sql, conn
 <div>
 	<label for="SendEmailReceipt">SendEmailReceipt:</label>
 	<!--<input type="textbox" name="SendEmailReceipt" value=""/>-->
-	<input type="radio" name="SendEmailReceipt" value="True" />Yes
+	<input type="radio" name="SendEmailReceipt" value="True" checked />Yes
 	<input type="radio" name="SendEmailReceipt" value="False" /> No
 </div>
 
