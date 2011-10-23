@@ -1,8 +1,9 @@
 
 <!--#include file=adovbs.inc -->
+
 <%
 donationEventId = Request.QueryString("DonationEventId")
-//Response.Write("<p>EventID=" & CStr(donationEventId) & "</p>")
+Response.Write("<p>EventID=" & CStr(donationEventId) & "</p>")
 
 Call Response.AddHeader("Content-Type", "application/csv")
 Call Response.AddHeader("Content-Disposition", "attachment: filename=file.csv")
