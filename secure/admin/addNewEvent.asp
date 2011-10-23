@@ -8,6 +8,8 @@ sql="SELECT * FROM EVENTTYPE"
 rs.Open sql, conn
 %>
 <form method="post" action="saveNewEvent.asp">
+<div>
+<label for="EventTypeID">EventType:</label>
 <SELECT name="EventTypeID">
   <% Do While Not rs.EOF %>
 	  <OPTION value="<%= rs.Fields.Item("EventTypeID") %>"><%= rs.Fields.Item("EventTypeDescription") %> </OPTION>
@@ -16,6 +18,7 @@ rs.Open sql, conn
   rs.close
   conn.close%>
 </SELECT>
+</div>
 <div>
 	<label for="EventName">EventName:</label>
 	<input type="textbox" name="EventName" value=""/>
@@ -32,12 +35,6 @@ rs.Open sql, conn
 	<label for="ReceiptMethod">ReceiptMethod:</label>
 	<input type="textbox" name="ReceiptMethod" value=""/>
 </div>
-
-<div>
-	<label for="SendEmailReceipt">SendEmailReceipt:</label>
-	<input type="textbox" name="SendEmailReceipt" value=""/>
-</div>
-
 <div>
 	<label for="SendEmailReceipt">SendEmailReceipt:</label>
 	<input type="textbox" name="SendEmailReceipt" value=""/>
