@@ -12,7 +12,7 @@ If EventTypeId = "1" Then 'Donation
     ' an invoice ID is generated using the date and time
     invoiceNo = Year(Date) & Month(Date) &  Day(Date) & Hour(Now) & Minute(Now) & Second(Now)
     amount = Request.Form("x_amount")
-    addToNewsLetter = Request.Form("AddToNewsletter") is "true"
+    addToNewsLetter = Request.Form("AddToNewsletter") = "true"
      
     Call AddDonation(invoiceNo, amount, addToNewsLetter)
     Call ShowAuthorizeForm(invoiceNo)
