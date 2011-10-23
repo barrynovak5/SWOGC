@@ -1,8 +1,9 @@
 <!--#include file="adovbs.inc"-->
 <%
 
-Function LoadEventDetails(ByRef ReceiptPageUrl, ByRef ReceiptPageTitle, ByRef ReceiptPageEnabled, ByRef EventName, _
+Function LoadEventDetails(ByRef EventTypeId, ByRef ReceiptPageUrl, ByRef ReceiptPageTitle, ByRef ReceiptPageEnabled, ByRef EventName, _
     ByRef EventDescription, ByRef PaymentFormHeader, ByRef ReceiptFormHeader, ByRef ReceiptEmailHeader, _
+    ByRef ReceiptFormHeader2, ByRef ReceiptFormFooter2, _
     ByRef PaymentFormFooter, ByRef ReceiptFormFooter, ByRef ReceiptEmailFooter)
 
 set conn= Server.CreateObject("ADODB.Connection")
