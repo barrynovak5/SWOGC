@@ -51,6 +51,7 @@ end if
 
 <form method="POST" action="updateevent.asp" onsubmit="return Validator(this)">
 	Do not include quotes (") in fields.  The field will not be saved as quotes are rejected by Authorize.Net
+
 <div>
 	<input type="hidden" name="EventId" value="<%= objRS.Fields("EVENTID")%>"/>
 	<label for="EventName">Event Name:</label>
