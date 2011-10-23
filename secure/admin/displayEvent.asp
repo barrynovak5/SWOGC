@@ -1,5 +1,6 @@
 <!--#INCLUDE FILE="adminheader.asp"-->
 <!--#include file=adovbs.inc -->
+<script src="eventsavevalidators.js" type="text/javascript"></script>
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
 Set objCmd  = Server.CreateObject("ADODB.Command")
@@ -39,7 +40,7 @@ Do While Not objRS.EOF
 <p>Event Type: <%= objRS.Fields("EventTypeDescription")%></p>
 <p>Event Id: <%= objRS.Fields("EventID")%></p>
 
-<form method="POST" action="updateevent.asp">
+<form method="POST" action="updateevent.asp" onsubmit="return Validator(this)">
 <div>
 	<input type="hidden" name="EventId" value="<%= objRS.Fields("EVENTID")%>"/>
 	<label for="EventName">Event Name:</label>
