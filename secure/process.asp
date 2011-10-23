@@ -6,6 +6,7 @@
 Dim EventTypeId, invoiceNo
 EventTypeId = Request.Form("EventTypeId")
 
+
 If EventTypeId = "1" Then 'Donation
 
     ' an invoice ID is generated using the date and time

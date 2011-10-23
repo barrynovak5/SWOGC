@@ -21,7 +21,7 @@ Set objCmd.ActiveConnection = objConn
 'CommandType is adCmdText.  If a query name is specified, then
 'the CommandType is adCmdStoredProc.
 
-objCmd.CommandText = "SELECT DonorFirstName, DonorLastName FROM Donations WHERE EVENTID = ? AND AddToNewsletter = True"
+objCmd.CommandText = "SELECT DonorFirstName, DonorLastName FROM Donations WHERE EVENTID = ?"
 objCmd.CommandType = adCmdText
 
 'Create the parameter and populate it.
@@ -53,6 +53,13 @@ Do While Not objRS.EOF
   objRS.MoveNext
 Loop
 %>
+</table>
+<table border=1 cellpadding=2 cellspacing=2>
+<tr>
+<%
+  Response.Write "<td><b>" & donationEventId & "</b></td>"
+%>
+</tr>
 </table>
 
 <%
