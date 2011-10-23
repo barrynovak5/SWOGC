@@ -287,7 +287,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
 
                                                                                             <input value="<% Response.Write(ReceiptPageUrl) %>" type="hidden" name="x_receipt_link_url" />
                                                                                             <input value="<% Response.Write(ReceiptPageTitle) %>" type="hidden" name="x_receipt_link_text" />
-                                                                                            <input value="<% Response.Write('LINK') %>" type="hidden" name="x_receipt_method" />
+                                                                                            <input value='<% Response.Write("LINK") %>' type="hidden" name="x_receipt_method" />
                                                                                             <input value="<% Response.Write(ReceiptFormHeader) %>" type="hidden" name="x_header_html_receipt" />
                                                                                             <input value="<% Response.Write(ReceiptFormHeader2) %>" type="hidden" name="x_header2_html_receipt" />                                                                                           
                                                                                             <input value="<% Response.Write(ReceiptFormFooter) %>" type="hidden" name="x_footer_html_receipt" />
