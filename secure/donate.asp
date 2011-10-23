@@ -32,7 +32,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
 
          // Check if string is currency  
 
-        var isCurrency_re    = /^[0-9]+(,[0-9]{3})*(\.[0-9]{2})?$
+        var isCurrency_re    = /^(?:(?:\d{0,3}(?:[, ]\d{0,3})*[, ])+\d{3}|\d+)(?:\.\d*)?(?:\s*\$)?$/;
 
         function isCurrency (s) {  
                 return String(s).search (isCurrency_re) != -1 ; 
