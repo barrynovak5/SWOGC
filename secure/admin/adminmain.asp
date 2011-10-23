@@ -6,7 +6,6 @@
 <title>4c Admin</title>
 
    <script type="text/javascript">
-<<<<<<< HEAD
           function SubmitForm(URL) {
 
               var donationEvent = document.getElementById("SelectListEventId");
@@ -20,13 +19,6 @@
 
               window.location = URL + "?ID=" + donationEvent.value + "&Name=" + fileName;
               return false;  
-=======
-          function SubmitForm(URL)
-	  {
-                 var donationEvent = document.getElementById("SelectListEventId");
-		 window.location = URL + "?DonationEventID=" + donationEvent.value
-                 return false;  
->>>>>>> 8ef6daa83e1fca5cc2cfa8dde895c90b5807a354
           }
    </script>	
 </head>
