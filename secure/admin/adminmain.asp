@@ -7,13 +7,6 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>4c Admin</title>
 
-    <style type="text/css" title="currentStyle">
-			@import "css/table.css";
-	</style>
-    <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" language="javascript" src="js/jquery.dataTables.min.js"></script>
-
-
    <script type="text/javascript">
           function SubmitForm(URL, sanitizeName) {
 
@@ -54,28 +47,6 @@
     <input name="ButtonEditEvent" type="submit" value="Edit Event" />
     <input name="ButtonDisplayEventVisitors" type="submit" value="Display List" /><br />
 </form>
-
-<div style="width:800px">
-<table cellpadding="0" cellspacing="0" border="0" class="display" id="EventList">
-	<thead>
-		<tr>
-			<th width="15px">Event Id</th>
-			<th>Event Name</th>
-			<th width="50px">Event Type</th>
-		</tr>
-	</thead>
-	<tbody>
-		
-	</tbody>
-	<tfoot>
-		<tr>
-			<th>Event Id</th>
-			<th>Event Name</th>
-			<th>Event Type</th>
-		</tr>
-	</tfoot>
-</table>
-</div>
 
 <form id="displayvisitors" action="displayEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('displayEventVisitors.asp', false);">
 	<input name="DonationEventId" type="hidden" />
