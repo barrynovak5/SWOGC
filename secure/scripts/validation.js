@@ -67,3 +67,27 @@
         }       
 
 
+        var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+        function ValidateUSPhone(phone, required)
+        {
+           var phoneNumber = trim(phone.value);
+                    
+            if (phoneNumber.length && !phoneNumberPattern.test(phoneNumber)) {
+
+                alert("Please enter a valid phone number"); 
+                phone.focus();
+                return false;
+            }
+            else
+            {
+               if (required)
+               {
+                    alert("Please enter a phone number");
+                    phone.focus();
+                    
+                    return false;
+               }
+            }
+
+            return (true);
+        }

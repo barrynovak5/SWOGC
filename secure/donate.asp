@@ -53,7 +53,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                 }
             }
 
-            return ValidateEmail(theForm.x_email);           
+            return ValidateEmail(theForm.x_email) && ValidateUSPhone(theForm.x_phone);           
             
         }
       

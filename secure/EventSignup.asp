@@ -55,9 +55,10 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
                     alert("Please enter an email address or an phone number");
                     return false;
                 }
+                
+                return ValidateUSPhone(theForm.x_phone)
             }
             
-            return (true);
         }
 
         function trim(inputStringTrim) {
