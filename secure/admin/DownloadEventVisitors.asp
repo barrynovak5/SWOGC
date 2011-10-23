@@ -40,7 +40,7 @@ objRS.Open objCmd
 Response.Write("Lines: " & objRs.Fields.Count)
 
 Do While Not objRS.EOF
-  Response.Write("A");  
+  Response.Write("A")
   For I = 0 To objRS.Fields.Count - 1
     If I > 0 Then 
         Response.Write ", "
