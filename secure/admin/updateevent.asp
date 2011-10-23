@@ -30,7 +30,7 @@ objCmd.Parameters("@EVENTID") = EventId
 
 'Open and display the Recordset.
 
-objRS.Open objCmd
+objRS.Open objCmd, adOpenKeyset, adLockOptimistic
 
 objRS("EventName") = Request.Form("EventName")
 objRS.Update
