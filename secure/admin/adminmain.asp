@@ -8,9 +8,11 @@
    <script type="text/javscript">
           function SubmitForm(theFormId)
 	  {
-
+		alert(theFormId);
 		 var theForm = document.getElementById(theFormId);
+		alert('x');
                  var donationEvent = document.getElementById("SelectListEventId");
+		alert(donationEvent.value);
 
 		 theForm.DonationEventId.value = donationEvent.value;
 		
