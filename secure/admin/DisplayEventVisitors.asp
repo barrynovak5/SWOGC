@@ -2,10 +2,8 @@
 <!--#include file=adovbs.inc -->
 <%
 donationEventId = Request.Querystring("Id")
-Response.Write(donationEventId)
-%>
+//Response.Write(donationEventId)
 
-<%
 Set objConn = Server.CreateObject("ADODB.Connection")
 Set objCmd  = Server.CreateObject("ADODB.Command")
 Set objRS   = Server.CreateObject("ADODB.Recordset")
