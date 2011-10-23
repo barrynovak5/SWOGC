@@ -111,17 +111,17 @@ Do While Not objRS.EOF
  %> 
  <tr>
     <td>
-        <%=objRS("DonationID") %>
+        <%=objRS("DonationID") %> 
     </td>
     <td>
-        <%=objRS("DonorFirstName") %>
+        <%=objRS("DonorFirstName") %> &nbsp;
     </td><td>
-        <%=objRS("DonorLastName") %>
+        <%=objRS("DonorLastName") %>&nbsp;
     </td><td>
-        <%=objRS("DonorCompany") %>
+        <%=objRS("DonorCompany") %>&nbsp;
     </td>
     <td>
-        <%=Replace(StatusDropDownText, "DonationStatusDropDown", "DonationStatuses" & objRS("DonationID"))%>
+        &nbsp;<%=Replace(StatusDropDownText, "DonationStatusDropDown", "DonationStatuses" & objRS("DonationID"))%>
     </td>
     <td>
         <input type="button" value="Update Status" onclick="return UpdateStatus(<%=objRS("DonationID")%>)" />
