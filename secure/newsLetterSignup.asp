@@ -28,7 +28,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     <style type="text/css">
             
     </style>
-    <script language="JavaScript" type="text/javascript"><!--
+    <script language="JavaScript" type="text/javascript">
 
         function LoadData()
         {
@@ -94,7 +94,7 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
         }
       
 
-//--></script>
+</script>
 
     <style type="text/css">
         .leftSideCol
