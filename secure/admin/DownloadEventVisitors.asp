@@ -44,13 +44,13 @@ objRS.Open objCmd
 Response.Write(fieldList & vbCrLf)
 
 Do While Not objRS.EOF
-  Response.Write("A")
   For I = 0 To objRS.Fields.Count - 1
-    Response.Write("B" & I)
     If I > 0 Then 
-        Response.Write ", "
+        Response.Write ","
     End If
-    Response.Write """" & objRS(I ) & """"
+    ' Write it out to a file, surrounding it with double-quotes and replacing
+    ' all internal double-quotes with double-double-quotes
+    Response.Write """" & Replace(objRS(I),"""", """""") & """"
   Next
   Response.Write vbcrlf
   objRS.MoveNext
