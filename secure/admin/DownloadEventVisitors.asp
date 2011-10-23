@@ -2,7 +2,7 @@
 <!--#include file=adovbs.inc -->
 <%
 donationEventId = Request.QueryString("DonationEventId")
-Response.Write("<p>EventID=" & CStr(donationEventId) & "</p>")
+//Response.Write("<p>EventID=" & CStr(donationEventId) & "</p>")
 %>
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
@@ -36,12 +36,11 @@ objRS.Open objCmd
 %>
 <%
 Do While Not objRS.EOF
-  Response.Write "<p>"
   For I = 0 To objRS.Fields.Count - 1
     	if I > 0 then Response.Write ", "
 	Response.Write """" & objRS(I ) & """"
   Next
-  Response.Write "</p>"
+  Response.Write "<br/>"
   objRS.MoveNext
 Loop
 %>

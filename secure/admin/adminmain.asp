@@ -8,26 +8,14 @@
    <script type="text/javascript">
           function SubmitForm(URL)
 	  {
-		//alert(theFormId);
-		 //var theForm = document.getElementById(theFormId);
-		//alerForm.name);
-		alert(URL);
                  var donationEvent = document.getElementById("SelectListEventId");
-		 alert(donationEvent.value);
-	        alert(URL + "?DonationEventID=" + donationEvent.value);
-
-		 //theForm.DonationEventId.value = donationEvent.value;
 		 window.location = URL + "?DonationEventID=" + donationEvent.value
-		 
-
                  return false;  
           }
    </script>	
 </head>
 
 <body>
-
-<button type="button" onclick="alert('Hello World'))">GetValue</button>
 
 <!--#INCLUDE FILE="adminheader.asp"-->
 <form method="post" action="displayEvent.asp">
