@@ -30,17 +30,20 @@ Call LoadEventDetails(EventId, EventTypeId, ReceiptPageUrl, ReceiptPageTitle, Re
     </style>
     <script language="JavaScript" type="text/javascript"><!--
 
+        function validateCurrency(amount) {
+            var regex = /^[1-9]\d*(?:\.\d{0,2})?$/;
+            return regex.test(amount);
+        }
+        
         function Validator(theForm) {
 
             if (!theForm.x_amount.value.length || trim(theForm.x_amount.value) == "") {
                 alert("Please enter a value for the \"Amount of Donation\" field.");
                 theForm.x_amount.focus();
                 return (false);
-            }
-
-            currency = parseFloat(theForm.x_amount.value.replace(/^[^\d\.]*/, ''))
+            }            
             
-            if (isNaN(currency))
+            if (validateCurrency(theForm.x_amount.value))
             {  
                 alert("Please enter a valid number in the \"Amount of Donation\" field.");
                 theForm.x_amount.focus();
