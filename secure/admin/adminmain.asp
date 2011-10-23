@@ -6,8 +6,8 @@
 <title>4c Admin</title>
 
    <script type="text/javascript">
-          function SubmitForm(URL)
-    	  {
+          function SubmitForm(URL) {
+              alert('a');
     	      var donationEvent = document.getElementById("SelectListEventId");
     	      var fileName = donationEvent.options[donationEvent.selectedIndex].text
     	      // Get rid of the item count in the fileName
@@ -43,7 +43,7 @@
 	
 </form>
 
-<form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="return SubmitForm('DownloadEventVisitors.asp');">
+<form id="downloadvisitors" action="DownloadEventVisitors.asp" language="javascript" onsubmit="alert('y'); return SubmitForm('DownloadEventVisitors.asp');">
 	<input name="DonationEventId" type="hidden" />
 	<input name="ButtonDownloadEventVisitors" type="submit" value="Download List" /><br /><br />
 	
