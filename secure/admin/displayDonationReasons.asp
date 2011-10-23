@@ -46,6 +46,7 @@
      </script>
 </head>
 <body>
+<!--#INCLUDE FILE="adminheader.asp"-->
 
     <%
 

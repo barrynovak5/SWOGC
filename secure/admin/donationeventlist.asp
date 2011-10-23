@@ -1,3 +1,4 @@
+<!--#INCLUDE FILE="adminheader.asp"-->
 <%
 set conn=Server.CreateObject("ADODB.Connection")
 conn.Open "FourC"

@@ -1,3 +1,4 @@
+<!--#INCLUDE FILE="adminheader.asp"-->
 <!--#include file=adovbs.inc -->
 <%
 Set objConn = Server.CreateObject("ADODB.Connection")
