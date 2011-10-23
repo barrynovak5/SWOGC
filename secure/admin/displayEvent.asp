@@ -39,7 +39,18 @@ Do While Not objRS.EOF
 %>
 <form method="POST" action="updateevent.asp"
 <input type="hidden" value="<%= objRS.Fields("EVENTID")%>"/>
+<label for="EventName">EventName:</label>
 <input type="textbox" name="EventName" value="<%= objRS.Fields("EventName")%>"/>
+
+<label for="EventDescription">EventDescription:</label>
+<input type="textbox" name="EventDescription" value="<%= objRS.Fields("EventDescription")%>"/>
+
+<label for="ReceiptEmailSender">ReceiptEmailSender:</label>
+<input type="textbox" name="ReceiptEmailSender" value="<%= objRS.Fields("ReceiptEmailSender")%>"/>
+
+todo:
+ReceiptEmailHeader	ReceiptEmailFooter	PaymentFormHeader	PaymentFormFooter	ReceiptFormHeader	ReceiptFormFooter	CancelURL	ReceiptPageURL	ReceiptPageTitle	EventConfirmation	EventEmailConfirmation
+
 <input type="submit" value="Save"/>
 </form>
 <%
