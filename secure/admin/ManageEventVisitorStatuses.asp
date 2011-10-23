@@ -41,7 +41,7 @@ if (Request.Form("PostAction") = "U") then
     
     Call UpdateDonationStatus(Request.Form("DonationID"), Request.Form("DonationStatusID"))
 
-endif
+end if
 
 Set objRS   = Server.CreateObject("ADODB.Recordset")
 objConn.Open "FourC"
