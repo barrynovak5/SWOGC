@@ -8,7 +8,8 @@
    <script type="text/javascript">
           function SubmitForm(URL) {
               alert('a');
-    	      var donationEvent = document.getElementById("SelectListEventId");
+              var donationEvent = document.getElementById("SelectListEventId");
+              alert(donationEvent.selectedIndex);
     	      var fileName = donationEvent.options[donationEvent.selectedIndex].text
     	      alert('b');
     	      // Get rid of the item count in the fileName
