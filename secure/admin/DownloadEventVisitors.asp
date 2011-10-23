@@ -43,12 +43,8 @@ objRS.Open objCmd
 
 Response.Write(fieldList & vbCrLf)
 
-Response.Write("B")
-Response.Write(objCmd.CommandText)
 Do While Not objRS.EOF
-  Response.Write("C")
   For I = 0 To objRS.Fields.Count - 1
-    Response.Write("D")
     If I > 0 Then 
         Response.Write ","
     End If
