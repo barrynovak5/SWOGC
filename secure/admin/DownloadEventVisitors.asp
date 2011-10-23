@@ -1,7 +1,7 @@
 
 <!--#include file=adovbs.inc -->
 <%
-donationEventId = Request.Form("DonationEventId")
+donationEventId = Request.QueryString("DonationEventId")
 Response.Write("<p>EventID=" & CStr(donationEventId) & "</p>")
 %>
 <%
@@ -39,7 +39,7 @@ Do While Not objRS.EOF
   Response.Write "<p>"
   For I = 0 To objRS.Fields.Count - 1
     	if I > 0 then Response.Write ", "
-	Response.Write """" & objRS(I) & """"
+	Response.Write """" & objRS(I ) & """"
   Next
   Response.Write "</p>"
   objRS.MoveNext
